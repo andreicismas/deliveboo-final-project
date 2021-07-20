@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             
             'address' => ['required', 'string'],
-            'VAT' => [ 'string']
+            'VAT' => ['required', 'string']
         ]);
     }
 
