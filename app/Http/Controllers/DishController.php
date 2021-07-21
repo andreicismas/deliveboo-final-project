@@ -12,10 +12,11 @@ class DishController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($user_id)
     {
+        $dishes = Dish::where('user_id', $user_id)->get();
         $data = [
-            'dishes' => Dish::all()
+            'dishes' => $dishes
         ];
         return view ('dishes.index', $data);
     }
