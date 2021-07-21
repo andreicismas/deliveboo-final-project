@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             
             'address' => ['required', 'string'],
-            'VAT' => ['required', 'string']
+            'VAT' => ['required', 'string', 'size:15', 'unique:users']
         ]);
     }
 
@@ -70,8 +70,7 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            
+            'password' => Hash::make($data['password']),            
             'address' => $data["address"],
             'VAT' => $data["VAT"]
         ]);

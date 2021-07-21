@@ -1,8 +1,11 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
+use App\Dish;
 use App\Order;
+use App\User;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -12,19 +15,27 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($user_id)
     {
-        //
-    }
+        // prendi gli ordini in cui lo user_id del primo piatto è uguale allo user_id passato per argomento
 
+        // $orders = Order::where()->get();
+
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($user_id)
     {
-        //
+        $dishes = Dish::where('user_id', $user_id)->get();
+        $data = [
+            'dishes' => $dishes
+        ];
+
+        return view ('order.create', $data);        
     }
 
     /**
@@ -35,7 +46,22 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'delivery-address' => 'required|max:255',
+            'customer-mail' => 'required|email:rfc,dns'
+        ]);
+
+        $data = $request->all();
+        $newOrder = new Order();
+        $newOrder->fill($data);
+        $newOrder->save();
+
+        // da controllare con la view, per gestire i piatti ordinati con relative quantità
+
+        // sync con tabella ponte
+
+        // route sbagliata, bisogna passare anche id ristorante
+        return redirect()->route('dishes.index');
     }
 
     /**
@@ -46,7 +72,12 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::findOrFail($id);
+        $data = [
+            'order' => $order
+        ];
+
+        return view("order.show", $data);
     }
 
     /**
