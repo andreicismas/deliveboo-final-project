@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Dish;
 use App\Order;
+use App\User;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -12,9 +14,13 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($user_id)
     {
-        //
+        //$user = User::findOrFail($user_id);
+
+        //$dishes = Dish::where('user_id', $user_id)->get();
+        //$orders = Order::where('dish_id')->get();    
+
     }
 
     /**
@@ -22,9 +28,14 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($user_id)
     {
-        //
+        $dishes = Dish::where('user_id', $user_id)->get();
+        $data = [
+            'dishes' => $dishes
+        ];
+
+        return view ('order.create', $data);        
     }
 
     /**
@@ -35,7 +46,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
