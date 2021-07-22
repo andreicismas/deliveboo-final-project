@@ -56,7 +56,6 @@ class DishController extends Controller
             'ingredients' => 'required|max:5000',
             'description' => 'required|max:5000',
             'price' => 'required|numeric|between:0,100',
-            /*'visibility' => 'required|boolean' NON VAAAAAAA! ☜(ﾟヮﾟ☜)  */
         ]);
         $data = $request->all();
         $newDish = new Dish();
@@ -65,7 +64,7 @@ class DishController extends Controller
 
         $newDish->save();
         
-        return redirect()->route('dishes.create');
+        return redirect()->route('dishes.index');
     }
 
     /**
@@ -74,6 +73,8 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
     public function show($id)
     {
         $dish = Dish::findOrFail($id);
@@ -107,14 +108,14 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
     public function update(Request $request, $id)
     {
         $request->validate([
-            //'name' => 'required|max:255',
-            //'ingredients' => 'required|max:5000',
-            // 'description' => 'required|max:5000',
-            // 'price' => 'required|numeric|between:0,100',
-            //'visibility' => 'required|boolean'      
+            'name' => 'required|max:255',
+            'ingredients' => 'required|max:5000',
+            'description' => 'required|max:5000',
+            'price' => 'required|numeric|between:0,100', 
         ]);
         $data = $request->all();
         $dish = Dish::findOrFail($id);
@@ -132,9 +133,8 @@ class DishController extends Controller
     public function destroy($id)
     {
         $dish = Dish::findOrFail($id);
-        $dish->orders()->detatch();
+        //$dish->orders()->detatch(); restituisce errore!! ☜
         $dish->delete();
-
         return redirect()->route('dishes.index');
     }
 }

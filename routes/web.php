@@ -32,5 +32,6 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/dishes', 'DishController@index')->name('dishes.index');
     Route::get('/dishes/create', 'DishController@create')->name('dishes.create');
     Route::match(["PUT", "PATCH"], '/dishes/{dish}', 'DishController@update')->name('dishes.update');
+    Route::delete('/dishes/{Id}', 'DishController@destroy')->name('dishes.destroy');
     Route::get('/dishes/{dish}/edit', 'DishController@edit')->name('dishes.edit');
 //});

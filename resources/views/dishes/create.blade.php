@@ -1,3 +1,12 @@
+@extends('layouts.app')
+@section('content')
+
+    @if(count($errors->all())>0) {{--messaggi errore, flex a dx del form--}}
+
+    @foreach($errors->all() as $error)
+        <h5>{{$error}}</h5>   
+    @endforeach
+    @endif
 
 <form action ="{{route('dishes.store')}}" method="post"> 
     @csrf 
@@ -20,15 +29,14 @@
 
         <div>
             <label>Disponibilità</label>  <br>
-            <input type="radio" value=1 id="" name="visibility">
+            <input type="radio" value=1 id="" name="visibility" checked>
             <label for="1">Immediata</label> <br>
             <input type="radio" value=0 id="" name="visibility">
-            <label for="0">Rendi disponibile più avanti</label>  
+            <label for="0">Nascondi dal menù</label>  
         </div>
 
     <div>
       <input type="submit" value="carica">
     </div>
-  
-         
 </form>
+@endsection
