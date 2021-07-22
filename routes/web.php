@@ -59,3 +59,4 @@ Route::middleware('auth')
     //Rotta unica, scegliete voi
     Route::resource("/dishes", "DishController");    
 });
+
