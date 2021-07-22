@@ -13,13 +13,13 @@ class DishController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-//impedisce di accedere alla classe Dish se non registrati
+//impedisce di accedere alla classe Dish se non registrati------------------
 
     public function __construct()
     {
         $this->middleware('auth');
     }
-//---------------------------------------------//
+//--------------------------------------------------------------------------
 
     public function index()
     {
@@ -30,6 +30,7 @@ class DishController extends Controller
             if (!$dishes) {
                 abort(404);
             }
+            
         return view ('dishes.index', $data);
     }
 
@@ -61,7 +62,6 @@ class DishController extends Controller
         $newDish = new Dish();
         $newDish->fill($data);
         $newDish->user_id = $request->user()->id;
-
         $newDish->save();
         
         return redirect()->route('dishes.index');
@@ -78,11 +78,12 @@ class DishController extends Controller
     public function show($id)
     {
         $dish = Dish::findOrFail($id);
-        $data = [
-            'dish' => $dish
-        ];
 
-        return view('dishes.show', $data);
+        if (is_null($dish)) {
+            abort(404);
+        }
+
+        return view('dishes.show', ['dish' => $dish]);
     }
 
     /**
@@ -130,6 +131,7 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
         $dish = Dish::findOrFail($id);
