@@ -22,12 +22,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-/*Route::prefix('auth')
-    ->namespace('auth')
-    ->middleware('auth')
-    ->name("auth.")
-    ->group(function () {   dishcontroller va spostato in auth?*/
-        Route::middleware('auth');
+
     Route::post('/dishes', 'DishController@store')->name('dishes.store');
     Route::get('/dishes', 'DishController@index')->name('dishes.index');
     Route::get('/dishes/create', 'DishController@create')->name('dishes.create');
@@ -35,4 +30,3 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::match(["PUT", "PATCH"], '/dishes/{dish}', 'DishController@update')->name('dishes.update');
     Route::delete('/dishes/{Id}', 'DishController@destroy')->name('dishes.destroy');
     Route::get('/dishes/{dish}/edit', 'DishController@edit')->name('dishes.edit');
-//});
