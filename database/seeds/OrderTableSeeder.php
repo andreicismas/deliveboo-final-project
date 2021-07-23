@@ -18,8 +18,12 @@ class OrderTableSeeder extends Seeder
 
         for ($i = 0; $i < 5; $i++) {
             $newOrder = new Order();
+            $newOrder->customer_name = $faker->name();
+            $newOrder->customer_phone_number = $faker->phoneNumber();
             $newOrder->delivery_address = $faker->address();
-            $newOrder->customer_mail = $faker->unique()->safeEmail;
+            $newOrder->customer_mail = $faker->safeEmail;
+            $newOrder->payment_amount = $faker->randomFloat(2, 0, 99);
+            $newOrder->payment_status = true;
 
             $newOrder->save();
         }

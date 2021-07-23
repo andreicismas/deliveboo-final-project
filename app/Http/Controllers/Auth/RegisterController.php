@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Support\Str;
+
 class RegisterController extends Controller
 {
     /*
@@ -67,12 +69,25 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $slug = Str::slug($data["name"]);
+
+        $slugTemp = $slug;
+        $slugExists = User::where("slug", $slug)->first();
+        $counter = 1;
+
+        while($slugExists) {
+            $slug = $slugTemp . "-" . $counter;
+            $counter++;
+            $slugExists = User::where("slug", $slug)->first();
+        }
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),            
             'address' => $data["address"],
-            'VAT' => $data["VAT"]
+            'VAT' => $data["VAT"],
+            'slug' => $slug
         ]);
     }
 }
