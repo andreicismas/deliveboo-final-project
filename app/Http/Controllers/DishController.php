@@ -13,13 +13,13 @@ class DishController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-//impedisce di accedere alla classe Dish se non registrati------------------
+/*/impedisce di accedere alla classe Dish se non registrati------------------
 
     public function __construct()
     {
         $this->middleware('auth');
     }
-//--------------------------------------------------------------------------
+//--------------------------------------------------------------------------*/
 
     public function index()
     {
