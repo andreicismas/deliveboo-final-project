@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Dish;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class DishController extends Controller
 {
     /**
@@ -12,12 +12,25 @@ class DishController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($user_id)
+
+/*/impedisce di accedere alla classe Dish se non registrati------------------
+
+    public function __construct()
     {
-        $dishes = Dish::where('user_id', $user_id)->get();
-        $data = [
-            'dishes' => $dishes
-        ];
+        $this->middleware('auth');
+    }
+//--------------------------------------------------------------------------*/
+
+    public function index()
+    {
+        $dishes = Dish::where('user_id', Auth::user()->id )->get();
+        if (!$dishes) {
+            abort(404);
+        }
+            $data = [
+                'dishes' => $dishes
+            ];
+                
         return view ('dishes.index', $data);
     }
 
@@ -44,13 +57,11 @@ class DishController extends Controller
             'ingredients' => 'required|max:5000',
             'description' => 'required|max:5000',
             'price' => 'required|numeric|between:0,100',
-            'visibility' => 'required|boolean'      
         ]);
         $data = $request->all();
         $newDish = new Dish();
         $newDish->fill($data);
         $newDish->user_id = $request->user()->id;
-
         $newDish->save();
         
         return redirect()->route('dishes.index');
@@ -62,14 +73,17 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
     public function show($id)
     {
         $dish = Dish::findOrFail($id);
-        $data = [
-            'dish' => $dish
-        ];
 
-        return view('dishes.show', $data);
+        if (is_null($dish)) {
+            abort(404);
+        }
+
+        return view('dishes.show', ['dish' => $dish]);
     }
 
     /**
@@ -95,14 +109,14 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
     public function update(Request $request, $id)
     {
         $request->validate([
             'name' => 'required|max:255',
             'ingredients' => 'required|max:5000',
             'description' => 'required|max:5000',
-            'price' => 'required|numeric|between:0,100',
-            'visibility' => 'required|boolean'      
+            'price' => 'required|numeric|between:0,100', 
         ]);
         $data = $request->all();
         $dish = Dish::findOrFail($id);
@@ -117,12 +131,12 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
         $dish = Dish::findOrFail($id);
-        $dish->orders()->detatch();
+        //$dish->orders()->detatch(); restituisce errore!! ☜
         $dish->delete();
-
         return redirect()->route('dishes.index');
     }
 }
