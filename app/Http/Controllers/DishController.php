@@ -24,13 +24,13 @@ class DishController extends Controller
     public function index()
     {
         $dishes = Dish::where('user_id', Auth::user()->id )->get();
+        if (!$dishes) {
+            abort(404);
+        }
             $data = [
                 'dishes' => $dishes
             ];
-            if (!$dishes) {
-                abort(404);
-            }
-            
+                
         return view ('dishes.index', $data);
     }
 
