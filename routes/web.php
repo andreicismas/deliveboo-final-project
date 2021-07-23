@@ -24,16 +24,16 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')
-//->prefix('user/{user}')
-->group(function () {
+    //->prefix('user/{user}')
+    ->group(function () {
 
-    //ORDERS
-    Route::get("/orders", "OrderController@index")->name("orders.index"); 
-    Route::get("/orders/{order}", "OrderController@show")->name("orders.show");
+        //ORDERS
+        Route::get("/orders", "OrderController@index")->name("orders.index");
+        Route::get("/orders/{order}", "OrderController@show")->name("orders.show");
 
-    //DISHES
-    Route::resource("/dishes", "DishController");    
-});
+        //DISHES
+        Route::resource("/dishes", "DishController");
+    });
 
 //ORDERS UR
 Route::post("/orders", "OrderController@store")->name("orders.store");
