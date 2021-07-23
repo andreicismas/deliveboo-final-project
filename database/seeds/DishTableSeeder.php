@@ -17,7 +17,7 @@ class DishTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        Dish::truncate();
+        // Dish::truncate();
         
         for ($i = 0; $i < 10; $i++ ) {
             $newDish = new Dish();
