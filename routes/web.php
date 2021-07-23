@@ -33,6 +33,7 @@ Route::middleware('auth')
 
         //DISHES
         Route::resource("/dishes", "DishController");
+        Route::get("/dishes/{id}", "DishController@show")->name("dishes.show");
     });
 
 //ORDERS UR
