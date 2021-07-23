@@ -30,7 +30,7 @@ class AddForeignKeyToPaymentsTable extends Migration
     public function down()
     {
         Schema::table('payments', function (Blueprint $table) {
-            $table->dropForeign('posts_order_id_foreign');
+            $table->dropForeign('payments_order_id_foreign');
             $table->dropColumn('order_id');
         });
     }
