@@ -37344,6 +37344,19 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+/*Una volta installato vue, servirà riscrivere la funzione*/
+
+
+window.addEventListener("load", function () {
+  var deleteDish = document.querySelectorAll(".areUsure");
+  deleteDish.forEach(function (form) {
+    form.addEventListener("submit", function (event) {
+      if (!confirm("Vuoi davvero cancellare questo piatto? Ricorda che puoi sempre nasconderlo dal tuo menù!")) {
+        event.preventDefault();
+      }
+    });
+  });
+});
 
 /***/ }),
 
