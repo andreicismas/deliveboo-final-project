@@ -62,9 +62,11 @@
                 margin-bottom: 30px;
             }
         </style>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div id="app" class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -79,22 +81,23 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+            
 
-                   {{-- <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                    <a href="https://github.com/laravel/laravel">prova</a>
-                </div>--}}
+            
+
+                <div v-for="i in 10" :key="i">
+
+                    <span v-text="'testo prova' + i"></span><br>
+                </div>
+        
+
+                @foreach ($types as $type)
+                    <a href=""><button class="btn btn-primary m-1 ">{{ $type->name }}</button><br></a> 
+            
+                    
+                @endforeach 
+
+            <h1>ciao dalla welcompage</h1>
 
             
             </div>
