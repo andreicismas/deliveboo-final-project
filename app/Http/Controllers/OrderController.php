@@ -64,12 +64,20 @@ class OrderController extends Controller
         $data = $request->all();
         $newOrder = new Order();
         $newOrder->fill($data);
+
+        // temp
+        $newOrder["payment_amount"] = 10;
+        $newOrder["payment_status"] = true;
+
         $newOrder->save();
 
         // da controllare con la view, per gestire i piatti ordinati con relative quantità
 
+        // dump($request);
+        // return;
+        
         // sync con tabella ponte
-
+        $newOrder->dishes()->sync($data["dishes"]);
         // route sbagliata, bisogna passare anche id ristorante
         return redirect()->route('welcome');
     }
