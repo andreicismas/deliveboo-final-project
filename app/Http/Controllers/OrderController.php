@@ -7,6 +7,7 @@ use App\Dish;
 use App\Order;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -15,8 +16,15 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($user_id)
+    public function index()
     {
+        $user_id = Auth::user()->id;
+        $orders = Order::with("dish_id")
+            ->join("dishes", "dish_id", "=", "dishes.id")
+            ->join("users", "dishes.user_id", "=", "user.id")
+            ->where("user_id", $user_id)
+            ->get();
+        return view("orders.index", ["orders" => $orders]);
         // prendi gli ordini in cui lo user_id del primo piatto è uguale allo user_id passato per argomento
 
         // $orders = Order::where()->get();
@@ -75,7 +83,7 @@ class OrderController extends Controller
 
         // dump($request);
         // return;
-        
+
         // sync con tabella ponte
         $newOrder->dishes()->sync($data["dishes"]);
         // route sbagliata, bisogna passare anche id ristorante
