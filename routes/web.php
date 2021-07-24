@@ -1,5 +1,5 @@
 <?php
-
+use App\Type;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    return view('welcome' , [
+        "types"=>Type::all()
+    ]);
 });
 
 Auth::routes();
