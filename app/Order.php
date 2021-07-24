@@ -8,10 +8,10 @@ class Order extends Model
 {
 
     protected $fillable = [
-        "customer_name", "customer_phone_number", "delivery_address", "customer_mail"
+        "delivery_address", "customer_mail"
     ];
 
-    public function dishes () {
+    public function dishes() {
         return $this->belongsToMany("App\Dish");
     }
 }

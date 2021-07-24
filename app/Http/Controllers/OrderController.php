@@ -28,6 +28,8 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    /*----------------------------------------------------------------DA QUI PROVE
     public function create($user_id)
     {
         $dishes = Dish::where('user_id', $user_id)->get();
@@ -36,7 +38,15 @@ class OrderController extends Controller
         ];
 
         return view ('order.create', $data);        
-    }
+    }----*/
+
+    public function create() 
+        {
+            $dishes = Dish::all(); //!!!! non passeranno tutti i piatti ma solo quelli del ristornate selezionato
+        
+            return view ('orders.create', ['dishes'=>$dishes]);        
+        }
+
 
     /**
      * Store a newly created resource in storage.
@@ -46,10 +56,10 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+       /* $request->validate([
             'delivery-address' => 'required|max:255',
             'customer-mail' => 'required|email:rfc,dns'
-        ]);
+        ]);*/
 
         $data = $request->all();
         $newOrder = new Order();
@@ -61,7 +71,7 @@ class OrderController extends Controller
         // sync con tabella ponte
 
         // route sbagliata, bisogna passare anche id ristorante
-        return redirect()->route('dishes.index');
+        return redirect()->route('welcome');
     }
 
     /**
