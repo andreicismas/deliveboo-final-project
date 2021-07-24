@@ -80,19 +80,19 @@
                     @endauth
                 </div>
             @endif
-
+            
             
 
             
 
-                <div v-for="i in 10" :key="i">
-
-                    <span v-text="'testo prova' + i"></span><br>
-                </div>
+                
         
 
                 @foreach ($types as $type)
-                    <a href=""><button class="btn btn-primary m-1 ">{{ $type->name }}</button><br></a> 
+                    <type-button
+                    name= "{{$type->name}}"
+                    ></type-button>
+                    
             
                     
                 @endforeach 
