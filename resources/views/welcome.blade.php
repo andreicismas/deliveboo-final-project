@@ -99,7 +99,7 @@
             
                 @foreach ($users as $user)
                 <div class="d-flex flex-row">
-
+                    <a href="{{ route("orders.create", ["slug" => $user->slug]) }}">
                     <div class="card" style="width: 18rem;">
                         {{-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
                         <div class="card-body">
@@ -108,6 +108,7 @@
                             <em class="card-title">indirizzo  UR -  {{$user->address}}</em>
                         </div>
                     </div>
+                    </a>
                 </div>
                 @endforeach
             </div>            

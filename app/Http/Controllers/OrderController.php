@@ -40,23 +40,27 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    /*----------------------------------------------------------------DA QUI PROVE
-    public function create($user_id)
+    /*----------------------------------------------------------------DA QUI PROVE----*/
+    public function create($user_slug)
     {
-        $dishes = Dish::where('user_id', $user_id)->get();
+        $user = DB::table("users")
+                ->where("slug", $user_slug)
+                ->first();
+
+        $dishes = Dish::where('user_id', $user->id)->get();
         $data = [
             'dishes' => $dishes
         ];
 
-        return view ('order.create', $data);        
-    }----*/
+        return view ('orders.create', $data);        
+    }
 
-    public function create() 
-        {
-            $dishes = Dish::all(); //!!!! non passeranno tutti i piatti ma solo quelli del ristornate selezionato
+    // public function create() 
+    //     {
+    //         $dishes = Dish::all(); //!!!! non passeranno tutti i piatti ma solo quelli del ristornate selezionato
         
-            return view ('orders.create', ['dishes'=>$dishes]);        
-        }
+    //         return view ('orders.create', ['dishes'=>$dishes]);        
+    //     }
 
 
     /**
