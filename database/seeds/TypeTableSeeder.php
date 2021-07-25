@@ -18,6 +18,8 @@ class TypeTableSeeder extends Seeder
             "AsianFusion", "Dolci", "Fritti", "Gelato", "Giapponese", "Hamburger", "Insalate", "Italiano", "Kebab", "Panini", "Pizza", "Pollo", "Senza Glutine" 
         ];
 
+        
+
         foreach ($types as $type) {
             $newType = new Type();
             $newType->name = $type;
