@@ -96,6 +96,8 @@
                     <a href="https://github.com/laravel/laravel">prova</a>
                 </div>--}}
 
+                <a href="{{route("orders.create")}}">Ordina</a>
+
             
             </div>
         </div>
