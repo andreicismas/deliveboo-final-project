@@ -16,6 +16,7 @@
             
             <a href="{{ route('dishes.edit', ['dish' => $dish->id]) }}" class="btn btn-primary"> Modifica </a> 
             @include('layouts.deleteBtn', [ "id" => $dish->id, "resource" => "dishes" ])
-       
+
+            <a href="{{route("dishes.index")}}">Indietro</a>
     </div>
 @endsection
