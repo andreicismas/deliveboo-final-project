@@ -88,24 +88,45 @@
                 </div>
             @endif
             
-            
+            <div class="align-self-start ">
 
-            
-
-                
-        
+                 <h1>Segli il tuo ristorante </h1>
 
                 @foreach ($types as $type)
                     <type-button
                      name= "{{$type->name}}"
                     ></type-button>
 
-                @endforeach 
+                @endforeach
+            
+            
+                 @foreach ($users as $user)
+                 <div class="d-flex flex-row">
 
-            <h1>ciao dalla welcompage</h1>
+                    <div class="card " style="width: 18rem;">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Nome UR - {{$user->name}}</h5>
+                            <em class="card-title">Email UR -  {{$user->email}}</em>
+                            <em class="card-title">indirizzo  UR -  {{$user->address}}</em>
+                        </div>
+                    </div>
+                 </div>
+
+                        {{-- <h1>{{$user->name}}</h1>
+                        <h1>{{$user->email}}</h1>
+                          <h1>{{$user->VAT}}</h1>
+                         <h1>{{$user->adress}}</h1> --}}
+                 @endforeach
+            </div>
 
             
-            </div>
+
+                
+        
+                 
+
+            
         </div>
     </body>
 </html>
