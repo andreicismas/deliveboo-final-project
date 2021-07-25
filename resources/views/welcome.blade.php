@@ -90,7 +90,7 @@
             
             <div class="align-self-start ">
 
-                 <h1>Segli il tuo ristorante </h1>
+                 <h1>Scegli il tuo ristorante </h1>
 
                 @foreach ($types as $type)
                     <type-button
@@ -103,8 +103,8 @@
                  @foreach ($users as $user)
                  <div class="d-flex flex-row">
 
-                    <div class="card " style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card" style="width: 18rem;">
+                        {{-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
                         <div class="card-body">
                             <h5 class="card-title">Nome UR - {{$user->name}}</h5>
                             <em class="card-title">Email UR -  {{$user->email}}</em>
