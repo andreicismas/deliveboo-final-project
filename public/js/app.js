@@ -37664,7 +37664,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("span", { staticClass: "btn btn-primary m-1 " }, [
+  return _c("button", { staticClass: "btn btn-primary m-1 " }, [
     _vm._v(_vm._s(_vm.name) + " ")
   ])
 }
@@ -49911,7 +49911,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
+Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]); // rota vue cli
+
 Vue.component('TypeButton', __webpack_require__(/*! ./components/TypeButton.vue */ "./resources/js/components/TypeButton.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to

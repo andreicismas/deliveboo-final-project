@@ -62,8 +62,15 @@
                 margin-bottom: 30px;
             }
         </style>
+
+        {{-- link boostrap --}}
+
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+        {{-- link cli vue --}}
         <script src="{{ asset('js/app.js') }}" defer></script>
+
+
     </head>
     <body>
         <div id="app" class="flex-center position-ref full-height">
@@ -90,11 +97,9 @@
 
                 @foreach ($types as $type)
                     <type-button
-                    name= "{{$type->name}}"
+                     name= "{{$type->name}}"
                     ></type-button>
-                    
-            
-                    
+
                 @endforeach 
 
             <h1>ciao dalla welcompage</h1>

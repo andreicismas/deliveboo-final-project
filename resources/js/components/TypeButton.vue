@@ -1,6 +1,6 @@
 <template>
     
-       <span class="btn btn-primary m-1 ">{{name}} </span>
+       <button class="btn btn-primary m-1 ">{{name}} </button>
 
 </template>
 

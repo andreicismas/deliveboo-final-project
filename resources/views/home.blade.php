@@ -21,6 +21,8 @@
                             <li><a href="{{ route('dishes.create') }}">Carica nuovi piatti</a></li>                          
                         </ul>
                     </div>
+
+
                 </div>
             </div>
         </div>
