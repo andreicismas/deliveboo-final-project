@@ -1,5 +1,6 @@
 <?php
-
+use App\Type;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,13 +16,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-})->name("welcome");
+
+    return view('welcome' , [
+        "types"=>Type::all(),
+        "users"=>User::all(),
+    ]);
+
+
+});
 
 Auth::routes();
 
 //Sarà la Dashboard dell'UR
 Route::get('/home', 'HomeController@index')->name('home');
+
+//ORDERS UR
+Route::post("/orders", "OrderController@store")->name("orders.store");
+Route::get("/orders/create", "OrderController@create")->name("orders.create");
 
 Route::middleware('auth')
 //->prefix('user/{user}')
@@ -35,9 +46,6 @@ Route::middleware('auth')
     Route::resource("/dishes", "DishController");
 });
 
-//ORDERS UR
-Route::post("/orders", "OrderController@store")->name("orders.store");
-Route::get("/orders/create", "OrderController@create")->name("orders.create");
 
 
 // //valutare se e come passare lo user_id come argomento

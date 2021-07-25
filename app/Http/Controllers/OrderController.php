@@ -25,13 +25,12 @@ class OrderController extends Controller
             ->join("dish_order", "id", "=", "dish_order.order_id")
             ->join("dishes", "dish_id", "=", "dishes.id")
             ->join("users", "dishes.user_id", "=", "users.id")
-            ->where("user_id", $user_id)
+            ->select("orders.*")
             ->groupBy("orders.id")
+            ->where("user_id", $user_id)
+            ->orderBy("orders.id", "asc")
             ->get();
         return view("orders.index", ["orders" => $orders]);
-        // prendi gli ordini in cui lo user_id del primo piatto è uguale allo user_id passato per argomento
-
-        // $orders = Order::where()->get();
 
     }
     
@@ -100,9 +99,9 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Order $order)
     {
-        $order = Order::findOrFail($id);
+        // $order = Order::findOrFail($id);
         $data = [
             'order' => $order
         ];
