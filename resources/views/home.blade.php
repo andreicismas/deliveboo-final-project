@@ -22,6 +22,8 @@
                             <li><a href="{{ route('orders.index') }}">Storico Ordini</a></li>                      
                         </ul>
                     </div>
+
+
                 </div>
             </div>
         </div>

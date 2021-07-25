@@ -62,9 +62,18 @@
                 margin-bottom: 30px;
             }
         </style>
+
+        {{-- link boostrap --}}
+
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+        {{-- link cli vue --}}
+        <script src="{{ asset('js/app.js') }}" defer></script>
+
+
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div id="app" class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -78,28 +87,46 @@
                     @endauth
                 </div>
             @endif
+            
+            <div class="align-self-start ">
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+                 <h1>Segli il tuo ristorante </h1>
 
-                   {{-- <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                    <a href="https://github.com/laravel/laravel">prova</a>
-                </div>--}}
+                @foreach ($types as $type)
+                    <type-button
+                     name= "{{$type->name}}"
+                    ></type-button>
 
-                <a href="{{route("orders.create")}}">Ordina</a>
+                @endforeach
+            
+            
+                 @foreach ($users as $user)
+                 <div class="d-flex flex-row">
+
+                    <div class="card " style="width: 18rem;">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Nome UR - {{$user->name}}</h5>
+                            <em class="card-title">Email UR -  {{$user->email}}</em>
+                            <em class="card-title">indirizzo  UR -  {{$user->address}}</em>
+                        </div>
+                    </div>
+                 </div>
+
+                        {{-- <h1>{{$user->name}}</h1>
+                        <h1>{{$user->email}}</h1>
+                          <h1>{{$user->VAT}}</h1>
+                         <h1>{{$user->adress}}</h1> --}}
+                 @endforeach
+            </div>
 
             
-            </div>
+
+                
+        
+                 
+
+            
         </div>
     </body>
 </html>
