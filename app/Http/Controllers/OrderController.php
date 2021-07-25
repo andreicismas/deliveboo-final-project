@@ -9,6 +9,8 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\DB;
+
 class OrderController extends Controller
 {
     /**
@@ -19,10 +21,12 @@ class OrderController extends Controller
     public function index()
     {
         $user_id = Auth::user()->id;
-        $orders = Order::with("dish_id")
+        $orders = DB::table("orders")
+            ->join("dish_order", "id", "=", "dish_order.order_id")
             ->join("dishes", "dish_id", "=", "dishes.id")
-            ->join("users", "dishes.user_id", "=", "user.id")
+            ->join("users", "dishes.user_id", "=", "users.id")
             ->where("user_id", $user_id)
+            ->groupBy("orders.id")
             ->get();
         return view("orders.index", ["orders" => $orders]);
         // prendi gli ordini in cui lo user_id del primo piatto è uguale allo user_id passato per argomento
@@ -103,7 +107,7 @@ class OrderController extends Controller
             'order' => $order
         ];
 
-        return view("order.show", $data);
+        return view("orders.show", $data);
     }
 
     /**
