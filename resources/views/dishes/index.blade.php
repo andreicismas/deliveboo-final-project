@@ -27,7 +27,7 @@
                         <h5>Non visibile nel menù</h5> 
                     @endif
 
-                <a href="{{ route('dishes.show', [ "id" => $dish->id, "resource" => "dishes" ])}}" class="btn btn-primary"> Leggi tutto </a> 
+                <a href="{{ route('dishes.show', [ "dish" => $dish->id, "resource" => "dishes" ])}}" class="btn btn-primary"> Leggi tutto </a> 
                 <a href="{{ route('dishes.edit', ['dish' => $dish->id]) }}" class="btn btn-primary"> Modifica </a> 
                    @include('layouts.deleteBtn', [ "id" => $dish->id, "resource" => "dishes" ])
             @endforeach
