@@ -23,6 +23,10 @@ Auth::routes();
 //Sarà la Dashboard dell'UR
 Route::get('/home', 'HomeController@index')->name('home');
 
+//ORDERS UR
+Route::post("/orders", "OrderController@store")->name("orders.store");
+Route::get("/orders/create", "OrderController@create")->name("orders.create");
+
 Route::middleware('auth')
 //->prefix('user/{user}')
 ->group(function () {
@@ -35,9 +39,6 @@ Route::middleware('auth')
     Route::resource("/dishes", "DishController");
 });
 
-//ORDERS UR
-Route::post("/orders", "OrderController@store")->name("orders.store");
-Route::get("/orders/create", "OrderController@create")->name("orders.create");
 
 
 // //valutare se e come passare lo user_id come argomento
