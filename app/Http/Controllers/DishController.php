@@ -15,10 +15,10 @@ class DishController extends Controller
 
 //impedisce di accedere alla classe Dish se non registrati------------------
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //    // $this->middleware('auth');
+    // }
 //--------------------------------------------------------------------------/
 
     public function index()
@@ -75,15 +75,21 @@ class DishController extends Controller
      */
 
 
-    public function show($id)
+    public function show(Dish $dish)
     {
-        $dish = Dish::findOrFail($id);
+        /*$dish = Dish::findOrFail($id);
 
         if (is_null($dish)) {
             abort(404);
         }
+        return view('dishes.show', ['dish' => $dish]);*/
+        
+        $user = $dish->user_id;
+        if($user != Auth::user()->id) {
+            abort(403);
+        }
 
-        return view('dishes.show', ['dish' => $dish]);
+        return view('dishes.show', compact('dish'));
     }
 
     /**
@@ -92,14 +98,21 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Dish $dish)//Dish $dish
     {
-        $dish = Dish::findOrFail($id);
+        /*$dish = Dish::findOrFail($id);
         $data = [
             'dish' => $dish
         ];
 
-        return view('dishes.edit', $data);
+        return view('dishes.edit', $data);*/
+
+        $user = $dish->user_id;
+        if ($user != Auth::user()->id) {
+            abort(403);
+        }
+
+        return view('dishes.edit', compact('dish'));
     }
 
     /**
@@ -135,7 +148,9 @@ class DishController extends Controller
     public function destroy($id)
     {
         $dish = Dish::findOrFail($id);
-        //$dish->orders()->detatch(); restituisce errore!! ☜
+        
+        $dish->orders()->detach();
+        
         $dish->delete();
         return redirect()->route('dishes.index');
     }
