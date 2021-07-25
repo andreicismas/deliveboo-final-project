@@ -20,8 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     
 
-    {{-- link cli vue --}}
-    <script src="{{ asset('js/app.js') }}" defer></script>
+   
 
 </head>
 <body>
@@ -85,5 +84,7 @@
             @yield('content')
         </main>
     </div>
+
+    
 </body>
 </html>
