@@ -8,6 +8,8 @@
     @endforeach
     @endif
 
+<a href="{{route("dishes.index")}}">Indietro</a>
+
 <form action ="{{route('dishes.store')}}" method="post"> 
     @csrf 
 

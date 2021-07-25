@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name("welcome");
 
 Auth::routes();
 
@@ -33,6 +33,7 @@ Route::middleware('auth')
 
         //DISHES
         Route::resource("/dishes", "DishController");
+        Route::get("/dishes/{id}", "DishController@show")->name("dishes.show");
     });
 
 //ORDERS UR
