@@ -18,7 +18,8 @@
                     <div>
                         <ul>
                             <li><a href="{{ route('dishes.index') }}">Vedi menù</a></li>
-                            <li><a href="{{ route('dishes.create') }}">Carica nuovi piatti</a></li>                          
+                            <li><a href="{{ route('dishes.create') }}">Carica nuovi piatti</a></li>
+                            <li><a href="{{ route('orders.index') }}">Storico Ordini</a></li>                      
                         </ul>
                     </div>
                 </div>
