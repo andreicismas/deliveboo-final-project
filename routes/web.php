@@ -21,9 +21,7 @@ Route::get('/', function () {
         "types"=>Type::all(),
         "users"=>User::all(),
     ]);
-
-
-});
+})->name("welcome");
 
 Auth::routes();
 
@@ -32,7 +30,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //ORDERS UR
 Route::post("/orders", "OrderController@store")->name("orders.store");
-Route::get("/orders/create", "OrderController@create")->name("orders.create");
+Route::get("/orders/create/{slug}", "OrderController@create")->name("orders.create");
 
 Route::middleware('auth')
 //->prefix('user/{user}')
