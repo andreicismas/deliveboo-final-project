@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravell</title>
+        <title>Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -88,24 +88,24 @@
                 </div>
             @endif
             
-            <div class="align-self-start ">
+            <div class="align-self-start">
 
-                 <h1>Scegli il tuo ristorante </h1>
+                <h1>Scegli il tuo ristorante </h1>
 
                 @foreach ($types as $type)
-                    <type-button name= "{{$type->name}}"></type-button>
+                    <type-button name="{{$type->name}}"></type-button>
                 @endforeach
             
             
                 @foreach ($users as $user)
                 <div class="d-flex flex-row">
                     <a href="{{ route("orders.create", ["slug" => $user->slug]) }}">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 18rem; margin: 5px">
                         {{-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
                         <div class="card-body">
-                            <h5 class="card-title">Nome UR - {{$user->name}}</h5>
-                            <em class="card-title">Email UR -  {{$user->email}}</em>
-                            <em class="card-title">indirizzo  UR -  {{$user->address}}</em>
+                            <h5 class="card-title">{{$user->name}}</h5>
+                            <em class="card-title">{{$user->email}}</em><br>
+                            <em class="card-title">{{$user->address}}</em>
                         </div>
                     </div>
                     </a>
