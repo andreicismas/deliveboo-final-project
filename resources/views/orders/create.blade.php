@@ -7,6 +7,8 @@
         @endforeach
     @endif
 
+    <a href="{{ route("welcome") }}">Indietro</a>
+
     <form action="{{ route('orders.store') }}" method="post">
         @csrf
 
