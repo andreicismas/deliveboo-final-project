@@ -69,12 +69,12 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    /*public function store(Request $request)
     {
        /* $request->validate([
             'delivery-address' => 'required|max:255',
             'customer-mail' => 'required|email:rfc,dns'
-        ]);*/
+        ]);
 
         $data = $request->all();
         $newOrder = new Order();
@@ -93,8 +93,35 @@ class OrderController extends Controller
 
         // sync con tabella ponte
         $newOrder->dishes()->sync($data["dishes"]);
+        //foreach
+       // $newOrder->dishes()->sync([1 =>['quantity' => 1]]);
         // route sbagliata, bisogna passare anche id ristorante
         return redirect()->route('welcome');
+    }*/
+
+
+    public function store(Request $request)
+    {
+        //$order= Order::create($request->all());
+
+        $data = $request->all();
+        $newOrder = new Order();
+        $newOrder->fill($data);
+
+        // temp
+        $newOrder["payment_amount"] = 10;
+        $newOrder["payment_status"] = true;
+
+        $newOrder->save();
+
+        $dishes = collect($request->input('dishes', [])) 
+        ->map(function($dishes) {   
+            return ['quantity' => $dishes];  //terza colonna chiamata nel model Order
+        });
+        //dd($dishes);
+      
+        $newOrder->dishes()->sync($dishes);
+
     }
 
     /**
