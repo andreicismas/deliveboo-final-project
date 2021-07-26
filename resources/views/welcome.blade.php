@@ -92,8 +92,9 @@
 
                 <h1>Scegli il tuo ristorante </h1>
 
+
                 @foreach ($types as $type)
-                    <type-button name="{{$type->name}}"></type-button>
+                    <type-ristorants name="{{$type->name}}"></type-ristorants>
                 @endforeach
             
             
@@ -102,10 +103,24 @@
                     <a href="{{ route("orders.create", ["slug" => $user->slug]) }}">
                     <div class="card" style="width: 18rem; margin: 5px">
                         {{-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
+
+                         @foreach ($user->types as $type)
+                            <type-user
+                            name="{{$type->name}}"
+                            ></type-user>
+                        @endforeach
+
+
+
                         <div class="card-body">
-                            <h5 class="card-title">{{$user->name}}</h5>
-                            <em class="card-title">{{$user->email}}</em><br>
-                            <em class="card-title">{{$user->address}}</em>
+
+                            <user-registered
+                            {{-- code UR --}}
+                            name="{{$user->name}}"
+                            email="{{$user->email}}"
+                            address="{{$user->address}}"
+                            ></user-registered>
+
                         </div>
                     </div>
                     </a>
