@@ -69,41 +69,15 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    /*public function store(Request $request)
-    {
-       /* $request->validate([
-            'delivery-address' => 'required|max:255',
-            'customer-mail' => 'required|email:rfc,dns'
-        ]);
-
-        $data = $request->all();
-        $newOrder = new Order();
-        $newOrder->fill($data);
-
-        // temp
-        $newOrder["payment_amount"] = 10;
-        $newOrder["payment_status"] = true;
-
-        $newOrder->save();
-
-        // da controllare con la view, per gestire i piatti ordinati con relative quantità
-
-        // dump($request);
-        // return;
-
-        // sync con tabella ponte
-        $newOrder->dishes()->sync($data["dishes"]);
-        //foreach
-       // $newOrder->dishes()->sync([1 =>['quantity' => 1]]);
-        // route sbagliata, bisogna passare anche id ristorante
-        return redirect()->route('welcome');
-    }*/
 
 
     public function store(Request $request)
     {
-        //$order= Order::create($request->all());
-
+        $request->validate([ 
+            'delivery_address' => 'required|max:255',
+            'customer_mail' => 'required|email:rfc,dns'
+        ]);
+      
         $data = $request->all();
         $newOrder = new Order();
         $newOrder->fill($data);
@@ -121,6 +95,7 @@ class OrderController extends Controller
         //dd($dishes);
       
         $newOrder->dishes()->sync($dishes);
+        return redirect()->route('welcome');
 
     }
 
