@@ -14,7 +14,7 @@
 
         @foreach ($dishes as $dish)
             
-                <input type="checkbox" class=""> {{--dovrebbe attivare campo quantità--}}
+                <input type="checkbox" class=""> {{--aprirebbe una finestra con contantore--}}
                 <span>{{$dish->name}}</span>  
                 <input
                 name="dishes[{{$dish->id}}]" {{--colleziona gli esatti id che vanno sincronizzati anzichè tutti--}}
