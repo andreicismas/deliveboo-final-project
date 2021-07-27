@@ -12,6 +12,6 @@ class Order extends Model
     ];
 
     public function dishes() {
-        return $this->belongsToMany("App\Dish")->wherePivot('quantity');
+        return $this->belongsToMany("App\Dish")->withPivot('quantity');
     }
 }
