@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7c3612e8a76bb9858bbb551c575927f",
+    "content-hash": "2613a4a54efac176932850a2093c7453",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -64,16 +64,16 @@
         },
         {
             "name": "braintree/braintree_php",
-            "version": "6.3.0",
+            "version": "6.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/braintree/braintree_php.git",
-                "reference": "69e4fab9896ae084ffed1b6bcd2ed186954d14f9"
+                "reference": "3262deede6bdd134beff6f0940ae5201fc9a854b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/braintree/braintree_php/zipball/69e4fab9896ae084ffed1b6bcd2ed186954d14f9",
-                "reference": "69e4fab9896ae084ffed1b6bcd2ed186954d14f9",
+                "url": "https://api.github.com/repos/braintree/braintree_php/zipball/3262deede6bdd134beff6f0940ae5201fc9a854b",
+                "reference": "3262deede6bdd134beff6f0940ae5201fc9a854b",
                 "shasum": ""
             },
             "require": {
@@ -107,9 +107,9 @@
             "description": "Braintree PHP Client Library",
             "support": {
                 "issues": "https://github.com/braintree/braintree_php/issues",
-                "source": "https://github.com/braintree/braintree_php/tree/6.3.0"
+                "source": "https://github.com/braintree/braintree_php/tree/6.4.1"
             },
-            "time": "2021-06-21T21:36:45+00:00"
+            "time": "2021-07-21T21:10:05+00:00"
         },
         {
             "name": "brick/math",

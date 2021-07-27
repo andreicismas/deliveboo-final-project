@@ -122,11 +122,11 @@
                             ></user-registered>
 
                         </div>
-                    </div>
                     </a>
                 </div>
-                @endforeach
-            </div>            
+            @endforeach
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
