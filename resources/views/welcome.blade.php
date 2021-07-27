@@ -102,25 +102,20 @@
                 <div class="d-flex flex-row">
                     <a href="{{ route("orders.create", ["slug" => $user->slug]) }}">
                     <div class="card" style="width: 18rem; margin: 5px">
-                        {{-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
 
-                         @foreach ($user->types as $type)
+                        @foreach ($user->types as $type)
                             <type-user
-                            name="{{$type->name}}"
-                            ></type-user>
+                            name="{{$type->name}}">
+                            </type-user>
                         @endforeach
 
-
-
                         <div class="card-body">
-
                             <user-registered
                             {{-- code UR --}}
                             name="{{$user->name}}"
                             email="{{$user->email}}"
-                            address="{{$user->address}}"
-                            ></user-registered>
-
+                            address="{{$user->address}}">
+                            </user-registered>
                         </div>
                     </a>
                 </div>

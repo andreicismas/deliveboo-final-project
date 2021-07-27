@@ -1989,8 +1989,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -2001,10 +1999,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "UserRegistered",
-  props: _defineProperty({
+  props: {
     name: String,
-    email: String
-  }, "email", String)
+    email: String,
+    address: String
+  }
 });
 
 /***/ }),
@@ -37773,7 +37772,7 @@ var render = function() {
     _c("em", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.email))]),
     _c("br"),
     _vm._v(" "),
-    _c("em", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.email))])
+    _c("em", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.address))])
   ])
 }
 var staticRenderFns = []
@@ -50375,8 +50374,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\acer\Desktop\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\acer\Desktop\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\reven\Desktop\Boolean\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\reven\Desktop\Boolean\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

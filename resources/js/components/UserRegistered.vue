@@ -2,7 +2,7 @@
 <div>
     <h5 class="card-title">{{name}}</h5>
     <em class="card-title">{{email}}</em><br>
-    <em class="card-title">{{email}}</em>
+    <em class="card-title">{{address}}</em>
 </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
     props:{
         name:String,
         email:String,
-        email:String
+        address:String
     }
 }
 </script>
