@@ -1,117 +1,125 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <title>Laravel</title>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-            .full-height {
-                height: 100vh;
-            }
+    <!-- Styles -->
+    <style>
+        html,
+        body {
+            background-color: #fff;
+            color: #636b6f;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            height: 100vh;
+            margin: 0;
+        }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+        .full-height {
+            height: 100vh;
+        }
 
-            .position-ref {
-                position: relative;
-            }
+        .flex-center {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+        .position-ref {
+            position: relative;
+        }
 
-            .content {
-                text-align: center;
-            }
+        .top-right {
+            position: absolute;
+            right: 10px;
+            top: 18px;
+        }
 
-            .title {
-                font-size: 84px;
-            }
+        .content {
+            text-align: center;
+        }
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+        .title {
+            font-size: 84px;
+        }
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
+        .links>a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
 
-        {{-- link boostrap --}}
+        .m-b-md {
+            margin-bottom: 30px;
+        }
 
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    </style>
 
-        {{-- link cli vue --}}
-        <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- link boostrap --}}
+
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    {{-- link cli vue --}}
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
 
-    </head>
-    <body>
-        <div id="app" class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+</head>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-            
-            <div class="align-self-start">
+<body>
+    <div id="app" class="flex-center position-ref full-height">
+        @if (Route::has('login'))
+            <div class="top-right links">
+                @auth
+                    <a href="{{ url('/home') }}">Home</a>
+                @else
+                    <a href="{{ route('login') }}">Login</a>
 
-                <h1>Scegli il tuo ristorante </h1>
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}">Register</a>
+                    @endif
+                @endauth
+            </div>
+        @endif
 
-                @foreach ($types as $type)
-                    <type-button name="{{$type->name}}"></type-button>
-                @endforeach
-            
-            
-                @foreach ($users as $user)
+        <div class="align-self-start">
+
+            <h1>Scegli il tuo ristorante </h1>
+
+            @foreach ($types as $type)
+                <type-button name="{{ $type->name }}"></type-button>
+            @endforeach
+
+
+            @foreach ($users as $user)
                 <div class="d-flex flex-row">
-                    <a href="{{ route("orders.create", ["slug" => $user->slug]) }}">
-                    <div class="card" style="width: 18rem; margin: 5px">
-                        {{-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
-                        <div class="card-body">
-                            <h5 class="card-title">{{$user->name}}</h5>
-                            <em class="card-title">{{$user->email}}</em><br>
-                            <em class="card-title">{{$user->address}}</em>
+                    <a href="{{ route('orders.create', ['slug' => $user->slug]) }}">
+                        <div class="card" style="width: 18rem; margin: 5px">
+                            {{-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
+                            <div class="card-body">
+                                {{-- @foreach ($user->types as $type)
+                                    <span>{{ $type->name }}</span>
+                                @endforeach --}}
+                                <h5 class="card-title">{{ $user->name }}</h5>
+                                <em class="card-title">{{ $user->email }}</em><br>
+                                <em class="card-title">{{ $user->address }}</em>
+                            </div>
                         </div>
-                    </div>
                     </a>
                 </div>
-                @endforeach
-            </div>            
+            @endforeach
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
