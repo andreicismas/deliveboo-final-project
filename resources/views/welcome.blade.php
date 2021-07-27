@@ -93,9 +93,9 @@
                 <h1>Scegli il tuo ristorante </h1>
 
 
-                @foreach ($types as $type)
-                    <type-ristorants name="{{$type->name}}"></type-ristorants>
-                @endforeach
+               
+                    <type-ristorants></type-ristorants>
+                
             
             
                 @foreach ($users as $user)
@@ -104,28 +104,20 @@
                     <div class="card" style="width: 18rem; margin: 5px">
                         {{-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
 
-                         @foreach ($user->types as $type)
+                         {{-- @foreach ($user->types as $type)
                             <type-user
                             name="{{$type->name}}"
                             ></type-user>
-                        @endforeach
+                        @endforeach --}}
 
 
 
-                        <div class="card-body">
-
-                            <user-registered
-                            {{-- code UR --}}
-                            name="{{$user->name}}"
-                            email="{{$user->email}}"
-                            address="{{$user->address}}"
-                            ></user-registered>
-
-                        </div>
+                        
                     </div>
                     </a>
                 </div>
                 @endforeach
+                            <user-registered></user-registered>
             </div>            
         </div>
     </body>

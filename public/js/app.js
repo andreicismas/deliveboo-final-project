@@ -1947,10 +1947,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "TypeRistorants",
   props: {
     name: String
+  },
+  data: function data() {
+    return {
+      allTypesList: [],
+      typesList: []
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get("/api/type").then(function (resp) {
+      _this.allTypesList = resp.data.results;
+      _this.typesList = resp.data.results;
+    })["catch"](function (er) {
+      alert("ce un errore nel recuperare i dati ");
+    });
   }
 });
 
@@ -1989,8 +2016,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2001,10 +2040,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "UserRegistered",
-  props: _defineProperty({
-    name: String,
-    email: String
-  }, "email", String)
+  props: {
+    types: Array
+  },
+  data: function data() {
+    return {
+      allUsersList: [],
+      usersList: []
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get("/api/user").then(function (resp) {
+      _this.allUsersList = resp.data.results;
+      _this.usersList = resp.data.results;
+    })["catch"](function (er) {
+      alert("ce un errore nel recuperare i dati ");
+    });
+  }
 });
 
 /***/ }),
@@ -37717,9 +37771,21 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("button", { staticClass: "btn btn-primary m-1 " }, [
-    _vm._v(_vm._s(_vm.name) + " ")
-  ])
+  return _c(
+    "div",
+    _vm._l(_vm.typesList, function(types) {
+      return _c(
+        "button",
+        {
+          key: types.id,
+          staticClass: "btn btn-primary m-1 ",
+          attrs: { name: types.name }
+        },
+        [_vm._v(_vm._s(types.name))]
+      )
+    }),
+    0
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37767,14 +37833,43 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h5", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.name))]),
-    _vm._v(" "),
-    _c("em", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.email))]),
-    _c("br"),
-    _vm._v(" "),
-    _c("em", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.email))])
-  ])
+  return _c(
+    "div",
+    _vm._l(_vm.usersList, function(user) {
+      return _c(
+        "div",
+        { key: user.id, staticClass: "card-body" },
+        [
+          _c("h5", { staticClass: "card-title" }, [_vm._v(_vm._s(user.name))]),
+          _vm._v(" "),
+          _c("em", { staticClass: "card-title" }, [_vm._v(_vm._s(user.email))]),
+          _c("br"),
+          _vm._v(" "),
+          _c("em", { staticClass: "card-title" }, [
+            _vm._v(_vm._s(user.address))
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _vm._l(_vm.types, function(user, type) {
+            return _c(
+              "span",
+              { key: type.id, staticClass: "badge badge-pill badge-primary" },
+              [
+                _vm._v(
+                  " \r\n            " +
+                    _vm._s(user.type.name) +
+                    " \r\n            "
+                )
+              ]
+            )
+          })
+        ],
+        2
+      )
+    }),
+    0
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
