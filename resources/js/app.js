@@ -22,7 +22,9 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 // rota vue cli
-Vue.component('TypeButton', require('./components/TypeButton.vue').default);
+Vue.component('TypeRistorants', require('./components/TypeRistorants.vue').default);
+Vue.component('UserRegistered', require('./components/UserRegistered.vue').default);
+Vue.component('TypeUser', require('./components/TypeUser.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
