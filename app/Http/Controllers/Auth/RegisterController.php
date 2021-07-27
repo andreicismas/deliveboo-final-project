@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\Type;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -61,6 +62,12 @@ class RegisterController extends Controller
         ]);
     }
 
+    public function showRegistrationForm()
+    {
+        $types = Type::all();
+        return view('auth.register', ['types' => $types]); 
+    }
+
     /**
      * Create a new user instance after a valid registration.
      *
@@ -68,7 +75,8 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
+    {      
+
         $slug = Str::slug($data["name"]);
 
         $slugTemp = $slug;
@@ -81,7 +89,7 @@ class RegisterController extends Controller
             $slugExists = User::where("slug", $slug)->first();
         }
 
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),            
@@ -89,5 +97,9 @@ class RegisterController extends Controller
             'VAT' => $data["VAT"],
             'slug' => $slug
         ]);
+
+        $user->types()->sync($data["types"]);
+
+        return $user;
     }
 }

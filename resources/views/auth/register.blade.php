@@ -92,6 +92,25 @@
 
                         </div>
 
+                        {{--Tipologie di ristorante--}}
+
+                        <div class="form-group row">
+                            <label>Tipologie di ristorante</label>  
+                            @foreach($types as $type)
+
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input name="types[]" class="form-check-input" type="checkbox" value="{{ $type->id }}">
+
+                                    {{ $type->name }}
+                                </label>
+                            </div>
+
+                            @endforeach
+
+                        </div>
+
+
                           {{----}}
 
                         <div class="form-group row mb-0">
