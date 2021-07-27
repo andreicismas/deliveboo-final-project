@@ -1,15 +1,14 @@
 <template>
     
-       <button class="btn btn-primary m-1 ">{{name}} </button>
+       <button class="btn btn-primary m-1">{{ name }}</button>
 
 </template>
 
 <script>
 export default {
-    name:"TypeRistorants",
+    name:"TypeFilterButton",
     props:{
         name:String
     }
-   
 }
 </script>
