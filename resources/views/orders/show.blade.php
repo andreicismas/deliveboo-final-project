@@ -4,7 +4,7 @@
     <h1>{{ $order->customer_name }} - {{ $order->id }}</h1>
     <ul>
         @foreach ($order->dishes as $dish)
-            <li>{{ $dish->name }} || {{ $dish->price }}€</li>
+            <li>{{ $dish->name }} || {{ $dish->price }}€ || x{{ $dish->pivot->quantity }}</li>
         @endforeach
     </ul>
 @endsection
