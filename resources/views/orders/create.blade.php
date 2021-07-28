@@ -13,6 +13,8 @@
         @csrf
 
         @foreach ($dishes as $dish)
+
+             @if($dish->visibility == 1)
             
                 <input type="checkbox" class=""> {{--aprirebbe una finestra con contantore--}}
                 <span>{{$dish->name}}</span>  
@@ -20,6 +22,8 @@
                 name="dishes[{{$dish->id}}]" {{--colleziona gli esatti id che vanno sincronizzati anzichè tutti--}}
                 type="text"
                 placeholder="quantity">
+                
+            @endif
 
         @endforeach
 
