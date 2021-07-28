@@ -97,35 +97,12 @@
             <h1>Scegli il tuo ristorante </h1>
 
 
-            @foreach ($types as $type)
+            {{-- @foreach ($types as $type)
                 <type-filter-button name="{{ $type->name }}"></type-filter-button>
-            @endforeach
-
-            @foreach($users as $user)
-                <a href="{{ route('orders.create', ['slug' => $user->slug]) }}">
-                    <restaurant-card name="{{$user->name}}" email="{{$user->email}}" address="{{$user->address}}"></restaurant-card>
-                </a>
-            @endforeach
-            
-            {{-- @foreach ($users as $user)
-                <div class="d-flex flex-row">
-                    <a href="{{ route('orders.create', ['slug' => $user->slug]) }}">
-                        <div class="card" style="width: 18rem; margin: 5px">
-
-                            @foreach ($user->types as $type)
-                                <type-user name="{{ $type->name }}">
-                                </type-user>
-                            @endforeach
-
-                            <div class="card-body">
-                                <user-registered name="{{ $user->name }}"
-                                    email="{{ $user->email }}" address="{{ $user->address }}">
-                                </user-registered>
-                            </div>
-                        </div>
-                    </a>
-                </div>
             @endforeach --}}
+
+            
+        <restaurants-index></restaurants-index>
         </div>
     </div>
 </body>
