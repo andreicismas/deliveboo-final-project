@@ -3,6 +3,7 @@
 use App\Order;
 use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class OrderTableSeeder extends Seeder
 {
@@ -13,8 +14,12 @@ class OrderTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        //Order::truncate();
-        //Cannot truncate a table referenced in a foreign key constraint (`deliveboo`.`dish_order`, CONSTRAINT `dish_order_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `deliveboo`.`orders` (`id`))")
+        Schema::disableForeignKeyConstraints();
+
+        Order::truncate();
+
+        Schema::enableForeignKeyConstraints();
+
 
         for ($i = 0; $i < 5; $i++) {
             $newOrder = new Order();
