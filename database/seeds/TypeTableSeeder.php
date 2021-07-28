@@ -3,7 +3,7 @@
 use App\Type;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\Schema;
 
 class TypeTableSeeder extends Seeder
 {
@@ -14,11 +14,15 @@ class TypeTableSeeder extends Seeder
      */
     public function run()
     {
+        Schema::disableForeignKeyConstraints();
+
+        Type::truncate();
+
+        Schema::enableForeignKeyConstraints();
+
         $types = [
             "AsianFusion", "Dolci", "Fritti", "Gelato", "Giapponese", "Hamburger", "Insalate", "Italiano", "Kebab", "Panini", "Pizza", "Pollo", "Senza Glutine" 
         ];
-
-        
 
         foreach ($types as $type) {
             $newType = new Type();
