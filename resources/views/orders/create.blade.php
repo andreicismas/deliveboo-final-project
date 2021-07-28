@@ -27,7 +27,7 @@
 
         @endforeach
 
-        <input type="hidden" name="restaurant_id" value="">
+        <input type="hidden" name="restaurant_id" value="{{$dishes[0]->user_id}}">
 
         {{-- <div>
             <input name="customer_name" class="form-control" aria-label="With textarea" rows="1" style="resize: none"

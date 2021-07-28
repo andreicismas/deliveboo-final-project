@@ -129,11 +129,14 @@
             </div>
 
             <div>
-                @foreach ($ordered_dishes as $ordered_dish => $quantity)
-                    @if ($quantity)
-                        <span>{{ $ordered_dish }}</span> - <span>{{ $quantity }}</span><br>
-                        <input type="hidden" name="dishes[{{ $ordered_dish }}]" value="{{$quantity}}">
-                    @endif
+                <h4>Resoconto Carrello</h4>
+                @foreach($allRestaurantDishes as $restaurantDish)    
+                    @foreach ($ordered_dishes as $ordered_dish => $quantity)
+                        @if ($quantity && $restaurantDish->id == $ordered_dish)
+                            <span>{{ $restaurantDish->name }}</span> - <span>{{ $quantity }}</span><br>
+                            <input type="hidden" name="dishes[{{ $ordered_dish }}]" value="{{$quantity}}">
+                        @endif
+                    @endforeach
                 @endforeach
             </div>
 

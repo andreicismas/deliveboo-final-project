@@ -51,18 +51,19 @@ Route::post("/payment", function (Request $request) {
         'publicKey' => config('services.braintree.publicKey'),
         'privateKey' => config('services.braintree.privateKey')
     ]);
+
     // validazione dati request
-    // dump($request);
-    // return;
 
     $token = $gateway->ClientToken()->generate();
 
     // prendo i piatti del ristorante
-
+    $restaurant_id = $request->restaurant_id;
+    $allRestaurantDishes = Dish::where("user_id", $restaurant_id)->get();
 
     return view("payment", [
         "token" => $token,
-        "ordered_dishes" => $request->dishes
+        "ordered_dishes" => $request->dishes,
+        "allRestaurantDishes" => $allRestaurantDishes
     ]);
 })->name("payment");
 
