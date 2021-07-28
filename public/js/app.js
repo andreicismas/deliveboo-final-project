@@ -1995,6 +1995,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
  // import axios from "axios";
 
@@ -2033,13 +2039,15 @@ __webpack_require__.r(__webpack_exports__);
         //     }
         // }
         // strategia additiva, più filtri sdoppiano i risultati con entrambi i type invece che ridurli agli stessi
-        var result = [];
+        var temp = [];
 
         var _loop = function _loop(i) {
           _this.allRestaurantsList.forEach(function (element) {
             for (var j = 0; j < element.types.length; j++) {
               if (element.types[j].id == _this.filterList[i]) {
-                result.push(element);
+                if (!temp.includes(element)) {
+                  temp.push(element);
+                }
               }
             }
           });
@@ -2047,8 +2055,27 @@ __webpack_require__.r(__webpack_exports__);
 
         for (var i = 0; i < this.filterList.length; i++) {
           _loop(i);
-        } // soluzione più probabile: funzione ricorsiva con while
+        }
 
+        var result = [];
+        temp.forEach(function (element) {
+          if (element.types.length >= _this.filterList.length) {
+            result.push(element);
+          }
+        }); // var result = [];
+        // const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+        // // var countOccurrences = (dataset, search) => dataset.reduce(function (n, val) {
+        // //   return n + (val === search);
+        // // }, 0);
+        // temp.forEach((element) => {
+        //   if (countOccurrences([temp, element]) == this.filterList.length - 1) {
+        //     result.push(element);
+        //   }
+        // });
+        // soluzione più probabile: funzione ricorsiva con while
+        // var result = this.allRestaurantsList.map(element => {
+        //     element.type_ids = [];
+        // });
 
         return result;
       }

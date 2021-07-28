@@ -95,14 +95,9 @@
         <div class="align-self-start">
 
             <h1>Scegli il tuo ristorante </h1>
-
-
-            {{-- @foreach ($types as $type)
-                <type-filter-button name="{{ $type->name }}"></type-filter-button>
-            @endforeach --}}
-
             
         <restaurants-index></restaurants-index>
+        
         </div>
     </div>
 </body>
