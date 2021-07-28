@@ -9,7 +9,7 @@
 
     <a href="{{ route("welcome") }}">Indietro</a>
 
-    <form action="{{ route('orders.store') }}" method="post">
+    <form action="{{ route('payment') }}" method="post">
         @csrf
 
         @foreach ($dishes as $dish)
@@ -20,14 +20,16 @@
                 <span>{{$dish->name}}</span>  
                 <input
                 name="dishes[{{$dish->id}}]" {{--colleziona gli esatti id che vanno sincronizzati anzichè tutti--}}
-                type="text"
+                type="number"
                 placeholder="quantity">
                 
             @endif
 
         @endforeach
 
-        <div>
+        <input type="hidden" name="restaurant_id" value="">
+
+        {{-- <div>
             <input name="customer_name" class="form-control" aria-label="With textarea" rows="1" style="resize: none"
                 placeholder="Name">
         </div>
@@ -42,7 +44,7 @@
         <div>
             <input name="delivery_address" class="form-control" aria-label="With textarea" rows="1" style="resize: none"
                 placeholder="indirizzo di consegna">
-        </div>
+        </div> --}}
 
         <div>
             <input type="submit" value="ordina">

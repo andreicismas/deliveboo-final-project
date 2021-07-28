@@ -128,6 +128,14 @@
                 </div>
             </div>
 
+            <div>
+                @foreach($ordered_dishes as $ordered_dish => $quantity)
+                    @if($quantity)
+                        <span>{{$ordered_dish}}</span> - <span>{{$quantity}}</span><br>
+                    @endif
+                @endforeach
+            </div>
+
             <div class="bt-drop-in-wrapper">
                 <div id="bt-dropin"></div>
             </div>
