@@ -22,6 +22,8 @@
                 name="dishes[{{$dish->id}}]" {{--colleziona gli esatti id che vanno sincronizzati anzichè tutti--}}
                 type="text"
                 placeholder="quantity">
+                
+            @endif
 
             @endif
 
