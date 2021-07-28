@@ -1,6 +1,7 @@
 <?php
 use App\Type;
 use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -16,11 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-
-    return view('welcome' , [
-        "types"=>Type::all(),
-        "users"=>User::all(),
-    ]);
+    return view('welcome');
 })->name("welcome");
 
 Auth::routes();
@@ -44,7 +41,66 @@ Route::middleware('auth')
     Route::resource("/dishes", "DishController");
 });
 
+// braintree
+Route::get("/payment", function() {
+    $gateway = new Braintree\Gateway([
+        'environment' => config('services.braintree.environment'),
+        'merchantId' => config('services.braintree.merchantId'),
+        'publicKey' => config('services.braintree.publicKey'),
+        'privateKey' => config('services.braintree.privateKey')
+    ]);
 
+    $token = $gateway->ClientToken()->generate();
+
+    return view("payment", [
+        "token" => $token
+    ]);
+})->name("payment");
+
+Route::post('/checkout', function (Request $request) {
+    $gateway = new Braintree\Gateway([
+        'environment' => config('services.braintree.environment'),
+        'merchantId' => config('services.braintree.merchantId'),
+        'publicKey' => config('services.braintree.publicKey'),
+        'privateKey' => config('services.braintree.privateKey')
+    ]);
+
+    // $amount = $request->amount;
+    $amount = 10;
+    $nonce = $request->payment_method_nonce;
+
+    $name = $request->customer_name;
+    $mail = $request->customer_mail;
+    $phone = $request->customer_phone_number;
+    $address = $request->delivery_address;
+
+    $result = $gateway->transaction()->sale([
+        'amount' => $amount,
+        'paymentMethodNonce' => $nonce,
+        'customer' => [
+            'firstName' => $name,
+            'email' => $mail,
+            'phone' => $phone,
+        ],
+        'options' => [
+            'submitForSettlement' => true
+        ]
+    ]);
+
+    if ($result->success) {
+        $transaction = $result->transaction;
+
+        return back()->with('success_message', 'Transaction successful. The ID is: '. $transaction->id);
+    } else {
+        $errorString = "";
+
+        foreach ($result->errors->deepAll() as $error) {
+            $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
+        }
+
+        return back()->withErrors('An error occurred with the message: '.$result->message);
+    }
+})->name("checkout");
 
 // //valutare se e come passare lo user_id come argomento
 // Route::get("/dishes/user/{user}", "DishController@index")->name("dishes.index"); 
