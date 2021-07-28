@@ -39,25 +39,21 @@ export default {
       if (this.filterList.length == 0) {
         return this.allRestaurantsList;
       } else {
-        var temp = [];
+
+        var temp = this.allRestaurantsList;
         for (let i = 0; i < this.filterList.length; i++) {
-          this.allRestaurantsList.forEach((element) => {
+          var result = [];
+          temp.forEach((element) => {
             for (let j = 0; j < element.types.length; j++) {
               if (element.types[j].id == this.filterList[i]) {
-                  if (!temp.includes(element)) {
-                      temp.push(element);
+                  if (!result.includes(element)) {
+                      result.push(element);
                   }
               }
             }
           });
+          temp = result;
         }
-
-        var result = [];
-        temp.forEach(element => {
-            if (element.types.length >= this.filterList.length) {
-                result.push(element);
-            }
-        })
 
         return result;
       }
