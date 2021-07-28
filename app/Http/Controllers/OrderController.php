@@ -89,14 +89,15 @@ class OrderController extends Controller
         $newOrder->save();
 
         $dishes = collect($request->input('dishes', [])) //colleziona i dati nell'input e li mappa con la...
-        ->map(function($dishes) {   
-            return ['quantity' => $dishes];  //...terza colonna chiamata nel model Order
+        ->filter(function($dish){
+            return !is_Null($dish);
+        })
+        ->map(function($dish) {   
+            return ['quantity' => $dish];  //...terza colonna chiamata nel model Order
         });
         //dd($dishes);
-      
         $newOrder->dishes()->sync($dishes);
         return redirect()->route('welcome');
-
     }
 
     /**
