@@ -2014,7 +2014,6 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       allRestaurantsList: [],
-      // restaurantsList: [],
       typesList: [],
       filterList: []
     };
@@ -2026,56 +2025,45 @@ __webpack_require__.r(__webpack_exports__);
       if (this.filterList.length == 0) {
         return this.allRestaurantsList;
       } else {
-        // strategia sottrattiva, non funziona idky, non sembra refreshare la filterList :/
-        // var result = this.allRestaurantsList;
-        // for (let i = 0; i < this.filterList.length; i++) {
-        //     for (let j = 0; j < result.length; j++) {
-        //         for (let k = 0; k < result[j].types.length; k++) {
-        //             if (result[j].types[k].id != this.filterList[i]) {
-        //                 result.splice(j, 1);
-        //                 j--;
-        //             }
-        //         }
-        //     }
-        // }
-        // strategia additiva, più filtri sdoppiano i risultati con entrambi i type invece che ridurli agli stessi
-        var temp = [];
+        var temp = this.allRestaurantsList;
 
         var _loop = function _loop(i) {
-          _this.allRestaurantsList.forEach(function (element) {
+          result = [];
+          temp.forEach(function (element) {
             for (var j = 0; j < element.types.length; j++) {
               if (element.types[j].id == _this.filterList[i]) {
-                if (!temp.includes(element)) {
-                  temp.push(element);
+                if (!result.includes(element)) {
+                  result.push(element);
                 }
               }
             }
           });
+          temp = result;
         };
 
         for (var i = 0; i < this.filterList.length; i++) {
-          _loop(i);
-        }
+          var result;
 
-        var result = [];
-        temp.forEach(function (element) {
-          if (element.types.length >= _this.filterList.length) {
-            result.push(element);
-          }
-        }); // var result = [];
-        // const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
-        // // var countOccurrences = (dataset, search) => dataset.reduce(function (n, val) {
-        // //   return n + (val === search);
-        // // }, 0);
-        // temp.forEach((element) => {
-        //   if (countOccurrences([temp, element]) == this.filterList.length - 1) {
-        //     result.push(element);
-        //   }
-        // });
-        // soluzione più probabile: funzione ricorsiva con while
-        // var result = this.allRestaurantsList.map(element => {
-        //     element.type_ids = [];
-        // });
+          _loop(i);
+        } // var temp = [];
+        // for (let i = 0; i < this.filterList.length; i++) {
+        //   this.allRestaurantsList.forEach((element) => {
+        //     for (let j = 0; j < element.types.length; j++) {
+        //       if (element.types[j].id == this.filterList[i]) {
+        //           if (!temp.includes(element)) {
+        //               temp.push(element);
+        //           }
+        //       }
+        //     }
+        //   });
+        // }
+        // var result = [];
+        // temp.forEach(element => {
+        //     if (element.types.length >= this.filterList.length) {
+        //         result.push(element);
+        //     }
+        // })
+
 
         return result;
       }
@@ -2085,7 +2073,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this2 = this;
 
     axios.get("/api/user").then(function (resp) {
-      _this2.allRestaurantsList = resp.data.results; // this.restaurantsList = resp.data.results;
+      _this2.allRestaurantsList = resp.data.results;
     })["catch"](function (er) {
       alert("Impossibile recuperare l'elenco dei ristoranti.");
     });
@@ -50637,8 +50625,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\felic\Desktop\boolean\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\felic\Desktop\boolean\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\reven\Desktop\Boolean\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\reven\Desktop\Boolean\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
