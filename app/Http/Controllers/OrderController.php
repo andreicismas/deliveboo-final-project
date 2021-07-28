@@ -69,13 +69,15 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
     public function store(Request $request)
     {
-       /* $request->validate([
-            'delivery-address' => 'required|max:255',
-            'customer-mail' => 'required|email:rfc,dns'
-        ]);*/
-
+        $request->validate([ 
+            'delivery_address' => 'required|max:255',
+            'customer_mail' => 'required|email:rfc,dns'
+        ]);
+      
         $data = $request->all();
         $newOrder = new Order();
         $newOrder->fill($data);
@@ -86,14 +88,15 @@ class OrderController extends Controller
 
         $newOrder->save();
 
-        // da controllare con la view, per gestire i piatti ordinati con relative quantità
-
-        // dump($request);
-        // return;
-
-        // sync con tabella ponte
-        $newOrder->dishes()->sync($data["dishes"]);
-        // route sbagliata, bisogna passare anche id ristorante
+        $dishes = collect($request->input('dishes', [])) //colleziona i dati nell'input e li mappa con la...
+        ->filter(function($dish){
+            return !is_Null($dish);
+        })
+        ->map(function($dish) {   
+            return ['quantity' => $dish];  //...terza colonna chiamata nel model Order
+        });
+        //dd($dishes);
+        $newOrder->dishes()->sync($dishes);
         return redirect()->route('welcome');
     }
 

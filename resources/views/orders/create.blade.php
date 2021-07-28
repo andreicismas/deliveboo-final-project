@@ -13,10 +13,18 @@
         @csrf
 
         @foreach ($dishes as $dish)
-            <h3>{{ $dish->name }}
-                <input type="checkbox" name="dishes[]" value="{{ $dish->id }}">
-            </h3>
-            {{-- <input name="quantity[]" aria-label="With textarea" rows="1" style="resize: none" placeholder="quantità"> --}}
+
+             @if($dish->visibility == 1)
+            
+                <input type="checkbox" class=""> {{--aprirebbe una finestra con contantore--}}
+                <span>{{$dish->name}}</span>  
+                <input
+                name="dishes[{{$dish->id}}]" {{--colleziona gli esatti id che vanno sincronizzati anzichè tutti--}}
+                type="text"
+                placeholder="quantity">
+                
+            @endif
+
         @endforeach
 
         <div>
