@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/user', 'Api\UserController@index');
+
+Route::get('/types', 'Api\TypeController@index');

@@ -17,11 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-
-    return view('welcome' , [
-        "types"=>Type::all(),
-        "users"=>User::all(),
-    ]);
+    return view('welcome');
 })->name("welcome");
 
 Auth::routes();
