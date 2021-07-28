@@ -130,14 +130,31 @@
 
             <div>
                 <h4>Resoconto Carrello</h4>
-                @foreach($allRestaurantDishes as $restaurantDish)    
-                    @foreach ($ordered_dishes as $ordered_dish => $quantity)
-                        @if ($quantity && $restaurantDish->id == $ordered_dish)
-                            <span>{{ $restaurantDish->name }}</span> - <span>{{ $quantity }}</span><br>
-                            <input type="hidden" name="dishes[{{ $ordered_dish }}]" value="{{$quantity}}">
-                        @endif
-                    @endforeach
-                @endforeach
+                <table>
+                    <thead>
+                        <th>Piatto</th>
+                        <th>Prezzo</th>
+                        <th>Porzioni</th>
+                    </thead>
+                    <tbody>
+                        @foreach($allRestaurantDishes as $restaurantDish)    
+                            @foreach ($ordered_dishes as $ordered_dish => $quantity)
+                                @if ($quantity && $restaurantDish->id == $ordered_dish)
+                                    <tr>
+                                        <td>{{ $restaurantDish->name }}</td>
+                                        <td>{{ $restaurantDish->price }}</td>
+                                        <td>{{ $quantity }}</td>
+                                    </tr>
+                                    <input type="hidden" name="dishes[{{ $ordered_dish }}]" value="{{$quantity}}">
+                                @endif
+                            @endforeach
+                        @endforeach
+                    </tbody>
+                    <tfoot>
+                        <th>Totale</th>
+                        <td>xxx</td>
+                    </tfoot>
+                </table>
             </div>
 
             <div class="bt-drop-in-wrapper">
