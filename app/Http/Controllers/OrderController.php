@@ -39,8 +39,6 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    /*----------------------------------------------------------------DA QUI PROVE----*/
     public function create($user_slug)
     {
         $user = DB::table("users")
@@ -55,13 +53,6 @@ class OrderController extends Controller
         return view ('orders.create', $data);        
     }
 
-    // public function create() 
-    //     {
-    //         $dishes = Dish::all(); //!!!! non passeranno tutti i piatti ma solo quelli del ristornate selezionato
-        
-    //         return view ('orders.create', ['dishes'=>$dishes]);        
-    //     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -69,10 +60,9 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-
-
     public function store(Request $request)
     {
+        // spostato nella rotta di checkout
         $request->validate([ 
             'delivery_address' => 'required|max:255',
             'customer_mail' => 'required|email:rfc,dns'
