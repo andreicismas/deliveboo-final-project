@@ -69,7 +69,7 @@
                                     </a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                     document.getElementById('logout-form').submit();">
+                                                                         document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -129,9 +129,10 @@
             </div>
 
             <div>
-                @foreach($ordered_dishes as $ordered_dish => $quantity)
-                    @if($quantity)
-                        <span>{{$ordered_dish}}</span> - <span>{{$quantity}}</span><br>
+                @foreach ($ordered_dishes as $ordered_dish => $quantity)
+                    @if ($quantity)
+                        <span>{{ $ordered_dish }}</span> - <span>{{ $quantity }}</span><br>
+                        <input type="hidden" name="dishes[{{ $ordered_dish }}]" value="{{$quantity}}">
                     @endif
                 @endforeach
             </div>
@@ -139,8 +140,6 @@
             <div class="bt-drop-in-wrapper">
                 <div id="bt-dropin"></div>
             </div>
-
-            {{-- aggiungere i dati dell'ordine come input type hidden --}}
 
             <input id="nonce" name="payment_method_nonce" type="hidden" />
             <button class="button" type="submit"><span>Confirm</span></button>
@@ -173,4 +172,5 @@
         });
     </script>
 </body>
+
 </html>
