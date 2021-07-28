@@ -2020,9 +2020,22 @@ __webpack_require__.r(__webpack_exports__);
       if (this.filterList.length == 0) {
         return this.allRestaurantsList;
       } else {
-        var _loop = function _loop(i) {
-          result = [];
+        // strategia sottrattiva, non funziona idky, non sembra refreshare la filterList :/
+        // var result = this.allRestaurantsList;
+        // for (let i = 0; i < this.filterList.length; i++) {
+        //     for (let j = 0; j < result.length; j++) {
+        //         for (let k = 0; k < result[j].types.length; k++) {
+        //             if (result[j].types[k].id != this.filterList[i]) {
+        //                 result.splice(j, 1);
+        //                 j--;
+        //             }
+        //         }
+        //     }
+        // }
+        // strategia additiva, più filtri sdoppiano i risultati con entrambi i type invece che ridurli agli stessi
+        var result = [];
 
+        var _loop = function _loop(i) {
           _this.allRestaurantsList.forEach(function (element) {
             for (var j = 0; j < element.types.length; j++) {
               if (element.types[j].id == _this.filterList[i]) {
@@ -2033,10 +2046,9 @@ __webpack_require__.r(__webpack_exports__);
         };
 
         for (var i = 0; i < this.filterList.length; i++) {
-          var result;
-
           _loop(i);
-        }
+        } // soluzione più probabile: funzione ricorsiva con while
+
 
         return result;
       }

@@ -36,8 +36,23 @@ export default {
             if(this.filterList.length == 0) {
                 return this.allRestaurantsList;
             } else {
+
+                // strategia sottrattiva, non funziona idky, non sembra refreshare la filterList :/
+                // var result = this.allRestaurantsList;
+                // for (let i = 0; i < this.filterList.length; i++) {
+                //     for (let j = 0; j < result.length; j++) {
+                //         for (let k = 0; k < result[j].types.length; k++) {
+                //             if (result[j].types[k].id != this.filterList[i]) {
+                //                 result.splice(j, 1);
+                //                 j--;
+                //             }
+                //         }
+                //     }
+                // }
+
+                // strategia additiva, più filtri sdoppiano i risultati con entrambi i type invece che ridurli agli stessi
+                var result = [];
                 for (let i = 0; i < this.filterList.length; i++) {
-                    var result = [];
                     this.allRestaurantsList.forEach(element => {
                         for(let j = 0; j < element.types.length; j++) {
                             if (element.types[j].id == this.filterList[i]) {
@@ -46,6 +61,9 @@ export default {
                         }
                     })
                 }
+
+                // soluzione più probabile: funzione ricorsiva con while
+
                 return result;
             }
         }
