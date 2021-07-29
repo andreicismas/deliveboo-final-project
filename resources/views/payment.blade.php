@@ -152,7 +152,8 @@
                     </tbody>
                     <tfoot>
                         <th>Totale</th>
-                        <td>xxx</td>
+                        <td>{{ $amount }}</td>
+                        <input type="hidden" name="amount" value="{{$amount}}">
                     </tfoot>
                 </table>
             </div>

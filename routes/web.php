@@ -60,10 +60,20 @@ Route::post("/payment", function (Request $request) {
     $restaurant_id = $request->restaurant_id;
     $allRestaurantDishes = Dish::where("user_id", $restaurant_id)->get();
 
+    // calcolo totale
+    $amount = 0;
+    foreach ($request->dishes as $dish_id => $quantity) {
+        $temp = Dish::where("user_id", $restaurant_id)
+                    ->where("id", $dish_id)
+                    ->first();
+        $amount += $temp->price * $quantity;
+    }
+
     return view("payment", [
         "token" => $token,
         "ordered_dishes" => $request->dishes,
-        "allRestaurantDishes" => $allRestaurantDishes
+        "allRestaurantDishes" => $allRestaurantDishes,
+        "amount" => $amount
     ]);
 })->name("payment");
 
@@ -75,8 +85,7 @@ Route::post('/checkout', function (Request $request) {
         'privateKey' => config('services.braintree.privateKey')
     ]);
 
-    // $amount = $request->amount;
-    $amount = 10;
+    $amount = $request->amount;
     $nonce = $request->payment_method_nonce;
 
     $name = $request->customer_name;
@@ -113,7 +122,7 @@ Route::post('/checkout', function (Request $request) {
         $newOrder->fill($data);
 
         // temp
-        $newOrder["payment_amount"] = 10;
+        $newOrder["payment_amount"] = $amount;
         $newOrder["payment_status"] = true;
 
         $newOrder->save();
