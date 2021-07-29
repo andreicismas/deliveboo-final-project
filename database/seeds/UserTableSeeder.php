@@ -1,13 +1,10 @@
 <?php
 
-use App\User;
+use App\Type;
 use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-
-use function Psy\debug;
-
 class UserTableSeeder extends Seeder
 {
     /**
@@ -17,12 +14,19 @@ class UserTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        Schema::disableForeignKeyConstraints();
+        /*Schema::disableForeignKeyConstraints();
         
         User::truncate();
         DB::table('type_user')->truncate();
         
-        Schema::enableForeignKeyConstraints();
+        Schema::enableForeignKeyConstraints();*/
+        
+        
+        $types = Type::all();
+        
+        if ($types->isEmpty()) {
+            $this->call(TypeTableSeeder::class);
+        }
         
         factory(App\User::class, 10)->create();
 
