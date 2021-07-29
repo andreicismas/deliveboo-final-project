@@ -1,12 +1,9 @@
 <?php
 
-use App\Dish;
+use App\Order;
 use App\User;
-use Faker\Generator as Faker;
-
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
-use PhpOption\None;
 
 //use Faker\FakerRestaurant\Restaurant;
 
@@ -20,16 +17,20 @@ class DishTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
-        Schema::disableForeignKeyConstraints();
+        /*Schema::disableForeignKeyConstraints();
 
         Dish::truncate();
+        Order::truncate();
+        DB::table('dish_order')->truncate();
 
-        $faker = \Faker\Factory::create();
-        $faker->addProvider(new \FakerRestaurant\Provider\it_IT\Restaurant($faker));
+        Schema::enableForeignKeyConstraints();*/
 
-        $users = User::all()->pluck('id');
+        // $faker = \Faker\Factory::create();
+        // $faker->addProvider(new \FakerRestaurant\Provider\it_IT\Restaurant($faker));
+
+        /*$users = User::all()->pluck('id');
 
         if($users->isEmpty()) {
             for ($i = 0; $i < 10; $i++) {
@@ -51,11 +52,17 @@ class DishTableSeeder extends Seeder
             Schema::enableForeignKeyConstraints();
 
             return;
+        }*/
+
+        $users = User::all();
+
+        if ($users->isEmpty()) {
+            $this->call(UserTableSeeder::class);
         }
 
-        Schema::enableForeignKeyConstraints();
-        
-        foreach (range(1, 30) as $index) {
+        factory(App\Dish::class, 50)->create();
+
+        /*foreach (range(1, 30) as $index) {
             $dish = Dish::create([
                 'name' => $faker->foodName(),
                 'user_id' => $faker->randomElement($users),
@@ -67,6 +74,6 @@ class DishTableSeeder extends Seeder
                 'price' => $faker->randomFloat(2, 0, 20),
                 'visibility' => true
             ]);
-        }
+        }*/
     }
 }
