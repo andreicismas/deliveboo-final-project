@@ -39,8 +39,6 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    /*----------------------------------------------------------------DA QUI PROVE----*/
     public function create($user_slug)
     {
         $user = DB::table("users")
@@ -55,13 +53,6 @@ class OrderController extends Controller
         return view ('orders.create', $data);        
     }
 
-    // public function create() 
-    //     {
-    //         $dishes = Dish::all(); //!!!! non passeranno tutti i piatti ma solo quelli del ristornate selezionato
-        
-    //         return view ('orders.create', ['dishes'=>$dishes]);        
-    //     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -69,35 +60,34 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-
-
     public function store(Request $request)
     {
-        $request->validate([ 
-            'delivery_address' => 'required|max:255',
-            'customer_mail' => 'required|email:rfc,dns'
-        ]);
+        // spostato nella rotta di checkout
+        // $request->validate([ 
+        //     'delivery_address' => 'required|max:255',
+        //     'customer_mail' => 'required|email:rfc,dns'
+        // ]);
       
-        $data = $request->all();
-        $newOrder = new Order();
-        $newOrder->fill($data);
+        // $data = $request->all();
+        // $newOrder = new Order();
+        // $newOrder->fill($data);
 
-        // temp
-        $newOrder["payment_amount"] = 10;
-        $newOrder["payment_status"] = true;
+        // // temp
+        // $newOrder["payment_amount"] = 10;
+        // $newOrder["payment_status"] = true;
 
-        $newOrder->save();
+        // $newOrder->save();
 
-        $dishes = collect($request->input('dishes', [])) //colleziona i dati nell'input e li mappa con la...
-        ->filter(function($dish){
-            return !is_Null($dish);
-        })
-        ->map(function($dish) {   
-            return ['quantity' => $dish];  //...terza colonna chiamata nel model Order
-        });
-        //dd($dishes);
-        $newOrder->dishes()->sync($dishes);
-        return redirect()->route('welcome');
+        // $dishes = collect($request->input('dishes', [])) //colleziona i dati nell'input e li mappa con la...
+        // ->filter(function($dish){
+        //     return !is_Null($dish);
+        // })
+        // ->map(function($dish) {   
+        //     return ['quantity' => $dish];  //...terza colonna chiamata nel model Order
+        // });
+        // //dd($dishes);
+        // $newOrder->dishes()->sync($dishes);
+        // return redirect()->route('welcome');
     }
 
     /**

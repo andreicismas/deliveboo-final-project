@@ -1,6 +1,8 @@
 <?php
+
 use App\Type;
-use App\User;
+use App\Order;
+use App\Dish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -30,19 +32,19 @@ Route::post("/orders", "OrderController@store")->name("orders.store");
 Route::get("/orders/create/{slug}", "OrderController@create")->name("orders.create");
 
 Route::middleware('auth')
-//->prefix('user/{user}')
-->group(function () {
+    //->prefix('user/{user}')
+    ->group(function () {
 
-    //ORDERS
-    Route::get("/orders", "OrderController@index")->name("orders.index");
-    Route::get("/orders/{order}", "OrderController@show")->name("orders.show");
+        //ORDERS
+        Route::get("/orders", "OrderController@index")->name("orders.index");
+        Route::get("/orders/{order}", "OrderController@show")->name("orders.show");
 
-    //DISHES
-    Route::resource("/dishes", "DishController");
-});
+        //DISHES
+        Route::resource("/dishes", "DishController");
+    });
 
 // braintree
-Route::get("/payment", function() {
+Route::post("/payment", function (Request $request) {
     $gateway = new Braintree\Gateway([
         'environment' => config('services.braintree.environment'),
         'merchantId' => config('services.braintree.merchantId'),
@@ -50,10 +52,28 @@ Route::get("/payment", function() {
         'privateKey' => config('services.braintree.privateKey')
     ]);
 
+    // validazione dati request
+
     $token = $gateway->ClientToken()->generate();
 
+    // prendo i piatti del ristorante
+    $restaurant_id = $request->restaurant_id;
+    $allRestaurantDishes = Dish::where("user_id", $restaurant_id)->get();
+
+    // calcolo totale
+    $amount = 0;
+    foreach ($request->dishes as $dish_id => $quantity) {
+        $temp = Dish::where("user_id", $restaurant_id)
+                    ->where("id", $dish_id)
+                    ->first();
+        $amount += $temp->price * $quantity;
+    }
+
     return view("payment", [
-        "token" => $token
+        "token" => $token,
+        "ordered_dishes" => $request->dishes,
+        "allRestaurantDishes" => $allRestaurantDishes,
+        "amount" => $amount
     ]);
 })->name("payment");
 
@@ -65,14 +85,13 @@ Route::post('/checkout', function (Request $request) {
         'privateKey' => config('services.braintree.privateKey')
     ]);
 
-    // $amount = $request->amount;
-    $amount = 10;
+    $amount = $request->amount;
     $nonce = $request->payment_method_nonce;
 
     $name = $request->customer_name;
     $mail = $request->customer_mail;
     $phone = $request->customer_phone_number;
-    $address = $request->delivery_address;
+    // $address = $request->delivery_address;
 
     $result = $gateway->transaction()->sale([
         'amount' => $amount,
@@ -88,9 +107,34 @@ Route::post('/checkout', function (Request $request) {
     ]);
 
     if ($result->success) {
-        $transaction = $result->transaction;
 
-        return back()->with('success_message', 'Transaction successful. The ID is: '. $transaction->id);
+        // immissione dell'orders.store
+        $request->validate([
+            'delivery_address' => 'required|max:255',
+            'customer_mail' => 'required|email:rfc,dns'
+        ]);
+
+        $data = $request->all();
+        $newOrder = new Order();
+        $newOrder->fill($data);
+
+        $newOrder["payment_amount"] = $amount;
+        $newOrder["payment_status"] = true;
+
+        $newOrder->save();
+
+        $dishes = collect($request->input('dishes', [])) //colleziona i dati nell'input e li mappa con la...
+            ->filter(function ($dish) {
+                return !is_Null($dish);
+            })
+            ->map(function ($dish) {
+                return ['quantity' => $dish];  //...terza colonna chiamata nel model Order
+            });
+        //dd($dishes);
+        $newOrder->dishes()->sync($dishes);
+        return redirect()->route('welcome');
+        // 
+
     } else {
         $errorString = "";
 
@@ -98,7 +142,7 @@ Route::post('/checkout', function (Request $request) {
             $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
         }
 
-        return back()->withErrors('An error occurred with the message: '.$result->message);
+        return back()->withErrors('An error occurred with the message: ' . $result->message);
     }
 })->name("checkout");
 
