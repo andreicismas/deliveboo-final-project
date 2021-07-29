@@ -1,6 +1,7 @@
 <?php
 
 use App\Type;
+use App\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
@@ -30,5 +31,12 @@ class TypeTableSeeder extends Seeder
             $newType->slug = Str::slug($type);
             $newType->save();
         }
+
+        $users = User::all();
+
+        if ($users->isEmpty()) {
+            $this->call(UserTableSeeder::class);
+        }
+
     }
 }
