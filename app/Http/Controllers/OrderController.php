@@ -63,31 +63,31 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         // spostato nella rotta di checkout
-        $request->validate([ 
-            'delivery_address' => 'required|max:255',
-            'customer_mail' => 'required|email:rfc,dns'
-        ]);
+        // $request->validate([ 
+        //     'delivery_address' => 'required|max:255',
+        //     'customer_mail' => 'required|email:rfc,dns'
+        // ]);
       
-        $data = $request->all();
-        $newOrder = new Order();
-        $newOrder->fill($data);
+        // $data = $request->all();
+        // $newOrder = new Order();
+        // $newOrder->fill($data);
 
-        // temp
-        $newOrder["payment_amount"] = 10;
-        $newOrder["payment_status"] = true;
+        // // temp
+        // $newOrder["payment_amount"] = 10;
+        // $newOrder["payment_status"] = true;
 
-        $newOrder->save();
+        // $newOrder->save();
 
-        $dishes = collect($request->input('dishes', [])) //colleziona i dati nell'input e li mappa con la...
-        ->filter(function($dish){
-            return !is_Null($dish);
-        })
-        ->map(function($dish) {   
-            return ['quantity' => $dish];  //...terza colonna chiamata nel model Order
-        });
-        //dd($dishes);
-        $newOrder->dishes()->sync($dishes);
-        return redirect()->route('welcome');
+        // $dishes = collect($request->input('dishes', [])) //colleziona i dati nell'input e li mappa con la...
+        // ->filter(function($dish){
+        //     return !is_Null($dish);
+        // })
+        // ->map(function($dish) {   
+        //     return ['quantity' => $dish];  //...terza colonna chiamata nel model Order
+        // });
+        // //dd($dishes);
+        // $newOrder->dishes()->sync($dishes);
+        // return redirect()->route('welcome');
     }
 
     /**

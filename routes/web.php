@@ -91,7 +91,7 @@ Route::post('/checkout', function (Request $request) {
     $name = $request->customer_name;
     $mail = $request->customer_mail;
     $phone = $request->customer_phone_number;
-    $address = $request->delivery_address;
+    // $address = $request->delivery_address;
 
     $result = $gateway->transaction()->sale([
         'amount' => $amount,
@@ -107,9 +107,6 @@ Route::post('/checkout', function (Request $request) {
     ]);
 
     if ($result->success) {
-        // $transaction = $result->transaction;
-
-        // return redirect()->route("orders.store");
 
         // immissione dell'orders.store
         $request->validate([
@@ -121,7 +118,6 @@ Route::post('/checkout', function (Request $request) {
         $newOrder = new Order();
         $newOrder->fill($data);
 
-        // temp
         $newOrder["payment_amount"] = $amount;
         $newOrder["payment_status"] = true;
 
