@@ -37,6 +37,7 @@ class OrderTableSeeder extends Seeder
             DB::table('dish_order')->insertOrIgnore([
                 'dish_id' => $faker->randomElement($dishesIDs),
                 'order_id' => $faker->randomElement($ordersIDs),
+                'quantity' => rand(1,5),
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
