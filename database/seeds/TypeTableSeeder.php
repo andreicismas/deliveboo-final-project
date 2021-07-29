@@ -1,9 +1,10 @@
 <?php
 
 use App\Type;
+use App\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\Schema;
 
 class TypeTableSeeder extends Seeder
 {
@@ -14,6 +15,12 @@ class TypeTableSeeder extends Seeder
      */
     public function run()
     {
+        Schema::disableForeignKeyConstraints();
+
+        Type::truncate();
+
+        Schema::enableForeignKeyConstraints();
+
         $types = [
             "AsianFusion", "Dolci", "Fritti", "Gelato", "Giapponese", "Hamburger", "Insalate", "Italiano", "Kebab", "Panini", "Pizza", "Pollo", "Senza Glutine" 
         ];
@@ -24,5 +31,12 @@ class TypeTableSeeder extends Seeder
             $newType->slug = Str::slug($type);
             $newType->save();
         }
+
+        $users = User::all();
+
+        if ($users->isEmpty()) {
+            $this->call(UserTableSeeder::class);
+        }
+
     }
 }

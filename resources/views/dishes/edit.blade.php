@@ -8,6 +8,8 @@
     @endforeach
     @endif
 
+<a href="{{route("dishes.index")}}">Indietro</a>
+
 <form action ="{{route('dishes.update', $dish->id)}}" method="post" >
     @csrf 
     @method('PATCH')

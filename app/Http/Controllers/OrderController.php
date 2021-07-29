@@ -7,6 +7,9 @@ use App\Dish;
 use App\Order;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -15,11 +18,19 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($user_id)
+    public function index()
     {
-        // prendi gli ordini in cui lo user_id del primo piatto è uguale allo user_id passato per argomento
-
-        // $orders = Order::where()->get();
+        $user_id = Auth::user()->id;
+        $orders = DB::table("orders")
+            ->join("dish_order", "id", "=", "dish_order.order_id")
+            ->join("dishes", "dish_id", "=", "dishes.id")
+            ->join("users", "dishes.user_id", "=", "users.id")
+            ->select("orders.*")
+            ->groupBy("orders.id")
+            ->where("user_id", $user_id)
+            ->orderBy("orders.id", "asc")
+            ->get();
+        return view("orders.index", ["orders" => $orders]);
 
     }
     
@@ -28,15 +39,20 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($user_id)
+    public function create($user_slug)
     {
-        $dishes = Dish::where('user_id', $user_id)->get();
+        $user = DB::table("users")
+                ->where("slug", $user_slug)
+                ->first();
+
+        $dishes = Dish::where('user_id', $user->id)->get();
         $data = [
             'dishes' => $dishes
         ];
 
-        return view ('order.create', $data);        
+        return view ('orders.create', $data);        
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -46,22 +62,32 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'delivery-address' => 'required|max:255',
-            'customer-mail' => 'required|email:rfc,dns'
-        ]);
+        // spostato nella rotta di checkout
+        // $request->validate([ 
+        //     'delivery_address' => 'required|max:255',
+        //     'customer_mail' => 'required|email:rfc,dns'
+        // ]);
+      
+        // $data = $request->all();
+        // $newOrder = new Order();
+        // $newOrder->fill($data);
 
-        $data = $request->all();
-        $newOrder = new Order();
-        $newOrder->fill($data);
-        $newOrder->save();
+        // // temp
+        // $newOrder["payment_amount"] = 10;
+        // $newOrder["payment_status"] = true;
 
-        // da controllare con la view, per gestire i piatti ordinati con relative quantità
+        // $newOrder->save();
 
-        // sync con tabella ponte
-
-        // route sbagliata, bisogna passare anche id ristorante
-        return redirect()->route('dishes.index');
+        // $dishes = collect($request->input('dishes', [])) //colleziona i dati nell'input e li mappa con la...
+        // ->filter(function($dish){
+        //     return !is_Null($dish);
+        // })
+        // ->map(function($dish) {   
+        //     return ['quantity' => $dish];  //...terza colonna chiamata nel model Order
+        // });
+        // //dd($dishes);
+        // $newOrder->dishes()->sync($dishes);
+        // return redirect()->route('welcome');
     }
 
     /**
@@ -70,14 +96,14 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Order $order)
     {
-        $order = Order::findOrFail($id);
+        // $order = Order::findOrFail($id);
         $data = [
             'order' => $order
         ];
 
-        return view("order.show", $data);
+        return view("orders.show", $data);
     }
 
     /**

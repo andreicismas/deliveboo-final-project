@@ -20,6 +20,7 @@ class CreateDishOrderTable extends Migration
             $table->tinyInteger("quantity")->required();
 
             $table->timestamps();
+
         });
     }
 

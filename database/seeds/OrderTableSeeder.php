@@ -1,8 +1,10 @@
 <?php
 
-use App\Order;
+use App\Dish;
 use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class OrderTableSeeder extends Seeder
 {
@@ -13,19 +15,32 @@ class OrderTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        //Order::truncate();
-        //Cannot truncate a table referenced in a foreign key constraint (`deliveboo`.`dish_order`, CONSTRAINT `dish_order_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `deliveboo`.`orders` (`id`))")
+        /*Schema::disableForeignKeyConstraints();
 
-        for ($i = 0; $i < 5; $i++) {
-            $newOrder = new Order();
-            $newOrder->customer_name = $faker->name();
-            $newOrder->customer_phone_number = $faker->phoneNumber();
-            $newOrder->delivery_address = $faker->address();
-            $newOrder->customer_mail = $faker->safeEmail;
-            $newOrder->payment_amount = $faker->randomFloat(2, 0, 99);
-            $newOrder->payment_status = true;
+        Order::truncate();
+        DB::table('dish_order')->truncate();
 
-            $newOrder->save();
+        Schema::enableForeignKeyConstraints();*/
+
+        factory(App\Order::class, 15)->create();
+
+        $dishes = Dish::all(); 
+
+        if($dishes->isEmpty()) {
+            $this->call(DishTableSeeder::class);
+        }
+
+        $dishesIDs = DB::table('dishes')->pluck('id');
+        $ordersIDs = DB::table('orders')->pluck('id');
+
+        foreach (range(1, 20) as $index) {
+            DB::table('dish_order')->insertOrIgnore([
+                'dish_id' => $faker->randomElement($dishesIDs),
+                'order_id' => $faker->randomElement($ordersIDs),
+                'quantity' => rand(1,5),
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
         }
     }
 }
