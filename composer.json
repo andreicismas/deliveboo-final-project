@@ -17,7 +17,9 @@
         "jzonta/faker-restaurant": "^2.0",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "2.4"
+        "laravel/ui": "2.4",
+        "nesbot/carbon": "^2.51",
+        "twbs/bootstrap": "5.0.2"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

@@ -2001,6 +2001,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
  // import axios from "axios";
 
@@ -2022,50 +2028,36 @@ __webpack_require__.r(__webpack_exports__);
     restaurantsList: function restaurantsList() {
       var _this = this;
 
-      if (this.filterList.length == 0) {
-        return this.allRestaurantsList;
+      if (result == null) {
+        return "hai finito i ristoranti ...prova a fare meno filtri";
       } else {
-        var temp = this.allRestaurantsList;
+        if (this.filterList.length == 0) {
+          return this.allRestaurantsList;
+        } else {
+          var temp = this.allRestaurantsList;
 
-        var _loop = function _loop(i) {
-          result = [];
-          temp.forEach(function (element) {
-            for (var j = 0; j < element.types.length; j++) {
-              if (element.types[j].id == _this.filterList[i]) {
-                if (!result.includes(element)) {
-                  result.push(element);
+          var _loop = function _loop(i) {
+            result = [];
+            temp.forEach(function (element) {
+              for (var j = 0; j < element.types.length; j++) {
+                if (element.types[j].id == _this.filterList[i]) {
+                  if (!result.includes(element)) {
+                    result.push(element);
+                  }
                 }
               }
-            }
-          });
-          temp = result;
-        };
+            });
+            temp = result;
+          };
 
-        for (var i = 0; i < this.filterList.length; i++) {
-          var result;
+          for (var i = 0; i < this.filterList.length; i++) {
+            var result;
 
-          _loop(i);
-        } // var temp = [];
-        // for (let i = 0; i < this.filterList.length; i++) {
-        //   this.allRestaurantsList.forEach((element) => {
-        //     for (let j = 0; j < element.types.length; j++) {
-        //       if (element.types[j].id == this.filterList[i]) {
-        //           if (!temp.includes(element)) {
-        //               temp.push(element);
-        //           }
-        //       }
-        //     }
-        //   });
-        // }
-        // var result = [];
-        // temp.forEach(element => {
-        //     if (element.types.length >= this.filterList.length) {
-        //         result.push(element);
-        //     }
-        // })
+            _loop(i);
+          }
 
-
-        return result;
+          return result;
+        }
       }
     }
   },
@@ -2096,11 +2088,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
 //
 //
 //
@@ -37912,20 +37899,31 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("type-filter-button", {
-        attrs: { types: _vm.typesList },
-        model: {
-          value: _vm.filterList,
-          callback: function($$v) {
-            _vm.filterList = $$v
-          },
-          expression: "filterList"
-        }
-      }),
-      _vm._v(" "),
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: " d-flex justify-content-center row col-6-md " },
+      [
+        _c("type-filter-button", {
+          attrs: { types: _vm.typesList },
+          model: {
+            value: _vm.filterList,
+            callback: function($$v) {
+              _vm.filterList = $$v
+            },
+            expression: "filterList"
+          }
+        })
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass:
+          "d-flex flex-wrap justify-content-between align-items-center"
+      },
       _vm._l(_vm.restaurantsList, function(restaurant) {
         return _c("restaurant-card", {
           key: restaurant.id,
@@ -37937,10 +37935,10 @@ var render = function() {
             types: restaurant.types
           }
         })
-      })
-    ],
-    2
-  )
+      }),
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37966,19 +37964,23 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "row justify-content-center" },
     _vm._l(_vm.types, function(type) {
       return _c(
         "div",
-        { key: type.id, staticClass: "form-check form-check-inline" },
+        {
+          key: type.id,
+          staticClass: "btn-group btn-group-toggle col-6-md p-2  ",
+          attrs: { "data-toggle": "buttons" }
+        },
         [
-          _c("label", { staticClass: "form-check-label" }, [
+          _c("label", { staticClass: "btn btn-secondary button_style" }, [
+            _vm._v(_vm._s(type.name) + "\n          "),
             _c("input", {
-              staticClass: "form-check-input",
-              attrs: { type: "checkbox" },
+              attrs: { type: "checkbox", autocomplete: "off" },
               domProps: { value: type.id },
               on: { change: _vm.onChange }
-            }),
-            _vm._v("\n      " + _vm._s(type.name) + "\n    ")
+            })
           ])
         ]
       )
@@ -50625,8 +50627,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\reven\Desktop\Boolean\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\reven\Desktop\Boolean\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\acer\Desktop\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\acer\Desktop\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

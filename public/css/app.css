@@ -10942,3 +10942,9 @@ a.text-dark:focus {
   }
 }
 
+.btn-secondary:not(:disabled):not(.disabled):active,
+.btn-secondary:not(:disabled):not(.disabled).active,
+.show > .btn-secondary.dropdown-toggle {
+  background-color: #00c3ff;
+}
+
