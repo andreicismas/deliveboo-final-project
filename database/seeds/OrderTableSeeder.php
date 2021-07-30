@@ -22,7 +22,7 @@ class OrderTableSeeder extends Seeder
 
         Schema::enableForeignKeyConstraints();*/
 
-        factory(App\Order::class, 15)->create();
+        factory(App\Order::class, 50)->create();
 
         $dishes = Dish::all(); 
 
@@ -33,7 +33,7 @@ class OrderTableSeeder extends Seeder
         $dishesIDs = DB::table('dishes')->pluck('id');
         $ordersIDs = DB::table('orders')->pluck('id');
 
-        foreach (range(1, 20) as $index) {
+        foreach (range(1, 50) as $index) {
             DB::table('dish_order')->insertOrIgnore([
                 'dish_id' => $faker->randomElement($dishesIDs),
                 'order_id' => $faker->randomElement($ordersIDs),
