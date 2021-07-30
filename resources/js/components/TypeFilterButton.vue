@@ -1,20 +1,11 @@
 <template>
-  <div>
-    <div
-      class="form-check form-check-inline"
-      v-for="type in types"
-      :key="type.id"
-    >
-      <label class="form-check-label">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          :value="type.id"
-          @change="onChange"
-        />
-        {{ type.name }}
-      </label>
-    </div>
+  <div class="row">
+      <div class="btn-group btn-group-toggle col-3" data-toggle="buttons" v-for="type in types" :key="type.id">         
+          <label class="btn btn-secondary button_style">{{ type.name }}
+            <input type="checkbox" autocomplete="off" :value="type.id"
+                    @change="onChange"> 
+          </label>
+      </div>
   </div>
 </template>
 

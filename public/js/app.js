@@ -1957,6 +1957,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCard",
   props: {
@@ -2045,25 +2046,7 @@ __webpack_require__.r(__webpack_exports__);
           var result;
 
           _loop(i);
-        } // var temp = [];
-        // for (let i = 0; i < this.filterList.length; i++) {
-        //   this.allRestaurantsList.forEach((element) => {
-        //     for (let j = 0; j < element.types.length; j++) {
-        //       if (element.types[j].id == this.filterList[i]) {
-        //           if (!temp.includes(element)) {
-        //               temp.push(element);
-        //           }
-        //       }
-        //     }
-        //   });
-        // }
-        // var result = [];
-        // temp.forEach(element => {
-        //     if (element.types.length >= this.filterList.length) {
-        //         result.push(element);
-        //     }
-        // })
-
+        }
 
         return result;
       }
@@ -2096,15 +2079,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -37856,10 +37830,13 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", {}, [
     _c(
       "div",
-      { staticClass: "card", staticStyle: { width: "18rem", margin: "5px" } },
+      {
+        staticClass: "card d-flex ",
+        staticStyle: { width: "18rem", margin: "5px" }
+      },
       [
         _c(
           "a",
@@ -37870,6 +37847,10 @@ var render = function() {
             }),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
+              _c("img", {
+                attrs: { src: "img/pancake-burger-200x150.jpg", alt: "" }
+              }),
+              _vm._v(" "),
               _c("h5", { staticClass: "card-title" }, [
                 _vm._v(_vm._s(_vm.name))
               ]),
@@ -37966,19 +37947,23 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "row" },
     _vm._l(_vm.types, function(type) {
       return _c(
         "div",
-        { key: type.id, staticClass: "form-check form-check-inline" },
+        {
+          key: type.id,
+          staticClass: "btn-group btn-group-toggle col-3",
+          attrs: { "data-toggle": "buttons" }
+        },
         [
-          _c("label", { staticClass: "form-check-label" }, [
+          _c("label", { staticClass: "btn btn-secondary button_style" }, [
+            _vm._v(_vm._s(type.name) + "\n          "),
             _c("input", {
-              staticClass: "form-check-input",
-              attrs: { type: "checkbox" },
+              attrs: { type: "checkbox", autocomplete: "off" },
               domProps: { value: type.id },
               on: { change: _vm.onChange }
-            }),
-            _vm._v("\n      " + _vm._s(type.name) + "\n    ")
+            })
           ])
         ]
       )
@@ -50625,8 +50610,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\reven\Desktop\Boolean\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\reven\Desktop\Boolean\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\giuli\OneDrive\Documenti\EserciziAtom\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\giuli\OneDrive\Documenti\EserciziAtom\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
