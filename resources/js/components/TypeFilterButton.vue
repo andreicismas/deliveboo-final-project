@@ -1,6 +1,6 @@
 <template>
-  <div class="row">
-      <div class="btn-group btn-group-toggle col-3" data-toggle="buttons" v-for="type in types" :key="type.id">         
+  <div class="row justify-content-center">
+      <div class="btn-group btn-group-toggle col-6-md p-2" data-toggle="buttons" v-for="type in types" :key="type.id">         
           <label class="btn btn-secondary button_style">{{ type.name }}
             <input type="checkbox" autocomplete="off" :value="type.id"
                     @change="onChange"> 

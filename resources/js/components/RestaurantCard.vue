@@ -6,8 +6,7 @@
         <div class="card-body">
           <img src="img/pancake-burger-200x150.jpg" alt="">
           <h5 class="card-title">{{ name }}</h5>
-          <em class="card-title">{{ email }}</em
-          ><br/>
+          <em class="card-title">{{ email }}</em><br/>
           <em class="card-title">{{ address }}</em>
         </div>
       </a>

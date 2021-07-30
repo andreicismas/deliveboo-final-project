@@ -1957,7 +1957,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCard",
   props: {
@@ -1982,6 +1981,10 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _RestaurantCard_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RestaurantCard.vue */ "./resources/js/components/RestaurantCard.vue");
 /* harmony import */ var _TypeFilterButton_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TypeFilterButton.vue */ "./resources/js/components/TypeFilterButton.vue");
+//
+//
+//
+//
 //
 //
 //
@@ -37893,20 +37896,31 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("type-filter-button", {
-        attrs: { types: _vm.typesList },
-        model: {
-          value: _vm.filterList,
-          callback: function($$v) {
-            _vm.filterList = $$v
-          },
-          expression: "filterList"
-        }
-      }),
-      _vm._v(" "),
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: " d-flex justify-content-center row col-6-md " },
+      [
+        _c("type-filter-button", {
+          attrs: { types: _vm.typesList },
+          model: {
+            value: _vm.filterList,
+            callback: function($$v) {
+              _vm.filterList = $$v
+            },
+            expression: "filterList"
+          }
+        })
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass:
+          "d-flex flex-wrap justify-content-between align-items-center"
+      },
       _vm._l(_vm.restaurantsList, function(restaurant) {
         return _c("restaurant-card", {
           key: restaurant.id,
@@ -37918,10 +37932,10 @@ var render = function() {
             types: restaurant.types
           }
         })
-      })
-    ],
-    2
-  )
+      }),
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37947,13 +37961,13 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "row" },
+    { staticClass: "row justify-content-center" },
     _vm._l(_vm.types, function(type) {
       return _c(
         "div",
         {
           key: type.id,
-          staticClass: "btn-group btn-group-toggle col-3",
+          staticClass: "btn-group btn-group-toggle col-6-md p-2",
           attrs: { "data-toggle": "buttons" }
         },
         [

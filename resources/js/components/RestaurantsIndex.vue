@@ -1,20 +1,24 @@
 <template>
   <div>
-    <type-filter-button
-      :types="typesList"
-      v-model="filterList"
-    ></type-filter-button>
+    <div class=" d-flex justify-content-center row col-6-md ">
+      <type-filter-button
+        :types="typesList"
+        v-model="filterList"
+      ></type-filter-button>
+    </div>
 
-    <restaurant-card
-      v-for="restaurant in restaurantsList"
-      :key="restaurant.id"
-      :name="restaurant.name"
-      :email="restaurant.email"
-      :address="restaurant.address"
-      :link="restaurant.link"
-      :types="restaurant.types"
-    >
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center">
+
+      <restaurant-card
+        v-for="restaurant in restaurantsList" :key="restaurant.id" :name="restaurant.name" :email="restaurant.email"
+        :address="restaurant.address"
+        :link="restaurant.link"
+        :types="restaurant.types"
+      >
     </restaurant-card>
+    </div>
+
   </div>
 </template>
 

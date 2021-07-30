@@ -167,9 +167,7 @@
                                     </li>
                                     <li><a class="decnone white" href="#">Inserisci carta di credito</a></li>
                                     <li><a class="lilbox" href=""><img class="box-img" src="img/app-store-badge.png"
-                                                alt=""></a></li>
-                                    <li><a class="lilbox" href=""><img class="box-img" src="img/app-store-badge.png"
-                                                alt=""></a></li>
+                                                alt=""></a></li>                                    
                                 </ul>
                             </div>
                             <div>
@@ -185,14 +183,10 @@
                         <div class="logo text-center">
                         </div>
                         <div class="loop text-center">
-                            <h1 class="yellow">Stay In The Loop</h1>
-                            <p class="white">Sign up to receive up to date news and offers directly in your inbox:</p>
-                            <input class="email" type="text" placeholder="you@email.com"><br>
-                            <a class="special order" href="#">SUBSCRIBE</a>
-                            <h6><span class="yellow">© Copyright 2012 - 2020 | Avada Theme by</span><span class="white">
-                                    Theme Fusion
+                            <h6><span class="yellow">© Copyright 2012 - 2020 | DeliveBoo Theme by</span><span class="white">
+                                    DeliveBoo Fusion
                                 </span><span class="yellow">| All Rights Reserved | Powered By</span><span
-                                    class="white"> Wordpress</span></h6>
+                                    class="white"> Team Heroes</span></h6>
                             </span>
                         </div>
                     </div>
