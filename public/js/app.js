@@ -2045,25 +2045,7 @@ __webpack_require__.r(__webpack_exports__);
           var result;
 
           _loop(i);
-        } // var temp = [];
-        // for (let i = 0; i < this.filterList.length; i++) {
-        //   this.allRestaurantsList.forEach((element) => {
-        //     for (let j = 0; j < element.types.length; j++) {
-        //       if (element.types[j].id == this.filterList[i]) {
-        //           if (!temp.includes(element)) {
-        //               temp.push(element);
-        //           }
-        //       }
-        //     }
-        //   });
-        // }
-        // var result = [];
-        // temp.forEach(element => {
-        //     if (element.types.length >= this.filterList.length) {
-        //         result.push(element);
-        //     }
-        // })
-
+        }
 
         return result;
       }
