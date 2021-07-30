@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 
 use App\Dish;
 use App\Order;
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\DB;
+
+use Carbon\Carbon;
 
 class OrderController extends Controller
 {
@@ -30,7 +31,85 @@ class OrderController extends Controller
             ->where("user_id", $user_id)
             ->orderBy("orders.id", "asc")
             ->get();
-        return view("orders.index", ["orders" => $orders]);
+
+        // dati per i grafici
+        $months = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
+        $years = ["2020", "2021"];
+
+        $ordersByYear = [];
+        foreach($years as $key => $value) {
+            $ordersByYear[] = DB::table("orders")
+            ->join("dish_order", "id", "=", "dish_order.order_id")
+            ->join("dishes", "dish_id", "=", "dishes.id")
+            ->join("users", "dishes.user_id", "=", "users.id")
+            ->groupBy("orders.id")
+            ->where("user_id", $user_id)
+            ->where(DB::raw("DATE_FORMAT(orders.created_at, '%Y')"),$value)
+            ->count();
+        };
+
+        $profitByYear = [];
+        foreach($years as $key => $value) {
+            $temp = DB::table("orders")
+            ->join("dish_order", "id", "=", "dish_order.order_id")
+            ->join("dishes", "dish_id", "=", "dishes.id")
+            ->join("users", "dishes.user_id", "=", "users.id")
+            ->select("orders.*")
+            ->groupBy("orders.id")
+            ->where("user_id", $user_id)
+            ->where(DB::raw("DATE_FORMAT(orders.created_at, '%Y')"),$value)
+            ->get();
+
+            $total = 0;
+            foreach($temp as $k => $v) {
+                $total += $v->payment_amount;
+            }
+            $profitByYear[] = $total;
+        };
+
+        $ordersByMonth = [];
+        foreach($months as $key => $value) {
+            $ordersByMonth[] = DB::table("orders")
+            ->join("dish_order", "id", "=", "dish_order.order_id")
+            ->join("dishes", "dish_id", "=", "dishes.id")
+            ->join("users", "dishes.user_id", "=", "users.id")
+            ->groupBy("orders.id")
+            ->where("user_id", $user_id)
+            ->where(DB::raw("DATE_FORMAT(orders.created_at, '%Y')"),"2021")
+            ->where(DB::raw("DATE_FORMAT(orders.created_at, '%m')"),$key)
+            ->count();
+        };
+
+        $profitByMonth = [];
+        foreach($months as $key => $value) {
+            $temp = DB::table("orders")
+            ->join("dish_order", "id", "=", "dish_order.order_id")
+            ->join("dishes", "dish_id", "=", "dishes.id")
+            ->join("users", "dishes.user_id", "=", "users.id")
+            ->select("orders.*")
+            ->groupBy("orders.id")
+            ->where("user_id", $user_id)
+            ->where(DB::raw("DATE_FORMAT(orders.created_at, '%Y')"),"2021")
+            ->where(DB::raw("DATE_FORMAT(orders.created_at, '%m')"),$key)
+            ->get();
+
+            $total = 0;
+            foreach($temp as $k => $v) {
+                $total += $v->payment_amount;
+            }
+            $profitByMonth[] = $total;
+        };
+
+        $data = [
+            "orders" => $orders,
+            "years" => $years,
+            "months" => $months,
+            "ordersByYear" => $ordersByYear,
+            "ordersByMonth" => $ordersByMonth,
+            "profitByYear" => $profitByYear,
+            "profitByMonth" => $profitByMonth
+        ];
+        return view("orders.index", $data);
 
     }
     
@@ -39,24 +118,19 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    /*----------------------------------------------------------------DA QUI PROVE
-    public function create($user_id)
+    public function create($user_slug)
     {
-        $dishes = Dish::where('user_id', $user_id)->get();
+        $user = DB::table("users")
+                ->where("slug", $user_slug)
+                ->first();
+
+        $dishes = Dish::where('user_id', $user->id)->get();
         $data = [
             'dishes' => $dishes
         ];
 
-        return view ('order.create', $data);        
-    }----*/
-
-    public function create() 
-        {
-            $dishes = Dish::all(); //!!!! non passeranno tutti i piatti ma solo quelli del ristornate selezionato
-        
-            return view ('orders.create', ['dishes'=>$dishes]);        
-        }
+        return view ('orders.create', $data);        
+    }
 
 
     /**
@@ -67,30 +141,32 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-       /* $request->validate([
-            'delivery-address' => 'required|max:255',
-            'customer-mail' => 'required|email:rfc,dns'
-        ]);*/
+        // spostato nella rotta di checkout
+        // $request->validate([ 
+        //     'delivery_address' => 'required|max:255',
+        //     'customer_mail' => 'required|email:rfc,dns'
+        // ]);
+      
+        // $data = $request->all();
+        // $newOrder = new Order();
+        // $newOrder->fill($data);
 
-        $data = $request->all();
-        $newOrder = new Order();
-        $newOrder->fill($data);
+        // // temp
+        // $newOrder["payment_amount"] = 10;
+        // $newOrder["payment_status"] = true;
 
-        // temp
-        $newOrder["payment_amount"] = 10;
-        $newOrder["payment_status"] = true;
+        // $newOrder->save();
 
-        $newOrder->save();
-
-        // da controllare con la view, per gestire i piatti ordinati con relative quantità
-
-        // dump($request);
-        // return;
-
-        // sync con tabella ponte
-        $newOrder->dishes()->sync($data["dishes"]);
-        // route sbagliata, bisogna passare anche id ristorante
-        return redirect()->route('welcome');
+        // $dishes = collect($request->input('dishes', [])) //colleziona i dati nell'input e li mappa con la...
+        // ->filter(function($dish){
+        //     return !is_Null($dish);
+        // })
+        // ->map(function($dish) {   
+        //     return ['quantity' => $dish];  //...terza colonna chiamata nel model Order
+        // });
+        // //dd($dishes);
+        // $newOrder->dishes()->sync($dishes);
+        // return redirect()->route('welcome');
     }
 
     /**
