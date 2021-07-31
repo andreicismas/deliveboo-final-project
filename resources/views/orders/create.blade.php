@@ -41,7 +41,7 @@
                         <input class="my-input"
                         name="dishes[{{$dish->id}}]" {{--colleziona gli esatti id che vanno sincronizzati anzichè tutti--}}
                         type="number"
-                        placeholder="quantity">
+                        placeholder="Quantità">
                     </div>
 
                 </div>
