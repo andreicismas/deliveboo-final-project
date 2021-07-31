@@ -54,7 +54,8 @@ window.addEventListener("load", function () {
 
 
 
-/*window.addEventListener("load", function () {
+/* vecchio senza styles, non ha animazioni intermedie
+window.addEventListener("load", function () {
 
     const myOverlay= document.querySelectorAll(".my-overlay");
     myOverlay.forEach(div => {
