@@ -3,6 +3,10 @@
     flex-direction: column;
 }
 
+.cart-head{
+    display: flex;
+}
+
 .submit{
    width: 100%;
    height: 100px;
@@ -12,17 +16,32 @@
 
 .display-dish{
     width: 100%;
-    height: 100px;
+    height: 150px;
     background-color: pink;
-    z-index: 3;
+    border: 3px solid white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    z-index: 0;
  }
 
-
-
-.cart-head{
-    display: flex;
+ .description{
+    background-color: rgba(137, 43, 226, 0.342);
+    max-width: 60%;
+    height: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
-input{
+.my-counter{
+    background-color: rgba(43, 226, 73, 0.342);
+    max-width: 40%;
+    height: 100%;
+}
+
+.my-input{
+   width: 200px;
   background-color: black;
  }
+

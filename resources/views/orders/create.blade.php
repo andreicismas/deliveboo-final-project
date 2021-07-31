@@ -26,15 +26,20 @@
                 
 
                 <div class="display-dish">
-                    {{--<input type="checkbox" class=""> 
-                    <span>{{$dish->name}} </span>  --}}
-                    <input class="button-form"
-                    name="dishes[{{$dish->id}}]" {{--colleziona gli esatti id che vanno sincronizzati anzichè tutti--}}
-                    type="number"
-                    placeholder="quantity">
+                    {{--<input type="checkbox" class=""> --}}
 
+                    <div  class="description">
+                        <h6>{{$dish->ingredients}}<h6>
+                       <h6>{{$dish->description}}<h6>
+                    </div>
+                    <div class="my-counter">  
+                        <input class="my-input"
+                        name="dishes[{{$dish->id}}]" {{--colleziona gli esatti id che vanno sincronizzati anzichè tutti--}}
+                        type="number"
+                        placeholder="quantity">
+                    </div>
 
-                 </div>
+                </div>
                 @endif
             @endforeach
 
