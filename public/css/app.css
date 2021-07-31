@@ -115,8 +115,40 @@
   width: 100%;
 }
 
-.prova {
-  background-color: hotpink;
+.hide {
+  width: 0px;
+  -webkit-animation-name: hide;
+          animation-name: hide;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+@-webkit-keyframes hide {
+  from {
+    width: 100%;
+  }
+
+  20% {
+    width: 20%;
+  }
+
+  to {
+    width: 0%;
+  }
+}
+
+@keyframes hide {
+  from {
+    width: 100%;
+  }
+
+  20% {
+    width: 20%;
+  }
+
+  to {
+    width: 0%;
+  }
 }
 
 /*-------------- nasconde frecce input number su più browser --------*/

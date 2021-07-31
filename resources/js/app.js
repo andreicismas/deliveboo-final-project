@@ -46,8 +46,9 @@ window.addEventListener("load", function () {
     myOverlay.forEach(div => {
   
         div.addEventListener("click", () => { 
-            div.classList.add('prova');
+            div.classList.add('hide');
         })
+    
     })
 }); 
 

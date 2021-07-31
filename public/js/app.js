@@ -50316,7 +50316,7 @@ window.addEventListener("load", function () {
   var myOverlay = document.querySelectorAll(".my-overlay");
   myOverlay.forEach(function (div) {
     div.addEventListener("click", function () {
-      div.classList.add('prova');
+      div.classList.add('hide');
     });
   });
 });
