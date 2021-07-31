@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Dish;
 use App\Order;
+use App\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -125,8 +126,10 @@ class OrderController extends Controller
                 ->first();
 
         $dishes = Dish::where('user_id', $user->id)->get();
+
         $data = [
-            'dishes' => $dishes
+            'dishes' => $dishes,
+            'restaurant'=> $user->name,
         ];
 
         return view ('orders.create', $data);        

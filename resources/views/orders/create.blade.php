@@ -15,6 +15,11 @@
 
         <div class="cart-head">
             <a href="{{ route("welcome") }}">Indietro</a>
+
+            <div class="signboard">
+                <h2>{{$restaurant}}</h2>
+            </div>
+
             <input  class="submit" type="submit" value="ordina">
         </div>
 
