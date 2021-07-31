@@ -12,17 +12,23 @@
     <form action="{{ route('payment') }}" method="post">
         @csrf
 
+
+        <div v-for="dish in dishes" :key="dish.id">
+            prova
+        </div>
+
         @foreach ($dishes as $dish)
-        <display-button></display-button>
+
             @if($dish->visibility == 1)
-     
-                <input type="checkbox" class=""> {{--aprirebbe una finestra con contantore--}}
-                <span>{{$dish->name}}</span>  
+            
+            <display-div> </display-div>
+                <input type="checkbox" class=""> 
+             <span>   {{$dish->name}} </span>  
                 <input
                 name="dishes[{{$dish->id}}]" {{--colleziona gli esatti id che vanno sincronizzati anzichè tutti--}}
                 type="number"
                 placeholder="quantity">
-            
+           
             @endif
 
 
@@ -30,25 +36,11 @@
 
         <input type="hidden" name="restaurant_id" value="{{$dishes[0]->user_id}}">
 
-        {{-- <div>
-            <input name="customer_name" class="form-control" aria-label="With textarea" rows="1" style="resize: none"
-                placeholder="Name">
-        </div>
-        <div>
-            <input name="customer_phone_number" class="form-control" aria-label="With textarea" rows="1" style="resize: none"
-                placeholder="Phone">
-        </div>
-        <div>
-            <input name="customer_mail" class="form-control" aria-label="With textarea" rows="1" style="resize: none"
-                placeholder="Mail">
-        </div>
-        <div>
-            <input name="delivery_address" class="form-control" aria-label="With textarea" rows="1" style="resize: none"
-                placeholder="indirizzo di consegna">
-        </div> --}}
-
         <div>
             <input type="submit" value="ordina">
         </div>
     </form>
+
+   
+
 @endsection
