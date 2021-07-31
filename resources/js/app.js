@@ -39,34 +39,21 @@ const app = new Vue({
 });
 
 
-/*let counterDisplayElem = document.querySelector('.counter-display');
-let counterMinusElem = document.querySelector('.counter-minus');
-let counterPlusElem = document.querySelector('.counter-plus');
-
-let count = 0;
-
-updateDisplay();
-
-counterPlusElem.addEventListener("click",()=>{
-    count++;
-    updateDisplay();
-}) ;
-
-counterMinusElem.addEventListener("click",()=>{
-    count--;
-    updateDisplay();
-});
-
-function updateDisplay(){
-    counterDisplayElem.innerHTML = count;
-};
-
-
-<h1 class="counter-display">(..)</h1>
-<span class="counter-minus">-</span>
-<span class="counter-plus">+</span>   */
 
 window.addEventListener("load", function () {
+
+    const myOverlay= document.querySelectorAll(".my-overlay");
+    myOverlay.forEach(div => {
+  
+        div.addEventListener("click", () => { 
+            div.classList.add('prova');
+        })
+    })
+}); 
+
+
+
+/*window.addEventListener("load", function () {
 
     const myOverlay= document.querySelectorAll(".my-overlay");
     myOverlay.forEach(div => {
@@ -75,5 +62,6 @@ window.addEventListener("load", function () {
             div.style.width = "0%";
         })
     })
-  
-})
+});  */
+
+

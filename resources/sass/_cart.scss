@@ -60,6 +60,7 @@
 
 
 
+
  .description{
     background-color: rgba(137, 43, 226, 0.342);
     width: 60%;
@@ -106,22 +107,23 @@
  }
 
 
-
-
-
-.prova{
+ .ex-2-square {
+    width: 100px;
     height: 100px;
-    width: 1000px;
-    background-color: hotpink;
+    background: red;
+    transition: width 2s;
+}
+.ex-2-square:active {
+    width: 100%;
 }
 
 
 
 
 
-
-
-
+.prova{
+    background-color: hotpink;
+}
 
 
 
