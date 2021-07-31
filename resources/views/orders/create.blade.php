@@ -11,7 +11,7 @@
             @csrf
 
         <div class="cart-head">
-            <a href="{{ route("welcome") }}">Indietro</a>
+            <a class="back-bttn" href="{{ route("welcome") }}"> < </a>
 
             <div class="signboard">
                 <h2>{{$restaurant}}</h2>
@@ -19,34 +19,34 @@
 
             <input  class="submit" type="submit" value="ordina">
         </div>
-
-
-   
          
             @foreach ($dishes as $dish)
                 @if($dish->visibility == 1)
                 
 
                 <div class="display-dish">
+                    <div class="my-overlay"></div>
+
                     {{--<input type="checkbox" class=""> --}}
 
                     <div  class="description">
-                        <h6>{{$dish->ingredients}}<h6>
-                       <h6>{{$dish->description}}<h6>
+                        <h6><strong>Ingredienti:</strong></h6>
+                        <h6>{{$dish->ingredients}}</h6>
+                       <h6>{{$dish->description}}</h6>
                     </div>
                     <div class="my-counter"> 
 
-                        <span onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">aaah</span>
+                         <div class="tag-counter">
+                                <span onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</span>
+                            
+                                <input class="counter-display my-counter-input "
+                                name="dishes[{{$dish->id}}]" {{--colleziona gli esatti id che vanno sincronizzati anzichè tutti--}}
+                                type="number"
+                                placeholder="0">
 
-                        <input class="counter-display my-counter-input "
-                        name="dishes[{{$dish->id}}]" {{--colleziona gli esatti id che vanno sincronizzati anzichè tutti--}}
-                        type="number"
-                        placeholder="Quantità">
-                        
-                        <span onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">aargh!</span>
-        
+                                <span onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</span>
+                        </div>
                     </div>
-
                 </div>
                 @endif
             @endforeach

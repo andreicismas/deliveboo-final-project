@@ -65,3 +65,13 @@ function updateDisplay(){
 <h1 class="counter-display">(..)</h1>
 <span class="counter-minus">-</span>
 <span class="counter-plus">+</span>   */
+
+window.addEventListener("load", function () {
+
+    const deleteDish = document.querySelectorAll(".my-overlay");
+    deleteDish.forEach(div => {
+  
+        div.addEventListener("click", () => { alert('prova'); })
+    })
+  
+})

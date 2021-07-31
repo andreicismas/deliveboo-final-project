@@ -10,12 +10,19 @@
   align-items: center;
 }
 
+.back-bttn {
+  height: 100%;
+  font-size: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .signboard {
   width: 100%;
   height: 100px;
   display: flex;
   align-items: center;
-  padding-left: 30px;
+  padding-left: 50px;
   background-color: #ff0080;
   z-index: 3;
 }
@@ -28,15 +35,28 @@
 }
 
 .display-dish {
+  position: relative;
   width: 100%;
-  height: 150px;
+  height: 160px;
   background-color: pink;
   border: 3px solid white;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
+  align-content: space-around;
   z-index: 0;
+}
+
+.my-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  border: 2px solid red;
+  background-color: rgba(226, 51, 138, 0.664);
 }
 
 .description {
@@ -44,22 +64,66 @@
   width: 60%;
   height: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
   align-content: center;
+  align-items: center;
 }
 
 .my-counter {
   background-color: rgba(43, 226, 73, 0.342);
+  display: flex;
+  align-items: center;
   width: 30%;
   height: 100%;
 }
 
-.my-counter-input {
+.tag-counter {
   width: 200px;
+  height: 60px;
+  font-size: 40px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(35, 159, 241, 0.342);
+}
+
+.tag-counter > * {
+  padding: 10px;
+  color: white;
+}
+
+.my-counter-input {
+  width: 100px;
   height: 60px;
   font-size: 30px;
   text-align: center;
   background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.prova {
+  height: 100px;
+  width: 1000px;
+  background-color: hotpink;
+}
+
+/*-------------- nasconde frecce input number su più browser --------*/
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 /*!

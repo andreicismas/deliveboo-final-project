@@ -50339,6 +50339,15 @@ function updateDisplay(){
 <span class="counter-minus">-</span>
 <span class="counter-plus">+</span>   */
 
+window.addEventListener("load", function () {
+  var deleteDish = document.querySelectorAll(".my-overlay");
+  deleteDish.forEach(function (div) {
+    div.addEventListener("click", function () {
+      alert('prova');
+    });
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
