@@ -68,10 +68,12 @@ function updateDisplay(){
 
 window.addEventListener("load", function () {
 
-    const deleteDish = document.querySelectorAll(".my-overlay");
-    deleteDish.forEach(div => {
+    const myOverlay= document.querySelectorAll(".my-overlay");
+    myOverlay.forEach(div => {
   
-        div.addEventListener("click", () => { alert('prova'); })
+        div.addEventListener("click", () => { 
+            div.style.width = "0%";
+        })
     })
   
 })

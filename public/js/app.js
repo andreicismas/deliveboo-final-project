@@ -50340,10 +50340,10 @@ function updateDisplay(){
 <span class="counter-plus">+</span>   */
 
 window.addEventListener("load", function () {
-  var deleteDish = document.querySelectorAll(".my-overlay");
-  deleteDish.forEach(function (div) {
+  var myOverlay = document.querySelectorAll(".my-overlay");
+  myOverlay.forEach(function (div) {
     div.addEventListener("click", function () {
-      alert('prova');
+      div.style.width = "0%";
     });
   });
 });
