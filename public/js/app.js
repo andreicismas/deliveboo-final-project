@@ -50312,6 +50312,32 @@ Vue.component('display-button', __webpack_require__(/*! ./components/DisplayButt
 var app = new Vue({
   el: '#app'
 });
+/*let counterDisplayElem = document.querySelector('.counter-display');
+let counterMinusElem = document.querySelector('.counter-minus');
+let counterPlusElem = document.querySelector('.counter-plus');
+
+let count = 0;
+
+updateDisplay();
+
+counterPlusElem.addEventListener("click",()=>{
+    count++;
+    updateDisplay();
+}) ;
+
+counterMinusElem.addEventListener("click",()=>{
+    count--;
+    updateDisplay();
+});
+
+function updateDisplay(){
+    counterDisplayElem.innerHTML = count;
+};
+
+
+<h1 class="counter-display">(..)</h1>
+<span class="counter-minus">-</span>
+<span class="counter-plus">+</span>   */
 
 /***/ }),
 

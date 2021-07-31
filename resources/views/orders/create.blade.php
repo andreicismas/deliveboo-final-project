@@ -1,14 +1,11 @@
 @extends('layouts.app')
 @section('content')
 
-
-
         @if (count($errors->all()) > 0)
             @foreach ($errors->all() as $error)
                 <h5>{{ $error }}</h5>
             @endforeach
         @endif
-
 
         <form action="{{ route('payment') }}" method="post">
             @csrf
@@ -37,11 +34,17 @@
                         <h6>{{$dish->ingredients}}<h6>
                        <h6>{{$dish->description}}<h6>
                     </div>
-                    <div class="my-counter">  
-                        <input class="my-input"
+                    <div class="my-counter"> 
+
+                        <span onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">aaah</span>
+
+                        <input class="counter-display my-counter-input "
                         name="dishes[{{$dish->id}}]" {{--colleziona gli esatti id che vanno sincronizzati anzichè tutti--}}
                         type="number"
                         placeholder="Quantità">
+                        
+                        <span onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">aargh!</span>
+        
                     </div>
 
                 </div>
