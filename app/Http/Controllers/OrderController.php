@@ -37,17 +37,6 @@ class OrderController extends Controller
         $years = ["2020", "2021"];
 
         $ordersByYear = [];
-        foreach($years as $key => $value) {
-            $ordersByYear[] = DB::table("orders")
-            ->join("dish_order", "id", "=", "dish_order.order_id")
-            ->join("dishes", "dish_id", "=", "dishes.id")
-            ->join("users", "dishes.user_id", "=", "users.id")
-            ->groupBy("orders.id")
-            ->where("user_id", $user_id)
-            ->where(DB::raw("DATE_FORMAT(orders.created_at, '%Y')"),$value)
-            ->count();
-        };
-
         $profitByYear = [];
         foreach($years as $key => $value) {
             $temp = DB::table("orders")
@@ -60,26 +49,17 @@ class OrderController extends Controller
             ->where(DB::raw("DATE_FORMAT(orders.created_at, '%Y')"),$value)
             ->get();
 
+            $count = 0;
             $total = 0;
             foreach($temp as $k => $v) {
+                $count++;
                 $total += $v->payment_amount;
             }
+            $ordersByYear[] = $count;
             $profitByYear[] = $total;
         };
 
         $ordersByMonth = [];
-        foreach($months as $key => $value) {
-            $ordersByMonth[] = DB::table("orders")
-            ->join("dish_order", "id", "=", "dish_order.order_id")
-            ->join("dishes", "dish_id", "=", "dishes.id")
-            ->join("users", "dishes.user_id", "=", "users.id")
-            ->groupBy("orders.id")
-            ->where("user_id", $user_id)
-            ->where(DB::raw("DATE_FORMAT(orders.created_at, '%Y')"),"2021")
-            ->where(DB::raw("DATE_FORMAT(orders.created_at, '%m')"),$key)
-            ->count();
-        };
-
         $profitByMonth = [];
         foreach($months as $key => $value) {
             $temp = DB::table("orders")
@@ -93,10 +73,13 @@ class OrderController extends Controller
             ->where(DB::raw("DATE_FORMAT(orders.created_at, '%m')"),$key)
             ->get();
 
+            $count = 0;
             $total = 0;
             foreach($temp as $k => $v) {
+                $count++;
                 $total += $v->payment_amount;
             }
+            $ordersByMonth[] = $count;
             $profitByMonth[] = $total;
         };
 

@@ -70,7 +70,7 @@
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                                             document.getElementById('logout-form').submit();">
+                                                                                 document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -105,8 +105,7 @@
                                 <td>{{ $order->customer_name }}</td>
                                 <td>{{ $order->delivery_address }}</td>
                                 <td>{{ $order->payment_amount }}</td>
-                                <td><a href="{{ route('orders.show', ['order' => $order->id]) }}">Leggi tutto</a>
-                                </td>
+                                <td><a href="{{ route('orders.show', ['order' => $order->id]) }}">Leggi tutto</a></td>
                             </tr>
                         @endforeach
                     </table>
@@ -117,11 +116,11 @@
 
 
     {{-- container da fare position relative per rendere responsive il chart --}}
-    <h3 style="text-align: center">Visione Annuale</h3>
+    <h3 style="text-align: center">Riepilogo Ordini</h3>
     <div class="chart-container" style="width: 800px; height: 500px; margin: auto">
         <canvas id="chartY"></canvas>
     </div>
-    <h3 style="text-align: center">Visione Mensile</h3>
+    <h3 style="text-align: center">Riepilogo dell'Ultimo Anno</h3>
     <div class="chart-container" style="width: 800px; height: 500px; margin: auto">
         <canvas id="chartM"></canvas>
     </div>
@@ -130,7 +129,7 @@
     <script type="text/javascript">
         var myChart = new Chart(
             document.getElementById('chartY'), {
-                type: 'line',
+                type: 'bar',
                 data: {
                     labels: {!! json_encode($years) !!},
                     datasets: [{
@@ -145,7 +144,13 @@
                         data: {!! json_encode($profitByYear) !!},
                     }]
                 },
-                options: {}
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
             });
 
         var myChart = new Chart(
@@ -165,7 +170,13 @@
                         data: {!! json_encode($profitByMonth) !!},
                     }]
                 },
-                options: {}
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
             });
     </script>
 </body>
