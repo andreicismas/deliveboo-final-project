@@ -58,7 +58,8 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             
             'address' => ['required', 'string'],
-            'VAT' => ['required', 'string', 'size:15', 'unique:users']
+            'VAT' => ['required', 'string', 'size:5', 'unique:users']
+            
         ]);
     }
 
@@ -97,6 +98,13 @@ class RegisterController extends Controller
             'VAT' => $data["VAT"],
             'slug' => $slug
         ]);
+
+        if (request()->hasFile('cover_UR')){
+            $cover_UR = request()->file('cover_UR')->getClientOriginalName();
+            request()->file('cover_UR')->storeAs('covers',$user->id.'/'. $cover_UR, '');
+
+            $user->update(['cover_UR'=>$cover_UR]);
+        }
 
         $user->types()->sync($data["types"]);
 

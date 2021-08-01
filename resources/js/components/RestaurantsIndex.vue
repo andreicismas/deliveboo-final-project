@@ -16,6 +16,7 @@
         :name="restaurant.name"
         :email="restaurant.email"
         :img="restaurant.cover_UR"
+        
 
         :address="restaurant.address"
         :link="restaurant.link"
@@ -69,7 +70,7 @@ export default {
 
           return result;
         }
-                    }
+         }
       
     
   },

@@ -32,10 +32,10 @@ export default {
 
       if(url){
         return  url
-      }else if(url ==  ""){
-        
+      }else if(!url){
+        return 'http://127.0.0.1:8000/storage/covers/' + $user.id + "/" + $url
+        }      
         return "https://via.placeholder.com/286x200.png?text= undefinde img"
-      }
     }
   }
 };

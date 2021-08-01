@@ -1973,9 +1973,11 @@ __webpack_require__.r(__webpack_exports__);
     getImgUrl: function getImgUrl(url) {
       if (url) {
         return url;
-      } else if (url == "") {
-        return "https://via.placeholder.com/286x200.png?text= undefinde img";
+      } else if (!url) {
+        return 'http://127.0.0.1:8000/storage/covers/' + $user.id + "/" + $url;
       }
+
+      return "https://via.placeholder.com/286x200.png?text= undefinde img";
     }
   }
 });
@@ -1993,6 +1995,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _RestaurantCard_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RestaurantCard.vue */ "./resources/js/components/RestaurantCard.vue");
 /* harmony import */ var _TypeFilterButton_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TypeFilterButton.vue */ "./resources/js/components/TypeFilterButton.vue");
+//
 //
 //
 //
