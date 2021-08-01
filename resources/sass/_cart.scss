@@ -40,15 +40,29 @@
 
 //bottone submit
 .my-submit{
-    width:400px;
+    width:200px;
     min-width:100px;
     height: 80px;
     border-radius: 30px;
     margin: 30px;
     color: $falsewhite;
-    background-color: $primary;
+    background-color: $secondary;
     z-index: 3;
  }
+
+ //bordo per descrizione ecounter
+.border-box{
+    display: flex;
+    width: 80%;
+    border-radius: 40px;
+    background-color: #fff;
+    border: 0.5px solid $primary;
+    //background: linear-gradient( #f5f5f1, #ffffff);
+    //border-top: 1px solid rgb(192, 192, 192);
+    //border-left: 1px solid rgb(218, 218, 218);
+    //border-right: 1px solid rgb(218, 218, 218);
+    //border-bottom: 1px solid rgb(218, 218, 218);
+}
 
  //card piatto
 .display-dish{
@@ -83,22 +97,12 @@
     justify-content: center;
     align-items: center;
     color: $falsewhite;
-
-    border: 2px solid red;
-    background-color: rgba(226, 51, 138, 0.664);
+    background-color: $primary;
+    
     &>h4{
         font-size: 40px;
     }
 
-}
-
-//bordo per descrizione ecounter
-.border-box{
-    display: flex;
-    width: 80%;
-    border-radius: 40px;
-    background-color: #fff;
-    border: 1px solid gray
 }
 
 //box descrizione piatto
@@ -136,7 +140,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: $tertiary;
+    background-color: $primary;
     
     &>*{
         padding: 10px;
@@ -166,7 +170,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-content: space-around;
-    background-color: aqua;
+    background-color: $secondary;
     padding:0px;
     &>h4{
         font-size: 15px;
