@@ -10,10 +10,30 @@
 @import 'partials/navbar';
 
 
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+
+//fontawesome
+// @import '~@fortawesome/fontawesome-free/css/all.css';
+
+// Fonts
+//@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// @import 'cart';
+
+
+@import url('https:///fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;800&display=swap');
+
+//font-family: 'Poppins', sans-serif;
+/*Extra-light 200
+Light 300
+Regular 400
+Extra-bold 800*/
+
+//grassetto con 'grazie'
+@import url('https:///fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+//    font-family: 'Lilita One', cursive;
 
 
 .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle{
