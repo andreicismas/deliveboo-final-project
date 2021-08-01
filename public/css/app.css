@@ -4907,7 +4907,7 @@ h6 {
   }
 
   .my-mini-icon {
-    padding: 0;
+    padding: 10px 0 10px 0;
   }
 
   .minus {
@@ -15891,5 +15891,10 @@ Extra-bold 800*/
 
 .enlight {
   color: #fe7101;
+}
+
+a:hover {
+  color: #ff8b6c;
+  text-decoration: none;
 }
 

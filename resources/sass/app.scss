@@ -28,3 +28,8 @@ Extra-bold 800*/
 //    font-family: 'Lilita One', cursive;
 
 .enlight{color: $secondary}
+
+a:hover {
+    color: $tertiary;
+    text-decoration: none;
+}
