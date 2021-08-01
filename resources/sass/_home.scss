@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.payoff {
+    top: 160%;
+}
+
+.one, .two, .three {
+    font-size: x-large;
+}
+
+.crimson {
+    color: crimson;
+}
+
+.app {
+    top: 30%;
+    left: 15%;
+    font-size: x-large;
+}
+
+.bottom-50 {
+    margin-bottom: 50px;
+}
+
+.loop {
+    margin-top: 40px;
+}
+
+.lastul li {
+    padding: 5px 0;
+}
+
+.three {
+    margin-bottom: 20px;
+}
+
+.lipad {
+    padding: 0 20px;
+}
+
+.decnone {
+    text-decoration: none;
+}
+
+.m-top-20 {
+    margin-top: 20px;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.appstore {
+    height: 30px;
+    width: 60px;
+}
+
+.container {
+    width: 100vw;
+    height: 500px;
+}
+
+.loop p {
+    margin-top: 10px;
+}
+
+.email {
+    width: 650px;
+    border-radius: 50px;
+    line-height: 40px;
+    border: none;
+    padding-left: 20px;
+    margin-top: 30px;
+}
+
+.auto {
+    margin: auto;
+}
+
+.wrapper {
+    width: 80%;
+    margin: auto;
+    padding: 60px 0;
+}
+
+.full {
+    width: 100%;
+}
+
+.m-top-150 {
+    margin-top: 150px;
+}
+
+.top-final {
+    top: 15px;
+    right: 10%;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.evenly {
+    justify-content: space-evenly;
+}
+
+.text-center {
+    display: inline-block;
+    text-align: center;
+    /* margin: auto; */
+}
+
+.ordering {
+    width: 100%;
+}
+
+.img-second {
+    width: 100px;
+    height: 150px;
+}
+
+.flex-second {
+    height: 350px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 40px 0;
+}
+
+.redball {
+    height: 100px;
+    width: 100px;
+    color: white;
+    background-color: red;
+    border: 5px solid crimson;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 80px;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.order {
+    background-color: crimson;
+    border-radius: 50px;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: small;
+    font-weight: bold;
+}
+
+.loop h6 {
+    margin-top: 60px;
+}
+
+.special {
+    display: inline-block;
+    width: 650px;
+    border-radius: 50px;
+    border: none;
+    background-color: crimson;
+    margin-top: 30px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.adapt {
+    height: 100%;
+}
+
+.row-between {
+    justify-content: space-between;
+}
+
+.big-box {
+    flex-wrap: wrap;
+    margin: 20px 0;
+    justify-content: space-between;
+}
+
+.box {
+    flex-basis: calc((100% / 4) - 40px);
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.img-box {
+    width: 100%;
+    height: 100%;
+}
+
+.none {
+    display: none;
+    position: absolute;
+}
+
+.img-box:hover {
+    opacity: 0.5;
+    display: inline-block;
+}
+
+.basis-50 {
+    flex-basis: calc(50% - 20px);
+}
+
+.between {
+    justify-content: space-between;
+}
+
+.bot-10 {
+    padding-bottom: 20px;
+}
+
+.white {
+    color: white;
+    justify-content: space-between;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.float {
+    float: left;
+}
+
+.top-60 {
+    margin-top: 20px;
+}
+
+.lilbox {
+    display: inline-block;
+    margin-top: 10px;
+    width: 100px;
+    height: 35px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.box-img {
+    width: 100%;
+    height: 100%;
+}
+

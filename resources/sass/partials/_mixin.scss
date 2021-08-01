@@ -1,0 +1,17 @@
+@mixin full {
+    width: 100%;
+};
+
+@mixin relative {
+    position: relative;
+};
+
+@mixin absolute {
+    position: absolute;
+};
+
+@mixin reset {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class=" d-flex justify-content-center row col-6-md ">
+    <div class="d-flex justify-content-center row col-6-md ">
       <type-filter-button
         :types="typesList"
         v-model="filterList"
@@ -9,7 +9,6 @@
 
 
     <div class="d-flex flex-wrap justify-content-between align-items-center">
-
       <restaurant-card
         v-for="restaurant in restaurantsList" :key="restaurant.id" :name="restaurant.name" :email="restaurant.email"
         :address="restaurant.address"

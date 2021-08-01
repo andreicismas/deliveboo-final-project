@@ -63,14 +63,14 @@
     </style>
     {{-- link boostrap --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/style.css') }}" rel="stylesheet"> --}}
 
     {{-- link cli vue --}}
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body>
     <div id="app">
-        <div class="container">
+        <div>
             <div class="relative">
                 <img src="img/home-background-hero-scaled.jpg" alt="" class="full">
 
@@ -82,9 +82,9 @@
                                     <h1 class="white">DeliveBoo</h1>
                                 </div>
                             </div>
-                            <div>
+                            <div class='row'>
                                 @if (Route::has('login'))
-                                    <div class="top-right links">
+                                    <div class="top-right links col-12-sm">
                                         @auth
                                             <a href="{{ url('/home') }}">Home</a>
                                         @else
@@ -108,80 +108,37 @@
                         <div class="three">
                             <h1 class="white">Delivered</h1>
                         </div>
-                        <div class="four"><a class="order" href="#">VIEW OUR RESTAURANTS TYPES</a></div>
-                        
-                        
-                    </div>
-                    
+                    </div>                    
                 </div>
                 <div>
                     <div class="flex row-between mb-5">
-                         <h1>Restaurant Types</h1><a class="order" href="#">VIEW THE FULL RESTAURANT LIST</a>
+                         <h1>Restaurant Types</h1>
                     </div>
                     <div>
                         <restaurants-index></restaurants-index>
                     </div>
                 </div>
             </div>
-            <div class="wrapper">
-                <div class="flex row-between">
-                    <h1>Restaurant Categories</h1><a class="order" href="#">VIEW THE FULL RESTAURANT LIST</a>
-                </div>
-                <div class="big-box flex">
-                    <div class="box"><img class="img-box relative" src="img/appetizers-menu-background.jpg" alt="">
-                        <h1 class="none">prova</h1>
-                    </div>
-                    <div class="box"><img class="img-box" src="img/pancake-burger-200x150.jpg" alt=""></div>
-                    <div class="box"><img class="img-box" src="img/pizza-menu-background.jpg" alt=""></div>
-                    <div class="box"><img class="img-box" src="img/skin-on-fries-200x286.jpg" alt=""></div>
-                    <div class="box"><img class="img-box" src="img/sides-menu-background.jpg" alt=""></div>
-                    <div class="box"><img class="img-box" src="img/donut-burger-200x286.jpg" alt=""></div>
-                    <div class="box"><img class="img-box" src="img/new-milkshake-menu-200x150.jpg" alt=""></div>
-                    <div class="box"><img class="img-box" src="img/specials-menu-background.jpg" alt=""></div>
-                </div>
-            </div>                      
+
+            <footer>                
             <div class="relative">
-                <img src="img/footer-background-scaled.jpg" alt="" class="full">
+                <img src="img/footer-background-scaled.jpg" alt="">
                 <div class="wrapper absolute top-final flex white top-20">
                     <div class="flex column full">
-                        <div class="flex between full bottom-50">
+                        <div class="flex between full">
                             <div>
-                                <ul class="lastul">
-                                    <li>HOMEPAGE</li>
-                                    <li class="m-top-20"><a class="yellow decnone" href="#">Tipologie ristoranti </a>
-                                    </li>
-                                </ul>
+                                <h2 class="white">Download our</h2>
+                                <h1 class="yellow">Ordering App</h1>
                             </div>
                             <div>
-                                <ul class="lastul">
-                                    <li>PAGINA MENù RISTORATORE PUBBLICA</li>
-                                    <li class="m-top-20"><a class="decnone white" href="#">Menù</a></li>
-                                    <li><a class="decnone white" href="#">Cibi</a></li>
-                                    <li><a class="decnone white" href="#">Quantità</a></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <ul class="lastul">
-                                    <li>PAGINA CARRELLO/CHECKOUT</li>
-                                    <li class="m-top-20"><a class="decnone white" href="#">modifica quantità cibi</a>
-                                    </li>
-                                    <li><a class="decnone white" href="#">Inserisci carta di credito</a></li>
+                                <ul class="lastul">                                    
                                     <li><a class="lilbox" href=""><img class="box-img" src="img/app-store-badge.png"
+                                                alt=""></a></li>
+                                    <li><a class="lilbox" href=""><img class="box-img" src="img/badge-playstore.png"
                                                 alt=""></a></li>                                    
                                 </ul>
-                            </div>
-                            <div>
-                                <ul class="lastul">
-                                    <li>DASHBOARD UTENTE REGISTRATO</li>
-                                    <li>Pagina Lista Piatti</li>
-                                    <li>Pagina Piatto</li>
-                                    <li>Pagina Lista Ordini Ricevuti</li>
-                                    <li>Pagina Statistiche Ordini</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="logo text-center">
-                        </div>
+                            </div>          
+                        </div>                          
                         <div class="loop text-center">
                             <h6><span class="yellow">© Copyright 2012 - 2020 | DeliveBoo Theme by</span><span class="white">
                                     DeliveBoo Fusion
@@ -192,6 +149,7 @@
                     </div>
                 </div>
             </div>
+            </footer> 
         </div>
     </div>
     {{-- <nav></nav>
