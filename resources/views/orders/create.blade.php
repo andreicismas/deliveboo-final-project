@@ -12,13 +12,13 @@
 
         <div class="cart-head">
             
-            <a class="back-bttn" href="{{ route("welcome") }}"><i class="fas fa-long-arrow-alt-left"></i> </a>
+            <a class="back-bttn" href="{{ route("welcome") }}"><i class="fas fa-backspace"></i></i> </a>
 
             <div class="signboard">
                 <h1>{{$restaurant}}</h1>
             </div>
 
-            <input  class="my-submit my-bttns" type="submit" value="ordina" value="#ff00ff">
+            <button class="my-submit my-bttns" type="submit" value="ordina" value="#ff00ff"><i class="fas fa-shopping-bag"></i></button>
         </div>
          
         @foreach ($dishes as $dish)
@@ -27,9 +27,11 @@
 
             <div class="display-dish">
                     <div class="my-overlay"> <h4>{{$dish->name}}</h4> </div>
-
+                    
                 <div class="border-box"> 
-
+                        <div class="my-mini-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
                         <div  class="description">
                             <h6><strong>Ingredienti:</strong></h6>
                             <h6>{{$dish->ingredients}}</h6>

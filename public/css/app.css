@@ -4619,6 +4619,7 @@ readers do not read off random characters that represent icons */
   height: 300px;
   display: flex;
   align-items: center;
+  align-items: baseline;
   background-color: #fffdfa;
 }
 
@@ -4666,6 +4667,13 @@ readers do not read off random characters that represent icons */
   border: 0.5px solid #feae01;
 }
 
+.my-mini-icon {
+  font-size: 25px;
+  color: #ff8b6c;
+  padding-left: 28px;
+  padding-top: 20px;
+}
+
 .display-dish {
   position: relative;
   width: 100%;
@@ -4704,6 +4712,7 @@ readers do not read off random characters that represent icons */
 .description {
   width: 80%;
   height: 100%;
+  text-align: center;
   padding: 20px 40px 20px 40px;
   display: flex;
   flex-direction: column;
