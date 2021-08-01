@@ -15,6 +15,8 @@
         :key="restaurant.id"
         :name="restaurant.name"
         :email="restaurant.email"
+        :img="restaurant.cover_UR"
+
         :address="restaurant.address"
         :link="restaurant.link"
         :types="restaurant.types"
@@ -43,9 +45,7 @@ export default {
   computed: {
     restaurantsList() {
 
-      if(result == null){
-        return "hai finito i ristoranti ...prova a fare meno filtri"
-      }else{
+      
 
         
         if (this.filterList.length == 0) {
@@ -71,7 +71,7 @@ export default {
         }
                     }
       
-    },
+    
   },
   mounted() {
     axios

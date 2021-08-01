@@ -1957,6 +1957,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCard",
   props: {
@@ -1964,7 +1966,17 @@ __webpack_require__.r(__webpack_exports__);
     email: String,
     address: String,
     link: String,
-    types: Array
+    types: Array,
+    img: Text
+  },
+  methods: {
+    getImgUrl: function getImgUrl(url) {
+      if (url) {
+        return url;
+      } else if (url == "") {
+        return "https://via.placeholder.com/286x200.png?text= undefinde img";
+      }
+    }
   }
 });
 
@@ -1981,6 +1993,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _RestaurantCard_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RestaurantCard.vue */ "./resources/js/components/RestaurantCard.vue");
 /* harmony import */ var _TypeFilterButton_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TypeFilterButton.vue */ "./resources/js/components/TypeFilterButton.vue");
+//
+//
 //
 //
 //
@@ -2028,36 +2042,32 @@ __webpack_require__.r(__webpack_exports__);
     restaurantsList: function restaurantsList() {
       var _this = this;
 
-      if (result == null) {
-        return "hai finito i ristoranti ...prova a fare meno filtri";
+      if (this.filterList.length == 0) {
+        return this.allRestaurantsList;
       } else {
-        if (this.filterList.length == 0) {
-          return this.allRestaurantsList;
-        } else {
-          var temp = this.allRestaurantsList;
+        var temp = this.allRestaurantsList;
 
-          var _loop = function _loop(i) {
-            result = [];
-            temp.forEach(function (element) {
-              for (var j = 0; j < element.types.length; j++) {
-                if (element.types[j].id == _this.filterList[i]) {
-                  if (!result.includes(element)) {
-                    result.push(element);
-                  }
+        var _loop = function _loop(i) {
+          result = [];
+          temp.forEach(function (element) {
+            for (var j = 0; j < element.types.length; j++) {
+              if (element.types[j].id == _this.filterList[i]) {
+                if (!result.includes(element)) {
+                  result.push(element);
                 }
               }
-            });
-            temp = result;
-          };
+            }
+          });
+          temp = result;
+        };
 
-          for (var i = 0; i < this.filterList.length; i++) {
-            var result;
+        for (var i = 0; i < this.filterList.length; i++) {
+          var result;
 
-            _loop(i);
-          }
-
-          return result;
+          _loop(i);
         }
+
+        return result;
       }
     }
   },
@@ -37852,6 +37862,11 @@ var render = function() {
           "a",
           { attrs: { href: _vm.link } },
           [
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: { src: _vm.getImgUrl(_vm.img), alt: "" }
+            }),
+            _vm._v(" "),
             _vm._l(_vm.types, function(type) {
               return _c("span", { key: type.id }, [_vm._v(_vm._s(type.name))])
             }),
@@ -37930,6 +37945,7 @@ var render = function() {
           attrs: {
             name: restaurant.name,
             email: restaurant.email,
+            img: restaurant.cover_UR,
             address: restaurant.address,
             link: restaurant.link,
             types: restaurant.types
