@@ -4671,7 +4671,7 @@ h6 {
   width: 80%;
   border-radius: 40px;
   background-color: #fff;
-  border: 0.5px solid #feae01;
+  border: 1px solid #feae01;
 }
 
 .my-mini-icon {
@@ -4686,6 +4686,7 @@ h6 {
   width: 100%;
   max-height: 850px;
   margin: 5px;
+  margin-bottom: 30px;
   padding-left: 50px;
   display: flex;
   flex-wrap: wrap;
@@ -4814,6 +4815,43 @@ h6 {
 
   to {
     width: 10%;
+  }
+}
+
+.hiddenText {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  * {
+    background-color: rgba(0, 0, 255, 0.233);
+  }
+
+  .hiddenText {
+    display: block;
+  }
+
+  .signboard {
+    font-family: "Lilita One", cursive;
+    color: #323335;
+    width: 70%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+    z-index: 3;
+  }
+
+  .my-submit {
+    font-size: larger;
+    width: 250px;
+    min-width: 100px;
+    height: 80px;
+    border-radius: 30px;
+    margin: 30px;
+    color: #fffdfa;
+    background-color: #fe7101;
+    z-index: 3;
   }
 }
 

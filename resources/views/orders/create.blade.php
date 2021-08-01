@@ -18,7 +18,11 @@
                 <h1>{{$restaurant}}</h1>
             </div>
 
-            <button class="my-submit my-bttns" type="submit" value="ordina" value="#ff00ff"><i class="fas fa-shopping-bag"></i></button>
+            <button class="my-submit my-bttns" type="submit" value="ordina" value="#ff00ff">
+                <span class="hiddenText"> Ordina ora!</span>
+                <i class="fas fa-shopping-bag"></i>
+            </button>
+
         </div>
          
         @foreach ($dishes as $dish)
