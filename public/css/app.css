@@ -1,5 +1,6 @@
-@import url(https:///fonts.googleapis.com/css2?family=Questrial&display=swap);@charset "UTF-8";
+@import url(https:///fonts.googleapis.com/css2?family=Poppins:wght@200;
 
+300;400;800&display=swap);@import url(https:///fonts.googleapis.com/css2?family=Lilita+One&display=swap);@charset "UTF-8";
 .display {
   display: flex;
   flex-direction: column;
@@ -7,9 +8,8 @@
 }
 
 .cart-head {
+  height: 300px;
   display: flex;
-  justify-content: space-between;
-  padding-right: 100px;
   align-items: center;
   background-color: #fffdfa;
 }
@@ -20,6 +20,7 @@
 }
 
 .back-bttn {
+  width: 5%;
   height: 100%;
   font-size: 40px;
   padding-left: 10px;
@@ -27,13 +28,18 @@
 }
 
 .signboard {
+  font-family: "Lilita One", cursive;
+  color: #323335;
+  width: 80%;
   height: 100px;
   display: flex;
   align-items: center;
+  padding-left: 100px;
   z-index: 3;
 }
 
 .my-submit {
+  font-size: larger;
   width: 200px;
   min-width: 100px;
   height: 80px;
@@ -248,7 +254,7 @@ input[type=number] {
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Questrial", sans-serif;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -280,7 +286,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Questrial", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -6621,7 +6627,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Questrial", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -6746,7 +6752,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Questrial", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -11155,4 +11161,9 @@ a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+
+/*Extra-light 200
+Light 300
+Regular 400
+Extra-bold 800*/
 

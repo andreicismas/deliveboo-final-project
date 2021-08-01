@@ -14,7 +14,7 @@
             <a class="back-bttn" href="{{ route("welcome") }}"> < </a>
 
             <div class="signboard">
-                <h2>{{$restaurant}}</h2>
+                <h1>{{$restaurant}}</h1>
             </div>
 
             <input  class="my-submit my-bttns" type="submit" value="ordina" value="#ff00ff">

@@ -1,11 +1,25 @@
 // Fonts
 //@import url('https://fonts.googleapis.com/css?family=Nunito');
-@import url('https:///fonts.googleapis.com/css2?family=Questrial&display=swap');
-
 
 // Variables
 @import 'variables';
+
 @import 'cart';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+
+@import url('https:///fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;800&display=swap');
+
+//font-family: 'Poppins', sans-serif;
+/*Extra-light 200
+Light 300
+Regular 400
+Extra-bold 800*/
+
+
+//grassetto con 'grazie'
+@import url('https:///fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+//    font-family: 'Lilita One', cursive;
