@@ -1,30 +1,29 @@
 h1, p, h3, h6{ color: $main-text}
 
 //div generale della pagina
-.display{
+.display {
     display: flex;
     flex-direction: column;
     background-color: $tertiary;
 }
+
 //testata pagina
-.cart-head{
+.cart-head {
     height: 200px;
     display: flex;
     align-items: center;
     align-items: baseline;
     background-color: $falsewhite;
-
 }
 
 //classe generale ombra bottoni
-.my-bttns{
+.my-bttns {
     border: 0px;
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.39);
-    
-    }
+}
 
 //torna indietro, provvisorio
-.back-bttn{
+.back-bttn {
     width: 5%;
     height: 100%;
     font-size: 40px;
@@ -33,7 +32,7 @@ h1, p, h3, h6{ color: $main-text}
 }
 
 //nome ristoratore
-.signboard{
+.signboard {
     font-family: 'Lilita One', cursive;
    color: $main-text;
    width: 80%;
@@ -45,7 +44,7 @@ h1, p, h3, h6{ color: $main-text}
 }
 
 //bottone submit
-.my-submit{
+.my-submit {
     font-size: larger;
     width:200px;
     min-width:100px;
@@ -58,23 +57,8 @@ h1, p, h3, h6{ color: $main-text}
     z-index: 3;
  }
 
- //bordo per descrizione ecounter
-.border-box{
-    display: flex;
-    width: 80%;
-    border-radius: 40px;
-    background-color: #fff;
-    border: 1px solid $primary;
-}
-    .my-mini-icon{
-        font-size: 25px;
-        color: $tertiary;
-        padding-left: 28px;
-        padding-top: 20px;
-    }
-
- //card piatto
-.display-dish{
+  //card piatto
+.display-dish {
     position: relative;
     width: 100%;
     //height: 250px;
@@ -95,7 +79,7 @@ h1, p, h3, h6{ color: $main-text}
  }
 
  //overlay con nome
- .my-overlay{
+ .my-overlay {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -107,8 +91,10 @@ h1, p, h3, h6{ color: $main-text}
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
     color: $falsewhite;
     background-color: $primary;
+    cursor: pointer;
     
     &>h4{
         font-size: 40px;
@@ -116,9 +102,24 @@ h1, p, h3, h6{ color: $main-text}
 
 }
 
+ //bordo per descrizione ecounter
+.border-box {
+    display: flex;
+    width: 80%;
+    border-radius: 40px;
+    background-color: #fff;
+    border: 1px solid $primary;
+}
+    .my-mini-icon{
+        font-size: 25px;
+        color: $tertiary;
+        padding-left: 28px;
+        padding-top: 20px;
+    }
+
+
 //box descrizione piatto
- .description{
-     
+ .description {
     width: 80%;
     height: 100%;
     text-align: center;
@@ -130,8 +131,9 @@ h1, p, h3, h6{ color: $main-text}
     align-content: center;
     align-items: center;
 }
+
 //box contatore dei piatti
-.counter-div{
+.counter-div {
     display: flex;
     align-items: center;
     width: 10%;
@@ -144,7 +146,7 @@ h1, p, h3, h6{ color: $main-text}
     }
 
 //raccoglitore pulsanti e input numeri
-.tag-counter{
+.tag-counter {
     width: 60px;
     height: 200px;
     font-size: 40px;
@@ -154,7 +156,8 @@ h1, p, h3, h6{ color: $main-text}
     justify-content: center;
     align-items: center;
     background-color: $primary;
-    
+    cursor: pointer;
+
     &>*{
         padding: 10px;
         color: $falsewhite;
@@ -162,7 +165,7 @@ h1, p, h3, h6{ color: $main-text}
 }
 
 //input numeri
-.my-counter-input{
+.my-counter-input {
    width: 100px;
    height: 60px;
    font-size: 30px;
@@ -173,7 +176,7 @@ h1, p, h3, h6{ color: $main-text}
  }
 
 //stile che switcha con l'overlay (vedi app js)
-.hide{
+.hide {
     width: 10%;
     border-radius: 10px;
     font-size: 20px;
@@ -185,11 +188,10 @@ h1, p, h3, h6{ color: $main-text}
     align-content: space-around;
     background-color: $secondary;
     padding:0px;
-    &>h4{
-        font-size: 15px;
-        transform: rotate(90deg);
-    }
-    
+        &>h4{
+            font-size: 15px;
+            transform: rotate(90deg);
+        }
 }
     @keyframes hide {
         from {width: 100%;}
@@ -197,48 +199,104 @@ h1, p, h3, h6{ color: $main-text}
         to {width: 10%;}
     }
 
+.hiddenText {
+    display: none;
+}
 
-    .hiddenText{
-        display: none;
-       }
+.col-to-row{
+display: flex;
+flex-direction: column;
+}
+
+//-----------------------------------------//
+
+@media screen and (min-width: 992px) {
 
 
-    @media screen and (min-width: 992px) {
-        * {
-          background-color: rgba(0, 0, 255, 0.233);
+    .hiddenText {
+        display: block;
+    }
+
+    .col-to-row{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
         }
 
-        .hiddenText{
-         display: block;
+    .signboard {
+        width: 70%;
+    }
+
+    .display-dish {
+       
+        margin-right: 30px;
+        width: 30%;
+        height: 420px;
+
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-content: center;
+        align-items: flex-start;
+    }
+
+    .my-submit { width:250px;}
+
+    .border-box {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 40px;
+        background-color: #fff;
+        border: 1px solid $primary;
+    }
+        .my-mini-icon{
+            font-size: 25px;
+            color: $tertiary;
+            padding-left: 18px;
+            padding-top: 10px;
         }
 
-        .signboard{
-            font-family: 'Lilita One', cursive;
-           color: $main-text;
-           width: 70%;
-           height: 100px;
-           display: flex;
-           align-items: center;
-           padding-left: 100px;
-           z-index: 3;
-        }
+    .description {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding: 5px 10px 5px 10px;
+        display:flex;
+        
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
 
-        .my-submit{
-            font-size: larger;
-            width:250px;
-            min-width:100px;
-            height: 80px;
-            
-            border-radius: 30px;
-            margin: 30px;
-            color: $falsewhite;
-            background-color: $secondary;
-            z-index: 3;
-        }
-      }
+    .tag-counter {
+    width: 220px;
+    height: 60px;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-left: 5px;
+    }
 
+    .counter-div{
+        justify-content: center;
+        align-items: center;
+    }
 
+    .my-mini-icon{
+        padding: 0;
+    }
 
+    .minus{
+        font-size: larger;
+    }
+
+}
 /*-------------- nasconde frecce input number su più browser --------*/
 
 /* Chrome, Safari, Edge, Opera */
