@@ -50312,6 +50312,8 @@ Vue.component('display-button', __webpack_require__(/*! ./components/DisplayButt
 var app = new Vue({
   el: '#app'
 });
+/*---- Cambio stile div al click----*/
+
 window.addEventListener("load", function () {
   var myOverlay = document.querySelectorAll(".my-overlay");
   myOverlay.forEach(function (div) {
@@ -50331,6 +50333,20 @@ window.addEventListener("load", function () {
         })
     })
 });  */
+
+/*--
+window.addEventListener("load", function () {
+
+    const myOverlay= document.querySelectorAll(".my-overlay");
+    myOverlay.forEach(div => {
+  
+        div.addEventListener("click", () => { 
+            div.classList.add('hide');
+        })
+    
+    })
+    
+}); -*/
 
 /***/ }),
 

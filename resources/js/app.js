@@ -39,6 +39,7 @@ const app = new Vue({
 });
 
 
+/*---- Cambio stile div al click----*/
 
 window.addEventListener("load", function () {
 
@@ -66,4 +67,16 @@ window.addEventListener("load", function () {
     })
 });  */
 
+/*--
+window.addEventListener("load", function () {
 
+    const myOverlay= document.querySelectorAll(".my-overlay");
+    myOverlay.forEach(div => {
+  
+        div.addEventListener("click", () => { 
+            div.classList.add('hide');
+        })
+    
+    })
+    
+}); -*/

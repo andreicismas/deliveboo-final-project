@@ -34,8 +34,8 @@
                         </div>
                         <div  class="description">
                             <h6><strong>Ingredienti:</strong></h6>
-                            <h6>{{$dish->ingredients}}</h6>
-                            <h6>{{$dish->description}}</h6>
+                            <p>{{$dish->ingredients}}</p>
+                            <p>{{$dish->description}}</p>
                             <h3>{{$dish->price}} €</h3>
                         </div>
 
