@@ -11,7 +11,8 @@
             @csrf
 
         <div class="cart-head">
-            <a class="back-bttn" href="{{ route("welcome") }}"> < </a>
+            
+            <a class="back-bttn" href="{{ route("welcome") }}"><i class="fas fa-long-arrow-alt-left"></i> </a>
 
             <div class="signboard">
                 <h1>{{$restaurant}}</h1>
