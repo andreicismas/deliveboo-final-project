@@ -15889,6 +15889,10 @@ Light 300
 Regular 400
 Extra-bold 800*/
 
+a {
+  display: flex;
+}
+
 .enlight {
   color: #fe7101;
 }
