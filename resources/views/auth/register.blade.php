@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Register Your Restaurant' ) }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -94,7 +94,7 @@
 
                         {{--Tipologie di ristorante--}}
 
-                        <div class="form-group row">
+                        <div class="form-group row ">
                             <label>Tipologie di ristorante</label>  
                             @foreach($types as $type)
 
