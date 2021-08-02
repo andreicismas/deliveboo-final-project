@@ -60,12 +60,10 @@ Route::post("/payment", function (Request $request) {
     $restaurant_id = $request->restaurant_id;
     $allRestaurantDishes = Dish::where("user_id", $restaurant_id)->get();
 
-
-// validazione quantità
-$request->validate([
+    // validazione quantità
+     $request->validate([
     'dishes.*' => 'digits_between:1,99',
-]);
-    
+    ]);
 
     // calcolo totale
     $amount = 0;
@@ -74,19 +72,20 @@ $request->validate([
                     ->where("id", $dish_id)
                     ->first();
         $amount += $temp->price * $quantity;
-        //dd($amount);
     }
-    
-//reindirizza alla create se l'ordine è vuoto
-    if($amount === 0.0){ return back(); }
 
-    return view("payment", [
-        "token" => $token,
-        "ordered_dishes" => $request->dishes,
-        "allRestaurantDishes" => $allRestaurantDishes,
-        "amount" => $amount
-    ]);
-})->name("payment");
+    if($amount > 0){
+
+        return view("payment", [
+            "token" => $token,
+            "ordered_dishes" => $request->dishes,
+            "allRestaurantDishes" => $allRestaurantDishes,
+            "amount" => $amount
+        ]);
+    }else{
+         return back()->withErrors('Il tuo ordine non contiene piatti!');
+        }
+    })->name("payment");
 
 Route::post('/checkout', function (Request $request) {
     $gateway = new Braintree\Gateway([

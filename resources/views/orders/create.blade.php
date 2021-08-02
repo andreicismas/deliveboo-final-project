@@ -2,7 +2,9 @@
 @section('content')
 
     @if (count($errors->all()) > 0)
-          <p>Si è verificato un errore</p>
+            @foreach ($errors->all() as $error)
+                <h5>{{ $error }}</h5>
+            @endforeach
     @endif
 
     <form action="{{ route('payment') }}" method="post">
