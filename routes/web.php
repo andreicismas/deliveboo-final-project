@@ -138,9 +138,8 @@ Route::post('/checkout', function (Request $request) {
             });
         //dd($dishes);
         $newOrder->dishes()->sync($dishes);
-        return redirect()->route('welcome');
-        // 
 
+        return redirect()->route('payment-successful', ["order" => $newOrder]);
     } else {
         $errorString = "";
 
@@ -151,6 +150,10 @@ Route::post('/checkout', function (Request $request) {
         return back()->withErrors('An error occurred with the message: ' . $result->message);
     }
 })->name("checkout");
+
+Route::get('/payment-successful/{order}', function (Order $order) {
+    return view('paymentSuccessful', ["order" => $order]);
+})->name("payment-successful");
 
 // //valutare se e come passare lo user_id come argomento
 // Route::get("/dishes/user/{user}", "DishController@index")->name("dishes.index"); 
