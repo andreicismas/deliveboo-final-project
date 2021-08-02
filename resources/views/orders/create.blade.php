@@ -1,11 +1,15 @@
 @extends('layouts.app')
 @section('content')
 
+
     @if (count($errors->all()) > 0)
+    <div class="errorDiv">
             @foreach ($errors->all() as $error)
                 <h5>{{ $error }}</h5>
             @endforeach
+    </div>
     @endif
+
 
     <form action="{{ route('payment') }}" method="post">
     @csrf

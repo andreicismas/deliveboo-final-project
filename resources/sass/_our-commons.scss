@@ -2,6 +2,20 @@
 
 .enlight{color: $secondary}
 
+
+.errorDiv{
+    margin-top: 70px;
+    margin-bottom: 50px;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 20px 0 20px 0;
+    border: 2px solid $secondary;
+    background-color: white;
+    color: $secondary;
+    text-align: center;
+
+}
+
 a:hover{
     color: $tertiary;
     text-decoration: none;

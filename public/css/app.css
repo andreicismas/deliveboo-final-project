@@ -4615,6 +4615,18 @@ readers do not read off random characters that represent icons */
   color: #fe7101;
 }
 
+.errorDiv {
+  margin-top: 70px;
+  margin-bottom: 50px;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding: 20px 0 20px 0;
+  border: 2px solid #fe7101;
+  background-color: white;
+  color: #fe7101;
+  text-align: center;
+}
+
 a:hover {
   color: #ff8b6c;
   text-decoration: none;
