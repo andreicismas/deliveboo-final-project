@@ -3,10 +3,12 @@
     <div class="card" style="width: 18rem; margin: 5px">
       <a :href="link">
       <img :src="getImgUrl(img)" class="card-img-top" alt="">
+      
 
         <span v-for="type in types" :key="type.id">{{ type.name }}</span>
         <div class="card-body">
           <h5 class="card-title">{{ name }}</h5>
+          <h5 class="card-title">{{ indice }}</h5>
           <em class="card-title">{{ email }}</em
           ><br />
           <em class="card-title">{{ address }}</em>
@@ -17,6 +19,15 @@
 </template>
 
 <script>
+    //   import * as FilePond from 'filepond';
+
+    //   const pond = FilePond.create({
+    //     multiple: true,
+    //     name: 'filepond'
+    // });
+
+    // document.body.appendChild(pond.element);
+
 export default {
   name: "RestaurantCard",
   props: {
@@ -26,16 +37,14 @@ export default {
     link: String,
     types: Array,
     img:Text,
+    indice:Number
   },
   methods:{
-    getImgUrl(url){
 
-      if(url){
-        return  url
-      }else if(!url){
-        return 'http://127.0.0.1:8000/storage/covers/' + $user.id + "/" + $url
-        }      
-        return "https://via.placeholder.com/286x200.png?text= undefinde img"
+
+    getImgUrl(url){
+  
+      return '/storage/covers/' + this.indice + '/' + url
     }
   }
 };

@@ -14,15 +14,15 @@
         v-for="restaurant in restaurantsList"
         :key="restaurant.id"
         :name="restaurant.name"
+        :indice="restaurant.id"
         :email="restaurant.email"
         :img="restaurant.cover_UR"
-        
-
         :address="restaurant.address"
         :link="restaurant.link"
         :types="restaurant.types"
       >
     </restaurant-card>
+    
     </div>
   </div>
 </template>

@@ -1959,6 +1959,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//   import * as FilePond from 'filepond';
+//   const pond = FilePond.create({
+//     multiple: true,
+//     name: 'filepond'
+// });
+// document.body.appendChild(pond.element);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCard",
   props: {
@@ -1967,17 +1975,12 @@ __webpack_require__.r(__webpack_exports__);
     address: String,
     link: String,
     types: Array,
-    img: Text
+    img: Text,
+    indice: Number
   },
   methods: {
     getImgUrl: function getImgUrl(url) {
-      if (url) {
-        return url;
-      } else if (!url) {
-        return 'http://127.0.0.1:8000/storage/covers/' + $user.id + "/" + $url;
-      }
-
-      return "https://via.placeholder.com/286x200.png?text= undefinde img";
+      return '/storage/covers/' + this.indice + '/' + url;
     }
   }
 });
@@ -37879,6 +37882,10 @@ var render = function() {
                 _vm._v(_vm._s(_vm.name))
               ]),
               _vm._v(" "),
+              _c("h5", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(_vm.indice))
+              ]),
+              _vm._v(" "),
               _c("em", { staticClass: "card-title" }, [
                 _vm._v(_vm._s(_vm.email))
               ]),
@@ -37947,6 +37954,7 @@ var render = function() {
           key: restaurant.id,
           attrs: {
             name: restaurant.name,
+            indice: restaurant.id,
             email: restaurant.email,
             img: restaurant.cover_UR,
             address: restaurant.address,

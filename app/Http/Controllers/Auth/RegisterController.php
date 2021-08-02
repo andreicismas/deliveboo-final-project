@@ -102,7 +102,6 @@ class RegisterController extends Controller
         if (request()->hasFile('cover_UR')){
             $cover_UR = request()->file('cover_UR')->getClientOriginalName();
             request()->file('cover_UR')->storeAs('covers',$user->id.'/'. $cover_UR, '');
-
             $user->update(['cover_UR'=>$cover_UR]);
         }
 
