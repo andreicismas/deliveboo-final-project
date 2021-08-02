@@ -15,17 +15,21 @@
     @csrf
 
         <div class="cart-head">
-            
-            <a class="back-bttn" href="{{ route("welcome") }}"><i class="fas fa-backspace"></i></i> </a>
+
+            <div class="divBack">
+              <a class="back-bttn" href="{{ route("welcome") }}"><i class="fas fa-backspace"></i></i> </a>
+            </div>
 
             <div class="signboard">
                 <h1>{{$restaurant}}</h1>
             </div>
 
-            <button class="my-submit my-bttns" type="submit" value="ordina" value="#ff00ff">
-                <span class="hiddenText"> Ordina adesso!</span>
-                <i class="fas fa-shopping-bag"></i>
-            </button>
+            <div class="box-submit">
+                <button class="my-submit my-bttns" type="submit" value="ordina" value="#ff00ff">
+                    <span class="hiddenText"> Ordina adesso!</span>
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+            </div>
 
         </div>
 
