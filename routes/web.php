@@ -53,8 +53,6 @@ Route::post("/payment", function (Request $request) {
         'privateKey' => config('services.braintree.privateKey')
     ]);
 
-    // validazione dati request
-
     $token = $gateway->ClientToken()->generate();
 
     // prendo i piatti del ristorante
@@ -65,7 +63,7 @@ Route::post("/payment", function (Request $request) {
     $restaurant = User::where("id", $restaurant_id)->first();
     $restaurantSlug = $restaurant->slug;
 
-    // calcolo totale
+    // calcolo il totale
     $amount = 0;
     foreach ($request->dishes as $dish_id => $quantity) {
         $temp = Dish::where("user_id", $restaurant_id)
@@ -97,7 +95,6 @@ Route::post('/checkout', function (Request $request) {
     $name = $request->customer_name;
     $mail = $request->customer_mail;
     $phone = $request->customer_phone_number;
-    // $address = $request->delivery_address;
 
     $result = $gateway->transaction()->sale([
         'amount' => $amount,
@@ -154,14 +151,3 @@ Route::post('/checkout', function (Request $request) {
 Route::get('/payment-successful/{order}', function (Order $order) {
     return view('paymentSuccessful', ["order" => $order]);
 })->name("payment-successful");
-
-// //valutare se e come passare lo user_id come argomento
-// Route::get("/dishes/user/{user}", "DishController@index")->name("dishes.index"); 
-
-//Route::get("/dishes", "DishController@index")->name("dishes.index"); 
-//Route::post("/dishes", "DishController@store")->name("dishes.store");
-//Route::get("/dishes/create", "DishController@create")->name("dishes.create");
-//Route::get("/dishes/{dish}", "DishController@show")->name("dishes.show");
-//Route::match(["put", "patch"], "/dishes/{dish}", "DishController@update")->name("dishes.update");
-//Route::delete("/dishes/{dish}", "DishController@destroy")->name("dishes.destroy");
-//Route::get("/dishes/{dish}/edit", "DishController@edit")->name("dishes.edit");
