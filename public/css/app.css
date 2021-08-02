@@ -4729,12 +4729,6 @@ icona usata da me -> <i class="fas fa-backspace"> */
     padding: 0%;
   }
 
-  .my-nav {
-    background-color: rgba(255, 0, 0, 0.185);
-    height: 100px;
-    border-bottom-right-radius: 80px 120px;
-  }
-
   .how {
     background-color: rgba(0, 255, 191, 0.185);
     width: 30%;
@@ -4747,6 +4741,12 @@ icona usata da me -> <i class="fas fa-backspace"> */
 @media screen and (min-width: 764px) {
   .my-toggler {
     display: none;
+  }
+
+  .my-nav {
+    background-color: rgba(255, 0, 0, 0.185);
+    height: 100px;
+    border-bottom-right-radius: 80px 150px;
   }
 }
 

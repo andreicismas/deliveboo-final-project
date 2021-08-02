@@ -47,11 +47,7 @@
         padding: 0%;
     }
 
-    .my-nav{
-        background-color: rgba(255, 0, 0, 0.185);
-        height: 100px;
-        border-bottom-right-radius: 80px 120px;
-    }
+    
 
     
     .how{
@@ -73,5 +69,11 @@
 @media screen and (min-width: 764px) {
     .my-toggler{
         display: none;
+    }
+
+    .my-nav{
+        background-color: rgba(255, 0, 0, 0.185);
+        height: 100px;
+        border-bottom-right-radius: 80px 150px;
     }
 }
