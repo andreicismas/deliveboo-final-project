@@ -76,10 +76,10 @@
 
                 <div class="wrapper absolute top-final">
                     <header>
-                        <div class="navbar flex between">
-                            <div class="payoff  flex column">
+                        <div class="flex between">
+                            <div class="payoff flex column">
                                 <div class="three">
-                                    <h1 class="white">DeliveBoo</h1>
+                                    <h1 class="white">Delive<span class='inline-block'><h1 class="primary">Boo</h1></span></h1>
                                 </div>
                             </div>
                             <div class='row'>
@@ -102,19 +102,19 @@
                         <div class="one">
                             <h3 class="white">Hungry?</h3>
                         </div>
-                        <div class="two yellow">
-                            <h1 class="yellow">Great food</h1>
+                        <div class="two primary">
+                            <h1 class="primary">Great food</h1>
                         </div>
                         <div class="three">
                             <h1 class="white">Delivered</h1>
                         </div>
                     </div>                    
                 </div>
-                <div>
-                    <div class="flex row-between mb-5">
-                         <h1>Restaurant Types</h1>
+                <div class="container">
+                    <div class="m-top-20 flex row-between mb-5">
+                         <h1 class="$tertiary">Restaurant Types</h1>
                     </div>
-                    <div>
+                    <div >
                         <restaurants-index></restaurants-index>
                     </div>
                 </div>
@@ -128,7 +128,7 @@
                         <div class="flex between full">
                             <div>
                                 <h2 class="white">Download our</h2>
-                                <h1 class="yellow">Ordering App</h1>
+                                <h1 class="primary">Ordering App</h1>
                             </div>
                             <div>
                                 <ul class="lastul">                                    
@@ -139,10 +139,10 @@
                                 </ul>
                             </div>          
                         </div>                          
-                        <div class="loop text-center">
-                            <h6><span class="yellow">© Copyright 2012 - 2020 | DeliveBoo Theme by</span><span class="white">
+                        <div class="text-center">
+                            <h6><span class="primary">© Copyright 2012 - 2020 | DeliveBoo Theme by</span><span class="white">
                                     DeliveBoo Fusion
-                                </span><span class="yellow">| All Rights Reserved | Powered By</span><span
+                                </span><span class="primary">| All Rights Reserved | Powered By</span><span
                                     class="white"> Team Heroes</span></h6>
                             </span>
                         </div>

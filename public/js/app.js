@@ -2003,7 +2003,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
  // import axios from "axios";
 
@@ -37898,7 +37897,7 @@ var render = function() {
   return _c("div", [
     _c(
       "div",
-      { staticClass: "d-flex justify-content-center row col-6-md " },
+      { staticClass: "d-flex justify-content-center row col-6-md" },
       [
         _c("type-filter-button", {
           attrs: { types: _vm.typesList },

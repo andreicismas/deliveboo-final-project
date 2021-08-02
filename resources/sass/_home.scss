@@ -5,26 +5,28 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.yellow {
-    color: yellow;
+.primary {
+    color: $primary;
+}
+
+.secondary {
+    color: $secondary;
+}
+
+.tertiary {
+    color: $tertiary;
 }
 
 .payoff {
-    top: 160%;
+    top: 150%;
 }
 
 .one, .two, .three {
     font-size: x-large;
 }
 
-.crimson {
-    color: crimson;
-}
-
-.app {
-    top: 30%;
-    left: 15%;
-    font-size: x-large;
+.inline-block {
+    display: inline-block;
 }
 
 .bottom-50 {
@@ -33,10 +35,6 @@
 
 .lastul li {
     padding: 5px 0;
-}
-
-.three {
-    margin-bottom: 20px;
 }
 
 .decnone {
@@ -58,11 +56,7 @@
 
 .container {
     width: 100vw;
-    height: 500px;
-}
-
-.loop p {
-    margin-top: 10px;
+    height: 100vh;
 }
 
 .email {
@@ -86,10 +80,6 @@
 
 .full {
     width: 100%;
-}
-
-.m-top-150 {
-    margin-top: 150px;
 }
 
 .top-final {
@@ -120,7 +110,6 @@
 .text-center {
     display: inline-block;
     text-align: center;
-    /* margin: auto; */
 }
 
 .ordering {

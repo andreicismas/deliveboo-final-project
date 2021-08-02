@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 @import 'partials/mixin';
-@import 'home';
+
 @import 'partials/common';
 @import 'partials/variables';
 @import 'partials/footer';
 @import 'partials/header';
 @import 'partials/navbar';
-
+@import 'home';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
