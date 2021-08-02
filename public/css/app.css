@@ -4738,6 +4738,13 @@ icona usata da me -> <i class="fas fa-backspace"> */
   }
 }
 
+.my-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 @media screen and (min-width: 764px) {
   .my-toggler {
     display: none;
