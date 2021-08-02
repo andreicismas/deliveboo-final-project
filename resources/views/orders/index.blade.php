@@ -20,13 +20,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-
-
-
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" class="orders-part">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -86,43 +83,49 @@
         </nav>
 
         <main class="py-4">
-            <div class="container">
-                <a href="{{ route('home') }}">Indietro</a>
+            <div class="container-fluid">
+                <div class="my-container-flex flex-between my-link-container">
+                    <a href="{{ route('home') }}"><i class="fas fa-backspace"></i></a>
+                    <a href="#chartY"><i class="fas fa-chart-line" aria-hidden="true"></i></a>
+                </div>
 
                 @if (count($orders) == 0)
-                    <h3>Non ci sono ordini da mostrare</h3>
+                    <h3 class="center">Non ci sono ordini da mostrare!</h3>
                 @else
-                    <table>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
                         <thead>
-                            <th>ID Ordine</th>
+                            <th>Data</th>
                             <th>Nome Cliente</th>
                             <th>Indirizzo Cliente</th>
                             <th>Totale</th>
+                            <th>Info</th>
                         </thead>
                         @foreach ($orders as $order)
                             <tr>
-                                <td>{{ $order->id }}</td>
+                                <td>{{ $order->created_at }}</td>
                                 <td>{{ $order->customer_name }}</td>
                                 <td>{{ $order->delivery_address }}</td>
-                                <td>{{ $order->payment_amount }}</td>
+                                <td>{{ $order->payment_amount }}€</td>
                                 <td><a href="{{ route('orders.show', ['order' => $order->id]) }}">Leggi tutto</a></td>
                             </tr>
                         @endforeach
                     </table>
+                </div>
                 @endif
             </div>
         </main>
     </div>
 
-
-    {{-- container da fare position relative per rendere responsive il chart --}}
-    <h3 style="text-align: center">Riepilogo Ordini</h3>
-    <div class="chart-container" style="width: 800px; height: 500px; margin: auto">
-        <canvas id="chartY"></canvas>
-    </div>
-    <h3 style="text-align: center">Riepilogo dell'Ultimo Anno</h3>
-    <div class="chart-container" style="width: 800px; height: 500px; margin: auto">
-        <canvas id="chartM"></canvas>
+    <div class="container-fluid">
+        <h3 class="center">Riepilogo Ordini</h3>
+        <div class="chart-container">
+            <canvas id="chartY"></canvas>
+        </div>
+        <h3 class="center">Riepilogo dell'Ultimo Anno</h3>
+        <div class="chart-container">
+            <canvas id="chartM"></canvas>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -138,7 +141,7 @@
                         borderColor: 'rgb(255, 99, 132)',
                         data: {!! json_encode($ordersByYear) !!},
                     }, {
-                        label: 'Incassi',
+                        label: 'Incassi (€)',
                         backgroundColor: 'green',
                         borderColor: 'green',
                         data: {!! json_encode($profitByYear) !!},
@@ -164,7 +167,7 @@
                         borderColor: 'rgb(255, 99, 132)',
                         data: {!! json_encode($ordersByMonth) !!},
                     }, {
-                        label: 'Incassi',
+                        label: 'Incassi (€)',
                         backgroundColor: 'green',
                         borderColor: 'green',
                         data: {!! json_encode($profitByMonth) !!},

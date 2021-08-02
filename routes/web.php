@@ -3,6 +3,7 @@
 use App\Type;
 use App\Order;
 use App\Dish;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -60,6 +61,10 @@ Route::post("/payment", function (Request $request) {
     $restaurant_id = $request->restaurant_id;
     $allRestaurantDishes = Dish::where("user_id", $restaurant_id)->get();
 
+    // prendo lo slug per poter tornare indietro
+    $restaurant = User::where("id", $restaurant_id)->first();
+    $restaurantSlug = $restaurant->slug;
+
     // calcolo totale
     $amount = 0;
     foreach ($request->dishes as $dish_id => $quantity) {
@@ -73,7 +78,8 @@ Route::post("/payment", function (Request $request) {
         "token" => $token,
         "ordered_dishes" => $request->dishes,
         "allRestaurantDishes" => $allRestaurantDishes,
-        "amount" => $amount
+        "amount" => $amount,
+        "restaurantSlug" => $restaurantSlug
     ]);
 })->name("payment");
 
