@@ -1,20 +1,92 @@
+//fontawesome
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+//@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
 @import 'variables';
+
+@import 'cart';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 
-.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle{
-    background-color: rgb(0, 195, 255);
-}
+
+@import url('https:///fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;800&display=swap');
+
+//font-family: 'Poppins', sans-serif;
+/*Extra-light 200
+Light 300
+Regular 400
+Extra-bold 800*/
+
+
+//grassetto con 'grazie'
+@import url('https:///fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+//    font-family: 'Lilita One', cursive;
+
+.enlight{color: $secondary}
+
+// a:hover {
+//     color: $tertiary;
+//     text-decoration: none;
+// };
+
+
+// appena funziona creo is scss folder
+    nav{
+        background-color: $primary;
+    }
+    .navbar-light .navbar-nav .bg_style:hover, .navbar-light .navbar-nav .nav-link:focus {
+        color: red ;
+        font-size: 16px;
+        transition: 0.7s;
+    }
+    .navbar-light .bg_style:hover, .navbar-light .navbar-brand:focus {
+        color: $tertiary ;
+    }
+    
+    body{
+        
+            .img_bg_style_register{
+                height: 100vh;
+                background-image: url("public/img/background_log_reg.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        
+    }
+    
+   
+    @media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
+        body {
+            .img_bg_style_register{
+                height: 100%;
+               
+               
+            } 
+            .img_bg_style_login{
+                height: 100vh;
+               
+               
+            }
+        }
+    }
+    @media (min-width:577px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+        body {
+            .img_bg_style_register{
+                height: 100vh;
+               
+               
+            }
+        }
+    }
 
 
 
-.back_ground_img{
-// background-image:'{{asset("/img_deliveboo/img_deliveboo.png")}}' ;
+        
 
-}
+
+    

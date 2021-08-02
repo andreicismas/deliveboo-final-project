@@ -14,7 +14,7 @@
         "bootstrap": "^4.0.0",
         "cross-env": "^7.0",
         "jquery": "^3.2",
-        "laravel-mix": "^5.0.1",
+        "laravel-mix": "^5.0.9",
         "lodash": "^4.17.13",
         "popper.js": "^1.12",
         "resolve-url-loader": "^2.3.1",
@@ -24,8 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "chart.js": "^3.5.0",
-        "filepond": "^4.28.2",
-        "vue-filepond": "^7.0.0"
+        "@fortawesome/fontawesome-free": "^5.15.3",
+        "chart.js": "^3.5.0"
     }
 }
