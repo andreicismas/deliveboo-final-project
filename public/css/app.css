@@ -4723,29 +4723,30 @@ icona usata da me -> <i class="fas fa-backspace"> */
   background-color: #fe7101;
 }
 
-@media screen and (min-width: 992px) {
-  .iddenText {
-    display: block;
+@media screen and (min-width: 550px) {
+  .container {
+    margin: 0%;
+    padding: 0%;
+  }
+
+  .my-nav {
+    background-color: rgba(255, 0, 0, 0.185);
+    height: 100px;
+    border-bottom-right-radius: 80px 120px;
+  }
+
+  .how {
+    background-color: rgba(0, 255, 191, 0.185);
+    width: 30%;
+    margin: 0;
+    height: 100px;
+    border-radius: 20px;
   }
 }
 
-.y-nav {
-  background-color: rgba(255, 0, 0, 0.185);
-  height: 100px;
-  border-bottom-right-radius: 80px 120px;
-}
-
-.how {
-  background-color: rgba(0, 255, 191, 0.185);
-  width: 30%;
-  margin: 0;
-  height: 100px;
-  border-radius: 20px;
-}
-
-@media screen and (max-width: 764px) {
+@media screen and (min-width: 764px) {
   .my-toggler {
-    display: block;
+    display: none;
   }
 }
 
