@@ -74,7 +74,11 @@ $request->validate([
                     ->where("id", $dish_id)
                     ->first();
         $amount += $temp->price * $quantity;
+        //dd($amount);
     }
+    
+//reindirizza alla create se l'ordine è vuoto
+    if($amount === 0.0){ return back(); }
 
     return view("payment", [
         "token" => $token,

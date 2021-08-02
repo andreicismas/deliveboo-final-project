@@ -2,7 +2,7 @@
 @section('content')
 
     @if (count($errors->all()) > 0)
-           <p>Si è verificato un errore</p>
+          <p>Si è verificato un errore</p>
     @endif
 
     <form action="{{ route('payment') }}" method="post">
