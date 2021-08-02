@@ -2,9 +2,7 @@
 @section('content')
 
     @if (count($errors->all()) > 0)
-            @foreach ($errors->all() as $error)
-                <h5>{{ $error }}</h5>
-            @endforeach
+      <p>Si è verificato un errore</p>
     @endif
 
     <form action="{{ route('payment') }}" method="post">
@@ -53,7 +51,8 @@
                                         <input class="counter-display my-counter-input "
                                         name="dishes[{{$dish->id}}]" {{--colleziona gli esatti id che vanno sincronizzati anzichè tutti--}}
                                         type="number"
-                                        placeholder="0">
+                                        placeholder="0"
+                                        min="0" max="99">
                                     
                                     <span onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</span>
 
