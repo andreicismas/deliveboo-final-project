@@ -1980,7 +1980,15 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getImgUrl: function getImgUrl(url) {
-      return '/storage/covers/' + this.indice + '/' + url;
+      var urlHttp = this.img;
+
+      if (url) {
+        return '/storage/covers/' + this.indice + '/' + url;
+      }
+
+      if (url) {
+        return url; // return  'https://www.linga.org/site/photos/Largnewsimages/image-not-found.png' 
+      } else {}
     }
   }
 });
