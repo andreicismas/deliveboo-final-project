@@ -1,11 +1,14 @@
 #payment-form {
     .form-group {
         label {
-            color: $secondary;
+            color: $main-text;
             font-weight: bold;
         }
     }
-    h4, th {
+    h4 {
+        color: $main-text;
+    }
+    th {
         color: $secondary;
     }
     .fas {
@@ -28,5 +31,25 @@
     }
     .my-link-container {
         padding-bottom: 1.5rem;
+    }
+}
+.successful {
+    min-height: 100vh;
+    background-color: $red;
+    display: flex;
+    flex-direction: column;
+    .filler {
+        flex-grow: 1;
+    }
+    & > * {
+        margin: 20px auto;
+        color: $falsewhite;
+        text-align: center;
+    }
+    a {
+        background-color: $falsewhite;
+        color: $main-text;
+        padding: 10px;
+        border-radius: 10px;
     }
 }

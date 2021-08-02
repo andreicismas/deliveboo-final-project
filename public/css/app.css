@@ -4962,6 +4962,10 @@ input[type=number] {
   padding-right: 10px;
 }
 
+.orders-part th {
+  color: #fe7101;
+}
+
 .chart-container {
   position: relative;
   max-width: 992px;
@@ -4973,11 +4977,14 @@ input[type=number] {
 }
 
 #payment-form .form-group label {
-  color: #fe7101;
+  color: #323335;
   font-weight: bold;
 }
 
-#payment-form h4,
+#payment-form h4 {
+  color: #323335;
+}
+
 #payment-form th {
   color: #fe7101;
 }
@@ -5006,6 +5013,30 @@ input[type=number] {
 
 #payment-form .my-link-container {
   padding-bottom: 1.5rem;
+}
+
+.successful {
+  min-height: 100vh;
+  background-color: #e3342f;
+  display: flex;
+  flex-direction: column;
+}
+
+.successful .filler {
+  flex-grow: 1;
+}
+
+.successful > * {
+  margin: 20px auto;
+  color: #fffdfa;
+  text-align: center;
+}
+
+.successful a {
+  background-color: #fffdfa;
+  color: #323335;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 /*!
