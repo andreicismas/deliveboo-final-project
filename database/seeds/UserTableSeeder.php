@@ -7,6 +7,8 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
+use Illuminate\Support\Facades\Hash;
+
 use Illuminate\Support\Str;
 class UserTableSeeder extends Seeder
 {
@@ -56,7 +58,7 @@ class UserTableSeeder extends Seeder
             
             $newUser->email = $faker->unique()->safeEmail;
             $newUser->email_verified_at = now();
-            $newUser->password = 12345678;//$faker->password(8,20);//'$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            $newUser->password = Hash::make("12345678");//$faker->password(8,20);//'$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             $newUser->remember_token = Str::random(10);
     
             $newUser->address = $faker->address();
