@@ -6,7 +6,7 @@
 
 // Variables
 @import 'variables';
-
+@import 'our-commons';
 @import 'cart';
 
 // Bootstrap
@@ -27,9 +27,8 @@ Extra-bold 800*/
 @import url('https:///fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 //    font-family: 'Lilita One', cursive;
 
-.enlight{color: $secondary}
 
-a:hover {
+a:hover{
     color: $tertiary;
     text-decoration: none;
 }

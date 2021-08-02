@@ -1,4 +1,6 @@
 h1, p, h3, h6{ color: $main-text}
+h1{font-family: 'Lilita One';}
+*{font-family: 'Poppins', sans-serif;}
 
 //div generale della pagina
 .display {
@@ -22,10 +24,15 @@ h1, p, h3, h6{ color: $main-text}
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.39);
 }
 
-//torna indietro, provvisorio
-.back-bttn {
+
+.divBack{
     width: 5%;
     height: 100%;
+}
+
+
+//torna indietro, provvisorio
+.back-bttn {
     font-size: 40px;
     padding-left: 10px;
     padding-right: 10px;
@@ -33,7 +40,7 @@ h1, p, h3, h6{ color: $main-text}
 
 //nome ristoratore
 .signboard {
-    font-family: 'Lilita One', cursive;
+   font-family: 'Lilita One', cursive;
    color: $main-text;
    width: 80%;
    height: 100px;
@@ -45,16 +52,26 @@ h1, p, h3, h6{ color: $main-text}
 
 //bottone submit
 .my-submit {
-    font-size: larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bolder;
     width:200px;
     min-width:100px;
     height: 80px;
-    
     border-radius: 30px;
     margin: 30px;
     color: $falsewhite;
     background-color: $secondary;
     z-index: 3;
+ }
+
+ .fa-shopping-bag{
+   font-size: 30px;
+   margin-left: 5px;
+   align-self: center;
  }
 
   //card piatto

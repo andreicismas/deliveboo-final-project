@@ -4609,11 +4609,82 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
 @charset "UTF-8";
+
+/*----------------------------------------------modificabili a parere popolare*/
+.enlight {
+  color: #fe7101;
+}
+
+a:hover {
+  color: #ff8b6c;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: #feae01;
+}
+
 h1,
 p,
 h3,
 h6 {
   color: #323335;
+}
+
+h1 {
+  font-family: "Lilita One";
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+/*bottone indietro,
+icona usata da me -> <i class="fas fa-backspace"> */
+
+.back-bttn {
+  color: #fe7101;
+  font-size: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/*bottone base*/
+
+.my-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bolder;
+  border-radius: 30px;
+  margin: 30px;
+  border: 0;
+  color: #fffdfa;
+  background-color: #fe7101;
+  z-index: 3;
+}
+
+/*ombre bottoni (vedi nell'order create)*/
+
+.my-bttns {
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.39);
+}
+
+h1,
+p,
+h3,
+h6 {
+  color: #323335;
+}
+
+h1 {
+  font-family: "Lilita One";
+}
+
+* {
+  font-family: "Poppins", sans-serif;
 }
 
 .display {
@@ -4635,9 +4706,12 @@ h6 {
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.39);
 }
 
-.back-bttn {
+.divBack {
   width: 5%;
   height: 100%;
+}
+
+.back-bttn {
   font-size: 40px;
   padding-left: 10px;
   padding-right: 10px;
@@ -4655,7 +4729,12 @@ h6 {
 }
 
 .my-submit {
-  font-size: larger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bolder;
   width: 200px;
   min-width: 100px;
   height: 80px;
@@ -4664,6 +4743,12 @@ h6 {
   color: #fffdfa;
   background-color: #fe7101;
   z-index: 3;
+}
+
+.fa-shopping-bag {
+  font-size: 30px;
+  margin-left: 5px;
+  align-self: center;
 }
 
 .display-dish {
@@ -15888,10 +15973,6 @@ a.text-dark:focus {
 Light 300
 Regular 400
 Extra-bold 800*/
-
-.enlight {
-  color: #fe7101;
-}
 
 a:hover {
   color: #ff8b6c;
