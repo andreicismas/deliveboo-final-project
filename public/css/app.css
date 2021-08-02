@@ -1,6 +1,6 @@
 @import url(https:///fonts.googleapis.com/css2?family=Poppins:wght@200;
 
-300;400;800&display=swap);@import url(https:///fonts.googleapis.com/css2?family=Lilita+One&display=swap);/*!
+300;400;800&display=swap);@import url(https:///fonts.googleapis.com/css2?family=Lilita+One&display=swap);@import url(https://fonts.googleapis.com/css2?family=Righteous&display=swap);/*!
  * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
@@ -4682,6 +4682,35 @@ icona usata da me -> <i class="fas fa-backspace"> */
 
 .my-bttns {
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.39);
+}
+
+.my-nav {
+  background-color: rgba(255, 0, 0, 0.185);
+  height: 100px;
+  border-bottom-right-radius: 80px 120px;
+}
+
+.show {
+  background-color: rgba(0, 255, 191, 0.185);
+  width: 30%;
+  margin: 0;
+  height: 100px;
+  border-radius: 20px;
+}
+
+.my-navbar-brand {
+  font-family: "Righteous", cursive;
+  font-size: 50px;
+}
+
+.my-toggler {
+  display: none;
+}
+
+@media screen and (max-width: 764px) {
+  .my-toggler {
+    display: block;
+  }
 }
 
 h1,
