@@ -19,6 +19,7 @@ window.Vue = require('vue');
 const files = require.context('./', true, /\.vue$/i)
 files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+Vue.component('display-button', require('./components/DisplayButton.vue').default);
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 // // components vue
@@ -36,3 +37,46 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
 const app = new Vue({
     el: '#app',
 });
+
+
+/*---- Cambio stile div al click----*/
+
+window.addEventListener("load", function () {
+
+    const myOverlay= document.querySelectorAll(".my-overlay");
+    myOverlay.forEach(div => {
+  
+        div.addEventListener("click", () => { 
+            div.classList.add('hide');
+        })
+    
+    })
+}); 
+
+
+
+/* vecchio senza styles, non ha animazioni intermedie
+window.addEventListener("load", function () {
+
+    const myOverlay= document.querySelectorAll(".my-overlay");
+    myOverlay.forEach(div => {
+  
+        div.addEventListener("click", () => { 
+            div.style.width = "0%";
+        })
+    })
+});  */
+
+/*--
+window.addEventListener("load", function () {
+
+    const myOverlay= document.querySelectorAll(".my-overlay");
+    myOverlay.forEach(div => {
+  
+        div.addEventListener("click", () => { 
+            div.classList.add('hide');
+        })
+    
+    })
+    
+}); -*/
