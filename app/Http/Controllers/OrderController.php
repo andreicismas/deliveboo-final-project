@@ -32,7 +32,7 @@ class OrderController extends Controller
             ->select("orders.*")
             ->groupBy("orders.id")
             ->where("user_id", $user_id)
-            ->orderBy("orders.id", "asc")
+            ->orderBy("orders.created_at", "desc")
             ->get();
 
         // dati per i grafici
