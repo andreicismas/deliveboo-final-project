@@ -1,0 +1,32 @@
+#payment-form {
+    .form-group {
+        label {
+            color: $secondary;
+            font-weight: bold;
+        }
+    }
+    h4, th {
+        color: $secondary;
+    }
+    .fas {
+        width: 5%;
+        height: 100%;
+        font-size: 40px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .my-container-flex {
+        display: flex;
+        &.flex-between {
+            justify-content: space-between;
+            .my-submit-btn {
+                background-color: $primary;
+                font-size: 20px;
+                color: $falsewhite;
+            }
+        }
+    }
+    .my-link-container {
+        padding-bottom: 1.5rem;
+    }
+}
