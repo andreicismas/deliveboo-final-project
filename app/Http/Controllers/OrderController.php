@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\DB;
 
 use Carbon\Carbon;
 
+use function PHPSTORM_META\map;
+
 class OrderController extends Controller
 {
     /**
@@ -35,7 +37,34 @@ class OrderController extends Controller
 
         // dati per i grafici
         $months = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
-        $years = ["2020", "2021"];
+       
+        $existingOrdersYears = DB::table('orders')
+            ->join("dish_order", "id", "=", "dish_order.order_id")
+            ->join("dishes", "dish_id", "=", "dishes.id")
+            ->join("users", "dishes.user_id", "=", "users.id")
+            ->select("orders.*")
+            ->groupBy("orders.id")
+            ->where("user_id", $user_id)
+            ->pluck('orders.created_at')
+            ->toArray();
+
+        $ordersYearsToString = array_map('strtotime' ,$existingOrdersYears);
+        $yearsToSort = [];    
+
+        for ($i = 0; $i < count($ordersYearsToString); $i++) {
+            $orderYear = date('Y', $ordersYearsToString[$i]);
+
+            if(!in_array($orderYear,$yearsToSort)) {
+            $yearsToSort[] = $orderYear;
+            }
+        }
+
+        $years = collect($yearsToSort)->sort()->values()->all();
+      
+        // dump($years);
+        // return;
+        
+        //$years = ["2020", "2021"];
 
         $ordersByYear = [];
         $profitByYear = [];
