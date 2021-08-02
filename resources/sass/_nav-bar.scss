@@ -1,0 +1,64 @@
+.my-nav >*{
+  border: 1px solid black
+}
+
+
+.my-navbar-brand{
+    font-family: 'Righteous', cursive;
+    font-size: 30px;
+}
+
+.my-nav-item{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.my-toggler{
+    color: $secondary;
+    font-size: 30px;
+    background-color: transparent;
+    border: 0;
+        &:hover{
+        background-color: transparent;
+        }
+        &:focus{
+            color: $primary;
+            background-color: transparent;
+            }
+}
+
+.my-nav-link{
+    color: white;
+    width: 130px;
+    margin: 20px 20px 20px 5px;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    background-color: $secondary;
+}
+
+
+
+@media screen and (min-width: 992px) {
+    .iddenText {
+        display: block;
+    }
+}
+.y-nav{
+    background-color: rgba(255, 0, 0, 0.185);
+    height: 100px;
+    border-bottom-right-radius: 80px 120px;
+}
+.how{
+    background-color: rgba(0, 255, 191, 0.185);
+    width: 30%;
+    margin:0;
+    height: 100px;
+    border-radius: 20px;
+}
+
+
+@media screen and (max-width: 764px) {
+    .my-toggler{
+        display: block;
+    }
+}
