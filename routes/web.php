@@ -61,7 +61,7 @@ Route::post("/payment", function (Request $request) {
     $allRestaurantDishes = Dish::where("user_id", $restaurant_id)->get();
 
 
-////////////////////////////////////////////////////
+// validazione quantità
 $request->validate([
     'dishes.*' => 'digits_between:1,99',
 ]);
