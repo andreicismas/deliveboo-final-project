@@ -60,9 +60,12 @@ Route::post("/payment", function (Request $request) {
     $restaurant_id = $request->restaurant_id;
     $allRestaurantDishes = Dish::where("user_id", $restaurant_id)->get();
 
-    $request->validate([
-        'dishes.*' => 'digits_between:1,99', 
-    ]);
+
+////////////////////////////////////////////////////
+$request->validate([
+    'dishes.*' => 'digits_between:1,99',
+]);
+    
 
     // calcolo totale
     $amount = 0;

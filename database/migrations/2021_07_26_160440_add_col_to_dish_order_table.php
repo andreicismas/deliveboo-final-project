@@ -14,7 +14,7 @@ class AddColToDishOrderTable extends Migration
     public function up()
     {
         Schema::table('dish_order', function (Blueprint $table) {
-            $table->tinyInteger("quantity", 99)->min(1)->nullable();
+            $table->tinyInteger("quantity")->nullable();
         });
     }
 

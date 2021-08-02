@@ -2,7 +2,7 @@
 @section('content')
 
     @if (count($errors->all()) > 0)
-      <p>Si è verificato un errore</p>
+           <p>Si è verificato un errore</p>
     @endif
 
     <form action="{{ route('payment') }}" method="post">
@@ -52,7 +52,7 @@
                                         name="dishes[{{$dish->id}}]" {{--colleziona gli esatti id che vanno sincronizzati anzichè tutti--}}
                                         type="number"
                                         placeholder="0"
-                                        min="0" max="99">
+                                        value="0" min="0" max="99">
                                     
                                     <span onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</span>
 
