@@ -4689,8 +4689,8 @@ icona usata da me -> <i class="fas fa-backspace"> */
 }
 
 .my-nav a:not(a.my-brand) {
-  color: #fffdfa;
-  font-weight: normal;
+  color: #fe7101;
+  font-weight: 600;
 }
 
 .my-brand {
@@ -4706,11 +4706,6 @@ icona usata da me -> <i class="fas fa-backspace"> */
   align-items: center;
   justify-content: space-between;
   margin: 0;
-}
-
-.my-nav-item {
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 
 .my-toggler {
@@ -4730,17 +4725,27 @@ icona usata da me -> <i class="fas fa-backspace"> */
 }
 
 .my-nav-link {
-  color: white;
   width: 130px;
   margin: 20px 20px 20px 5px;
   border-radius: 10px;
-  padding: 5px 10px 5px 10px;
-  background-color: #fe7101;
+  padding: 0;
+  background-color: transparent;
+}
+
+.my-nav-item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  border-bottom: 1px solid red;
 }
 
 @media screen and (min-width: 764px) {
   .my-toggler {
     display: none;
+  }
+
+  .my-container {
+    margin: 0 30px 0 30px;
   }
 
   .my-nav {
@@ -4754,22 +4759,19 @@ icona usata da me -> <i class="fas fa-backspace"> */
     font-weight: bold;
   }
 
-  .my-container {
-    margin: 0 30px 0 30px;
+  .my-brand {
+    font-size: 33px;
+    color: #fffdfa;
   }
 
   .my-nav-link {
-    color: white;
-    width: 130px;
     margin: 20px 20px 20px 5px;
-    border-radius: 10px;
     padding: 15px 20px 15px 20px;
     background-color: #fffdfa;
   }
 
-  .my-brand {
-    font-size: 33px;
-    color: #fffdfa;
+  .my-nav-item {
+    border-bottom: 0px;
   }
 }
 
