@@ -4800,15 +4800,18 @@ h1 {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: #fffdfa;
 }
 
 .my-bttns {
   border: 0px;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.39);
+}
+
+.signboard {
+  display: none;
 }
 
 .divBack {
@@ -4830,6 +4833,7 @@ h1 {
   align-items: center;
   z-index: 3;
   font-size: 30px;
+  display: none;
 }
 
 .box-submit {
@@ -4866,7 +4870,7 @@ h1 {
   max-height: 850px;
   margin: 5px;
   margin-bottom: 30px;
-  padding-left: 50px;
+  padding-left: 10px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -5051,13 +5055,14 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: baseline;
-    background-color: #fffdfa;
+    justify-content: space-evenly;
   }
 
   .display-dish {
     margin-right: 30px;
     width: 30%;
     height: 420px;
+    padding-left: 50px;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-evenly;
@@ -5117,6 +5122,18 @@ h1 {
 
   .minus {
     font-size: larger;
+  }
+
+  .signboard {
+    font-family: "Lilita One", cursive;
+    color: #323335;
+    width: 50%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    font-size: 30px;
+    display: block;
   }
 }
 
