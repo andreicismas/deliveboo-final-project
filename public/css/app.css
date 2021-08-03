@@ -4736,7 +4736,7 @@ icona usata da me -> <i class="fas fa-backspace"> */
   margin-top: 5px;
   margin-bottom: 5px;
   width: 100%;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #fe7101;
 }
 
 @media screen and (min-width: 764px) {
@@ -4762,6 +4762,10 @@ icona usata da me -> <i class="fas fa-backspace"> */
   .my-brand {
     font-size: 33px;
     color: #fffdfa;
+  }
+
+  .my-brand:hover {
+    color: white;
   }
 
   .my-nav-link {

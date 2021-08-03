@@ -55,7 +55,7 @@
                                 </li>
                             @endif
                         @else
-                            <li class=" my-nav-item dropdown">
+                            <li class=" nav-item dropdown"> {{--non aggiungere my--}}
                                 <a id="navbarDropdown" class="my-name dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
