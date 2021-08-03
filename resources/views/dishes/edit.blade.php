@@ -8,11 +8,12 @@
     @endforeach
     @endif
 
-<a href="{{route("dishes.index")}}">Indietro</a>
 
-<form action ="{{route('dishes.update', $dish->id)}}" method="post" >
+<form class="dishes edit"action ="{{route('dishes.update', $dish->id)}}" method="post" >
     @csrf 
     @method('PATCH')
+
+        <a href="{{route("dishes.index")}}">Indietro</a>
 
         <div>
          <textarea name="name" class="form-control" aria-label="With textarea" rows="1" style="resize: none" placeholder="nome">{{$dish->name}}</textarea>
@@ -39,7 +40,7 @@
         </div>
 
     <div>
-      <input type="submit" value="salva le modifiche">
+      <input class="btn btn-primary" type="submit" value="Salva le modifiche">
     </div>
   
          
