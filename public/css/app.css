@@ -4688,6 +4688,16 @@ icona usata da me -> <i class="fas fa-backspace"> */
   width: 100%;
 }
 
+.my-nav a:not(a.my-brand) {
+  color: #fe7101;
+  font-weight: normal;
+}
+
+.my-brand {
+  font-family: "Righteous", cursive;
+  font-size: 30px;
+}
+
 .my-container {
   width: 100%;
   display: flex;
@@ -4695,11 +4705,6 @@ icona usata da me -> <i class="fas fa-backspace"> */
   align-items: center;
   justify-content: space-between;
   margin: 0;
-}
-
-.my-navbar-brand {
-  font-family: "Righteous", cursive;
-  font-size: 30px;
 }
 
 .my-nav-item {
@@ -4738,7 +4743,7 @@ icona usata da me -> <i class="fas fa-backspace"> */
   }
 
   .my-nav {
-    background-color: rgba(255, 0, 0, 0.185);
+    background-color: #fe7101;
     height: 100px;
     border-bottom-right-radius: 150px 150px;
   }
@@ -4753,7 +4758,24 @@ icona usata da me -> <i class="fas fa-backspace"> */
     margin: 20px 20px 20px 5px;
     border-radius: 10px;
     padding: 15px 20px 15px 20px;
-    background-color: #fe7101;
+    background-color: #fffdfa;
+  }
+
+  .my-nav {
+    width: 100%;
+  }
+
+  .my-nav a {
+    font-weight: bold;
+  }
+
+  .my-brand {
+    font-family: "Righteous", cursive;
+    font-size: 30px;
+  }
+
+  .my-brand a {
+    color: white;
   }
 }
 
@@ -16077,7 +16099,7 @@ Regular 400
 Extra-bold 800*/
 
 a:hover {
-  color: #ff8b6c;
+  color: #feae01;
   text-decoration: none;
 }
 

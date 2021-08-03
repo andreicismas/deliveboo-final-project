@@ -26,7 +26,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md my-nav">
             <div class="my-container">
-                <a class="my-navbar-brand" href="{{ url('/') }}">
+                <a class="my-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Deliveboo') }}
                 </a>
                 <button class="my-toggler"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

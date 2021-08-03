@@ -1,8 +1,17 @@
 .my-nav {
-width: 100%;
+    width: 100%;
+    & a:not(a.my-brand){
+        color: $secondary;
+        font-weight: normal;
+        }
 }
 
-.my-container{
+.my-brand {
+    font-family: 'Righteous', cursive;
+    font-size: 30px;
+}
+
+.my-container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -11,17 +20,12 @@ width: 100%;
     margin:0;
 }
 
-.my-navbar-brand{
-    font-family: 'Righteous', cursive;
-    font-size: 30px;
-}
-
-.my-nav-item{
+.my-nav-item {
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-.my-toggler{
+.my-toggler {
     color: $secondary;
     font-size: 30px;
     background-color: transparent;
@@ -51,16 +55,17 @@ width: 100%;
 
 //-----------------------------------------------------
 @media screen and (min-width: 764px) {
-    .my-toggler{
+    .my-toggler {
         display: none;
     }
 
-    .my-nav{
-        background-color: rgba(255, 0, 0, 0.185);
+    .my-nav {
+        background-color: $secondary;
         height: 100px;
         border-bottom-right-radius: 150px 150px;
     }
 
+    
     .my-container{
         margin:0 30px 0 30px;
     }
@@ -71,6 +76,22 @@ width: 100%;
         margin: 20px 20px 20px 5px;
         border-radius: 10px;
         padding: 15px 20px 15px 20px;
-        background-color: $secondary;
+        background-color: $falsewhite;
     }
+
+    .my-nav {
+        width: 100%;
+         & a{
+             font-weight: bold;
+            }
+        }
+        
+        .my-brand{
+            font-family: 'Righteous', cursive;
+            font-size: 30px;
+            & a{
+                color:white
+               }
+           
+        }
 }
