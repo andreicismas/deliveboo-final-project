@@ -1,106 +1,58 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('content')
 
-    <title>Laravel</title>
+<div class="welcome">
+    <h1>Scegli il tuo ristorante</h1>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <restaurants-index></restaurants-index>
 
-    <!-- Styles -->
-    <style>
-        html,
-        body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .full-height {
-            height: 100vh;
-        }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 84px;
-        }
-
-        .links>a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-
-    </style>
-
-    {{-- link boostrap --}}
-
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    {{-- link cli vue --}}
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-
-</head>
-
-<body>
-    <div id="app" class="container-sm  ">
-        @if (Route::has('login'))
-            <div class="top-right links">
-                @auth
-                    <a class href="{{ url('/home') }}">Home</a>
-                @else
-                    <a href="{{ route('login') }}">Login</a>
-
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
-                    @endif
-                @endauth
+    <footer>
+        <div class="container">
+            <div class="my-container-flex">
+                <div class="section">
+                    <h5>Scopri Deliveboo</h5>
+                    <ul>
+                        <li><a href="#">Chi siamo</a></li>
+                        <li><a href="#">Ristoranti</a></li>
+                        <li><a href="#">Il nostro blog</a></li>
+                        <li><a href="#">Lavora con noi</a></li>
+                        <li><a href="#">Altro</a></li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <h5>Note Legali</h5>
+                    <ul>
+                        <li><a href="#">Termini & Condizioni</a></li>
+                        <li><a href="#">Informativa sulla privacy</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <h5>Note Legali</h5>
+                    <ul>
+                        <li><a href="#">Contatti</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <h5>Scarica l'App</h5>
+                    <ul>
+                        <li><a href="#"><img src="{{ asset('images/app-store.png') }}" alt=""></a></li>
+                        <li><a href="#"><img src="{{ asset('images/google-play.png') }}" alt=""></a></li>
+                    </ul>
+                </div>
             </div>
-        @endif
-
-        <div class="align-self-start">
-
-    <h1>Scegli il tuo ristorante </h1>
-            
-            
-        <restaurants-index></restaurants-index>
-        
+            <div class="my-container-flex bottom-banner">
+                <div class="logos-container">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <span>© 2021 Deliveboo</span>
+            </div>
         </div>
-    </div>
-</body>
+    </footer>
+</div>
 
-</html>
+@endsection
