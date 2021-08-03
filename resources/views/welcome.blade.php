@@ -77,11 +77,11 @@
 </head>
 
 <body>
-    <div id="app" class="flex-center position-ref full-height">
+    <div id="app" class="container-sm  ">
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
-                    <a href="{{ url('/home') }}">Home</a>
+                    <a class href="{{ url('/home') }}">Home</a>
                 @else
                     <a href="{{ route('login') }}">Login</a>
 
@@ -94,7 +94,8 @@
 
         <div class="align-self-start">
 
-            <h1>Scegli il tuo ristorante </h1>
+    <h1>Scegli il tuo ristorante </h1>
+            
             
         <restaurants-index></restaurants-index>
         

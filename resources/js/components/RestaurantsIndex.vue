@@ -1,9 +1,10 @@
 <template>
   <div>
-    <type-filter-button
-      :types="typesList"
-      v-model="filterList"
-    ></type-filter-button>
+    <div class=" d-flex justify-content-center row col-6-md ">
+      <type-filter-button
+        :types="typesList"
+        v-model="filterList"
+      ></type-filter-button>
 
     <restaurant-card
       v-for="restaurant in restaurantsList"
@@ -76,8 +77,9 @@ export default {
             for (let j = 0; j < element.types.length; j++) {
               if (element.types[j].id == this.filterList[i]) {
                   if (!result.includes(element)) {
-                      result.push(element);
-                  }
+                    result.push(element);
+                    }
+                }
               }
             }
           });
