@@ -4773,6 +4773,10 @@ icona usata da me -> <i class="fas fa-backspace"> */
   .my-nav-item {
     border-bottom: 0px;
   }
+
+  #navbarDropdown.my-name {
+    color: white;
+  }
 }
 
 h1,
@@ -4801,6 +4805,7 @@ h1 {
   height: 100%;
   display: flex;
   align-items: center;
+  margin-top: 30px;
   justify-content: space-between;
   background-color: #fffdfa;
 }
@@ -5134,6 +5139,13 @@ h1 {
     z-index: 3;
     font-size: 30px;
     display: block;
+  }
+}
+
+@media screen and (min-width: 1396px) {
+  .description {
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
 

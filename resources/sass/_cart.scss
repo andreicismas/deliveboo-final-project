@@ -15,7 +15,7 @@ h1{font-family: 'Lilita One';}
     height: 100%;
     display: flex;
     align-items: center;
-    
+    margin-top: 30px;
     justify-content: space-between;
     background-color: $falsewhite;
 }
@@ -243,8 +243,8 @@ flex-direction: column;
 
 
 @media screen and (min-width: 992px) {
-
-
+   
+   
     .hiddenText {
         display: block;
     }
@@ -268,6 +268,7 @@ flex-direction: column;
         width: 100%;
         height: 100%;
         display: flex;
+   
         justify-content: center;
         align-items: baseline;           
         justify-content: space-evenly;
@@ -352,6 +353,15 @@ flex-direction: column;
      }
 
 }
+
+@media screen and (min-width:  1396px) {
+
+    .description { 
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
 /*-------------- nasconde frecce input number su più browser --------*/
 
 /* Chrome, Safari, Edge, Opera */
