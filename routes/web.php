@@ -3,6 +3,7 @@
 use App\Type;
 use App\Order;
 use App\Dish;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -52,15 +53,23 @@ Route::post("/payment", function (Request $request) {
         'privateKey' => config('services.braintree.privateKey')
     ]);
 
-    // validazione dati request
-
     $token = $gateway->ClientToken()->generate();
 
     // prendo i piatti del ristorante
     $restaurant_id = $request->restaurant_id;
     $allRestaurantDishes = Dish::where("user_id", $restaurant_id)->get();
 
+    // validazione quantità
+     $request->validate([
+    'dishes.*' => 'digits_between:1,99',
+    ]);
+
     // calcolo totale
+    // prendo lo slug per poter tornare indietro
+    $restaurant = User::where("id", $restaurant_id)->first();
+    $restaurantSlug = $restaurant->slug;
+
+    // calcolo il totale
     $amount = 0;
     foreach ($request->dishes as $dish_id => $quantity) {
         $temp = Dish::where("user_id", $restaurant_id)
@@ -69,13 +78,20 @@ Route::post("/payment", function (Request $request) {
         $amount += $temp->price * $quantity;
     }
 
-    return view("payment", [
-        "token" => $token,
-        "ordered_dishes" => $request->dishes,
-        "allRestaurantDishes" => $allRestaurantDishes,
-        "amount" => $amount
-    ]);
+    if($amount > 0){
+
+        return view("payment", [
+            "token" => $token,
+            "ordered_dishes" => $request->dishes,
+            "allRestaurantDishes" => $allRestaurantDishes,
+            "amount" => $amount,
+            "restaurantSlug" => $restaurantSlug
+        ]);
+    } else {
+        return back()->withErrors('Il tuo ordine non contiene piatti!');
+    }
 })->name("payment");
+
 
 Route::post('/checkout', function (Request $request) {
     $gateway = new Braintree\Gateway([
@@ -91,7 +107,6 @@ Route::post('/checkout', function (Request $request) {
     $name = $request->customer_name;
     $mail = $request->customer_mail;
     $phone = $request->customer_phone_number;
-    // $address = $request->delivery_address;
 
     $result = $gateway->transaction()->sale([
         'amount' => $amount,
@@ -132,9 +147,8 @@ Route::post('/checkout', function (Request $request) {
             });
         //dd($dishes);
         $newOrder->dishes()->sync($dishes);
-        return redirect()->route('welcome');
-        // 
 
+        return redirect()->route('payment-successful', ["order" => $newOrder]);
     } else {
         $errorString = "";
 
@@ -146,13 +160,6 @@ Route::post('/checkout', function (Request $request) {
     }
 })->name("checkout");
 
-// //valutare se e come passare lo user_id come argomento
-// Route::get("/dishes/user/{user}", "DishController@index")->name("dishes.index"); 
-
-//Route::get("/dishes", "DishController@index")->name("dishes.index"); 
-//Route::post("/dishes", "DishController@store")->name("dishes.store");
-//Route::get("/dishes/create", "DishController@create")->name("dishes.create");
-//Route::get("/dishes/{dish}", "DishController@show")->name("dishes.show");
-//Route::match(["put", "patch"], "/dishes/{dish}", "DishController@update")->name("dishes.update");
-//Route::delete("/dishes/{dish}", "DishController@destroy")->name("dishes.destroy");
-//Route::get("/dishes/{dish}/edit", "DishController@edit")->name("dishes.edit");
+Route::get('/payment-successful/{order}', function (Order $order) {
+    return view('paymentSuccessful', ["order" => $order]);
+})->name("payment-successful");

@@ -6,8 +6,13 @@
 
 // Variables
 @import 'variables';
-
+@import 'our-commons';
+@import 'nav-bar';
 @import 'cart';
+
+// stili ordini andrea
+@import 'partials/orders.scss';
+@import 'partials/payment.scss';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
@@ -25,11 +30,15 @@ Extra-bold 800*/
 
 //grassetto con 'grazie'
 @import url('https:///fonts.googleapis.com/css2?family=Lilita+One&display=swap');
-//    font-family: 'Lilita One', cursive;
+//font-family: 'Lilita One', cursive;
 
-.enlight{color: $secondary}
+//font logo
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+//font-family: 'Righteous', cursive;
 
-a:hover {
-    color: $tertiary;
+
+//"ma deve stare proprio qui?" SI
+a:hover{
+    color: $primary;
     text-decoration: none;
 }
