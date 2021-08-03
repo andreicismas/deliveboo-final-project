@@ -1,6 +1,6 @@
 @import url(https:///fonts.googleapis.com/css2?family=Poppins:wght@200;
 
-300;400;800&display=swap);@import url(https:///fonts.googleapis.com/css2?family=Lilita+One&display=swap);/*!
+300;400;800&display=swap);@import url(https:///fonts.googleapis.com/css2?family=Lilita+One&display=swap);@import url(https://fonts.googleapis.com/css2?family=Righteous&display=swap);/*!
  * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
@@ -4609,11 +4609,189 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
 @charset "UTF-8";
+
+/*----------------------------------------------modificabili a parere popolare*/
+.enlight {
+  color: #fe7101;
+}
+
+.errorDiv {
+  margin-top: 70px;
+  margin-bottom: 50px;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding: 20px 0 20px 0;
+  border: 2px solid #fe7101;
+  background-color: white;
+  color: #fe7101;
+  text-align: center;
+}
+
+a:hover {
+  color: #ff8b6c;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: #feae01;
+}
+
 h1,
 p,
 h3,
 h6 {
   color: #323335;
+}
+
+h1 {
+  font-family: "Lilita One";
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+/*bottone indietro,
+icona usata da me -> <i class="fas fa-backspace"> */
+
+.back-bttn {
+  color: #fe7101;
+  font-size: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/*bottone base*/
+
+.my-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bolder;
+  border-radius: 30px;
+  margin: 30px;
+  border: 0;
+  color: #fffdfa;
+  background-color: #fe7101;
+  z-index: 3;
+}
+
+/*ombre bottoni (vedi nell'order create)*/
+
+.my-bttns {
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.39);
+}
+
+.my-nav {
+  width: 100%;
+}
+
+.my-nav a:not(a.my-brand) {
+  color: #fe7101;
+  font-weight: 600;
+}
+
+.my-brand {
+  font-family: "Righteous", cursive;
+  font-size: 30px;
+  color: #feae01;
+}
+
+.my-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.my-toggler {
+  color: #fe7101;
+  font-size: 30px;
+  background-color: transparent;
+  border: 0;
+}
+
+.my-toggler:hover {
+  background-color: transparent;
+}
+
+.my-toggler:focus {
+  color: #feae01;
+  background-color: transparent;
+}
+
+.my-nav-link {
+  width: 130px;
+  margin: 20px 20px 20px 5px;
+  border-radius: 10px;
+  padding: 0;
+  background-color: transparent;
+}
+
+.my-nav-item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  border-bottom: 1px solid red;
+}
+
+@media screen and (min-width: 764px) {
+  .my-toggler {
+    display: none;
+  }
+
+  .my-container {
+    margin: 0 30px 0 30px;
+  }
+
+  .my-nav {
+    background-color: #fe7101;
+    height: 100px;
+    border-bottom-right-radius: 150px 150px;
+  }
+
+  .my-nav a:not(a.my-brand) {
+    color: #fe7101;
+    font-weight: bold;
+  }
+
+  .my-brand {
+    font-size: 33px;
+    color: #fffdfa;
+  }
+
+  .my-nav-link {
+    margin: 20px 20px 20px 5px;
+    padding: 10px 15px 10px 15px;
+    background-color: #fffdfa;
+  }
+
+  .my-nav-item {
+    border-bottom: 0px;
+  }
+
+  #navbarDropdown.my-name {
+    color: white;
+  }
+}
+
+h1,
+p,
+h3,
+h6 {
+  color: #323335;
+}
+
+h1 {
+  font-family: "Lilita One";
+}
+
+* {
+  font-family: "Poppins", sans-serif;
 }
 
 .display {
@@ -4623,10 +4801,12 @@ h6 {
 }
 
 .cart-head {
-  height: 200px;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
-  align-items: baseline;
+  margin-top: 30px;
+  justify-content: space-between;
   background-color: #fffdfa;
 }
 
@@ -4635,35 +4815,58 @@ h6 {
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.39);
 }
 
-.back-bttn {
-  width: 5%;
+.signboard {
+  display: none;
+}
+
+.divBack {
+  width: 15%;
   height: 100%;
-  font-size: 40px;
-  padding-left: 10px;
-  padding-right: 10px;
+}
+
+.back-bttn {
+  font-size: 45px;
+  padding: 0;
 }
 
 .signboard {
   font-family: "Lilita One", cursive;
   color: #323335;
-  width: 80%;
+  width: 50%;
   height: 100px;
   display: flex;
   align-items: center;
-  padding-left: 100px;
   z-index: 3;
+  font-size: 30px;
+  display: none;
+}
+
+.box-submit {
+  width: 25%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .my-submit {
-  font-size: larger;
-  width: 200px;
-  min-width: 100px;
-  height: 80px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: baseline;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bolder;
+  width: 100%;
+  height: 60px;
   border-radius: 30px;
-  margin: 30px;
   color: #fffdfa;
   background-color: #fe7101;
   z-index: 3;
+}
+
+.fa-shopping-bag {
+  font-size: 30px;
+  margin-left: 0px;
 }
 
 .display-dish {
@@ -4672,7 +4875,7 @@ h6 {
   max-height: 850px;
   margin: 5px;
   margin-bottom: 30px;
-  padding-left: 50px;
+  padding-left: 10px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -4723,7 +4926,7 @@ h6 {
   width: 80%;
   height: 100%;
   text-align: center;
-  padding: 20px 40px 20px 40px;
+  padding: 10px 20px 10px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -4736,7 +4939,7 @@ h6 {
   align-items: center;
   width: 10%;
   min-width: 60px;
-  height: 100%;
+  height: 200px;
   background-color: none;
 }
 
@@ -4746,7 +4949,7 @@ h6 {
 
 .tag-counter {
   width: 60px;
-  height: 200px;
+  height: 160px;
   font-size: 40px;
   border-radius: 40px;
   display: flex;
@@ -4758,12 +4961,12 @@ h6 {
 }
 
 .tag-counter > * {
-  padding: 10px;
+  padding: 3px;
   color: #fffdfa;
 }
 
 .my-counter-input {
-  width: 100px;
+  width: 80px;
   height: 60px;
   font-size: 30px;
   text-align: center;
@@ -4842,23 +5045,34 @@ h6 {
     flex-wrap: wrap;
   }
 
-  .signboard {
-    width: 70%;
+  .my-submit {
+    width: 220px;
+  }
+
+  .fa-shopping-bag {
+    font-size: 30px;
+    margin-left: 10px;
+  }
+
+  .cart-head {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    justify-content: space-evenly;
   }
 
   .display-dish {
     margin-right: 30px;
     width: 30%;
     height: 420px;
+    padding-left: 50px;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-evenly;
     align-content: center;
     align-items: flex-start;
-  }
-
-  .my-submit {
-    width: 250px;
   }
 
   .border-box {
@@ -4898,7 +5112,8 @@ h6 {
     height: 60px;
     flex-direction: row-reverse;
     align-items: center;
-    padding-left: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .counter-div {
@@ -4912,6 +5127,25 @@ h6 {
 
   .minus {
     font-size: larger;
+  }
+
+  .signboard {
+    font-family: "Lilita One", cursive;
+    color: #323335;
+    width: 50%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    font-size: 30px;
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1396px) {
+  .description {
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
 
@@ -15889,12 +16123,8 @@ Light 300
 Regular 400
 Extra-bold 800*/
 
-.enlight {
-  color: #fe7101;
-}
-
 a:hover {
-  color: #ff8b6c;
+  color: #feae01;
   text-decoration: none;
 }
 
