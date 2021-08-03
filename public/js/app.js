@@ -2000,9 +2000,132 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RestaurantsIndex.vue?vue&type=script&lang=js& ***!
   \***************************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\acer\\Desktop\\deliveboo\\resources\\js\\components\\RestaurantsIndex.vue: Unexpected token (67:0)\n\n\u001b[0m \u001b[90m 65 |\u001b[39m   computed\u001b[33m:\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 66 |\u001b[39m     restaurantsList() {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 67 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 68 |\u001b[39m       \u001b[90m// if (this.filterList.length == 0) {\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 69 |\u001b[39m       \u001b[90m//   return this.allRestaurantsList;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 70 |\u001b[39m       \u001b[90m// } else {\u001b[39m\u001b[0m\n    at Parser._raise (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:788:17)\n    at Parser.raiseWithData (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:781:17)\n    at Parser.raise (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:742:17)\n    at Parser.unexpected (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:9929:16)\n    at Parser.parseExprAtom (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11349:20)\n    at Parser.parseExprSubscripts (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10914:23)\n    at Parser.parseUpdate (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10894:21)\n    at Parser.parseMaybeUnary (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10872:23)\n    at Parser.parseExprOps (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10733:23)\n    at Parser.parseMaybeConditional (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10707:23)\n    at Parser.parseMaybeAssign (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10670:21)\n    at Parser.parseExpressionBase (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10610:23)\n    at C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10604:39\n    at Parser.allowInAnd (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12372:16)\n    at Parser.parseExpression (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10604:17)\n    at Parser.parseStatementContent (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12711:23)\n    at Parser.parseStatement (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12580:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:13169:25)\n    at Parser.parseBlockBody (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:13160:10)\n    at Parser.parseBlock (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:13144:10)\n    at Parser.parseFunctionBody (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12033:24)\n    at Parser.parseFunctionBodyAndFinish (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12017:10)\n    at Parser.parseMethod (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11967:10)\n    at Parser.parseObjectMethod (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11895:19)\n    at Parser.parseObjPropValue (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11928:23)\n    at Parser.parsePropertyDefinition (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11852:10)\n    at Parser.parseObjectLike (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11741:25)\n    at Parser.parseExprAtom (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11265:23)\n    at Parser.parseExprSubscripts (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10914:23)\n    at Parser.parseUpdate (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10894:21)\n    at Parser.parseMaybeUnary (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10872:23)\n    at Parser.parseExprOps (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10733:23)\n    at Parser.parseMaybeConditional (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10707:23)\n    at Parser.parseMaybeAssign (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10670:21)\n    at C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:10632:39\n    at Parser.allowInAnd (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12378:12)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _RestaurantCard_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RestaurantCard.vue */ "./resources/js/components/RestaurantCard.vue");
+/* harmony import */ var _TypeFilterButton_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TypeFilterButton.vue */ "./resources/js/components/TypeFilterButton.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+ // import axios from "axios";
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    RestaurantCard: _RestaurantCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    TypeFilterButton: _TypeFilterButton_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  name: "RestaurantsIndex",
+  props: {},
+  data: function data() {
+    return {
+      allRestaurantsList: [],
+      typesList: [],
+      filterList: [],
+      totalPages: 0,
+      sliceStart: 0,
+      sliceEnd: 10,
+      maxRestPerPage: 10
+    };
+  },
+  computed: {
+    restaurantsList: function restaurantsList() {
+      var _this = this;
+
+      // if (this.filterList.length == 0) {
+      //   return this.allRestaurantsList;
+      // } else {
+      //   var temp = this.allRestaurantsList;
+      //   for (let i = 0; i < this.filterList.length; i++) {
+      //     var result = [];
+      //     temp.forEach((element) => {
+      //       for (let j = 0; j < element.types.length; j++) {
+      //         if (element.types[j].id == this.filterList[i]) {
+      //             if (!result.includes(element)) {
+      //                 result.push(element);
+      //             }
+      //         }
+      //       }
+      //     });
+      //     temp = result;
+      //   }
+      //   return result;
+      // }
+      var result = [];
+
+      if (this.filterList.length == 0) {
+        result = this.allRestaurantsList;
+      } else {
+        var temp = this.allRestaurantsList;
+
+        var _loop = function _loop(i) {
+          result = [];
+          temp.forEach(function (element) {
+            for (var j = 0; j < element.types.length; j++) {
+              if (element.types[j].id == _this.filterList[i]) {
+                if (!result.includes(element)) {
+                  result.push(element);
+                }
+              }
+            }
+          });
+          temp = result;
+        };
+
+        for (var i = 0; i < this.filterList.length; i++) {
+          var result;
+
+          _loop(i);
+        }
+      }
+
+      this.totalPages = Math.ceil(result.length / this.maxRestPerPage);
+      return result.slice(this.sliceStart, this.sliceEnd);
+    }
+  },
+  methods: {
+    changePage: function changePage(num) {
+      this.sliceStart = (num - 1) * this.maxRestPerPage;
+      this.sliceEnd = num * this.maxRestPerPage;
+    }
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    axios.get("/api/user").then(function (resp) {
+      _this2.allRestaurantsList = resp.data.results;
+    })["catch"](function (er) {
+      alert("Impossibile recuperare l'elenco dei ristoranti.");
+    });
+    axios.get("/api/types").then(function (resp) {
+      _this2.typesList = resp.data.results;
+    })["catch"](function (er) {
+      alert("Impossibile recuperare l'elenco delle tipologie.");
+    });
+  }
+});
 
 /***/ }),
 
@@ -38476,8 +38599,65 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("type-filter-button", {
+        attrs: { types: _vm.typesList },
+        model: {
+          value: _vm.filterList,
+          callback: function($$v) {
+            _vm.filterList = $$v
+          },
+          expression: "filterList"
+        }
+      }),
+      _vm._v(" "),
+      _vm._l(_vm.restaurantsList, function(restaurant) {
+        return _c("restaurant-card", {
+          key: restaurant.id,
+          attrs: {
+            name: restaurant.name,
+            email: restaurant.email,
+            address: restaurant.address,
+            link: restaurant.link,
+            types: restaurant.types
+          }
+        })
+      }),
+      _vm._v(" "),
+      _vm.totalPages > 1
+        ? _c(
+            "div",
+            { staticClass: "pb-container" },
+            _vm._l(_vm.totalPages, function(i) {
+              return _c(
+                "button",
+                {
+                  key: i,
+                  attrs: { value: i },
+                  on: {
+                    click: function($event) {
+                      return _vm.changePage(i)
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(i))]
+              )
+            }),
+            0
+          )
+        : _vm._e()
+    ],
+    2
+  )
+}
 var staticRenderFns = []
+render._withStripped = true
 
 
 
@@ -51205,7 +51385,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n   ╷\n63 │ >>>>>>> start/style/scss-vedere-se-usare-boostrap\r\n   │                                                  ^\n   ╵\n  C:\\Users\\acer\\Desktop\\deliveboo\\resources\\sass\\app.scss 63:50  root stylesheet\n    at C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass-loader\\dist\\index.js:73:7\n    at Function.call$2 (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:93650:16)\n    at _render_closure1.call$2 (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:82010:12)\n    at _RootZone.runBinary$3$3 (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:27550:18)\n    at _FutureListener.handleError$1 (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:26099:19)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:26397:49)\n    at Object._Future__propagateToListeners (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:4550:77)\n    at _Future._completeError$2 (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:26229:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:25883:12)\n    at Object._asyncRethrow (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:4349:17)\n    at C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:12872:20\n    at _wrapJsFunctionForAsync_closure.$protected (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:4374:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:25904:12)\n    at _awaitOnObject_closure0.call$2 (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:25896:25)\n    at _RootZone.runBinary$3$3 (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:27550:18)\n    at _FutureListener.handleError$1 (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:26099:19)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:26397:49)\n    at Object._Future__propagateToListeners (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:4550:77)\n    at _Future._completeError$2 (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:26229:9)\n    at _Future__asyncCompleteError_closure.call$0 (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:26325:18)\n    at Object._microtaskLoop (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:4606:24)\n    at StaticClosure._startMicrotaskLoop (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:4612:11)\n    at _AsyncRun__scheduleImmediateJsOverride_internalCallback.call$0 (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:25795:21)\n    at invokeClosure (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:1441:26)\n    at Immediate.<anonymous> (C:\\Users\\acer\\Desktop\\deliveboo\\node_modules\\sass\\sass.dart.js:1462:18)\n    at processImmediate (internal/timers.js:462:21)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -51216,8 +51396,8 @@ throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\acer\Desktop\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\acer\Desktop\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\reven\Desktop\Boolean\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\reven\Desktop\Boolean\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

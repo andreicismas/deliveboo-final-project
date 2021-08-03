@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div class=" d-flex justify-content-center row col-6-md ">
       <type-filter-button
         :types="typesList"
         v-model="filterList"
@@ -82,7 +81,7 @@ export default {
                 }
               }
             }
-          });
+          );
           temp = result;
         }
       }
