@@ -5279,6 +5279,168 @@ input[type=number] {
   border-radius: 10px;
 }
 
+.container.dishes {
+  margin-top: 30px;
+}
+
+.container.dishes h2,
+.container.dishes span {
+  color: #feae01;
+  display: block;
+}
+
+.container.dishes a:last-of-type {
+  display: block;
+  margin-top: 30px;
+}
+
+.container.dishes form {
+  display: inline-block;
+}
+
+.container.dishes h2,
+h5 {
+  line-height: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.container.dishes h2 {
+  margin-bottom: 30px;
+}
+
+.container.dishes h5:not(:last-of-type) {
+  color: #323335;
+}
+
+.dishes .visibility {
+  text-decoration: underline;
+  color: #fe7101;
+  margin-bottom: 30px;
+}
+
+.dishes .btn {
+  font-weight: bold;
+}
+
+.container.dishes.index {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container.dishes.index > a {
+  width: 100%;
+}
+
+.dishes.index > .dish-card {
+  border: 3px solid #feae01;
+  padding: 15px;
+  border-radius: 4px;
+  width: 30%;
+  margin: 20px 10px;
+  background-color: #fffdfa;
+}
+
+.dishes.index > .dish-card > a {
+  display: inline-block;
+  margin: 5px 0;
+}
+
+.dishes.create,
+.dishes.edit {
+  padding-top: 30px;
+}
+
+.dishes.create > div,
+.dishes.create > a,
+.dishes.edit > div,
+.dishes.edit > a {
+  margin: 30px;
+  max-width: 45%;
+}
+
+.dishes.create > div textarea,
+.dishes.create > a textarea,
+.dishes.edit > div textarea,
+.dishes.edit > a textarea {
+  margin: 10px 0;
+  border-color: #feae01;
+}
+
+.dishes.create > div textarea::-moz-placeholder, .dishes.create > a textarea::-moz-placeholder, .dishes.edit > div textarea::-moz-placeholder, .dishes.edit > a textarea::-moz-placeholder {
+  color: #feae01;
+}
+
+.dishes.create > div textarea:-ms-input-placeholder, .dishes.create > a textarea:-ms-input-placeholder, .dishes.edit > div textarea:-ms-input-placeholder, .dishes.edit > a textarea:-ms-input-placeholder {
+  color: #feae01;
+}
+
+.dishes.create > div textarea::placeholder,
+.dishes.create > a textarea::placeholder,
+.dishes.edit > div textarea::placeholder,
+.dishes.edit > a textarea::placeholder {
+  color: #feae01;
+}
+
+.dishes.create > div label,
+.dishes.create > a label,
+.dishes.edit > div label,
+.dishes.edit > a label {
+  color: #feae01;
+}
+
+.dishes.create > div label:first-of-type,
+.dishes.create > a label:first-of-type,
+.dishes.edit > div label:first-of-type,
+.dishes.edit > a label:first-of-type {
+  font-weight: bold;
+  color: #ff8b6c;
+}
+
+@media screen and (max-width: 767px) {
+  .dishes.index > .dish-card {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .container.dishes.index {
+    display: block;
+    flex-wrap: none;
+  }
+
+  .dishes.create > div,
+  .dishes.edit > div {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .dishes.index > .dish-card {
+    width: 45%;
+  }
+
+  .dishes.create > div,
+  .dishes.edit > div {
+    max-width: 75%;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .dishes.index > .dish-card > a,
+  .dishes.index > .dish-card > form {
+    display: block;
+    margin: 5px auto;
+  }
+
+  .dishes.index > .dish-card > form {
+    display: flex;
+  }
+
+  .dishes.index > .dish-card > form input {
+    width: 100%;
+  }
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
