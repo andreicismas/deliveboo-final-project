@@ -1,0 +1,68 @@
+// appena funziona creo is scss folder
+  
+nav{
+    background-color: $primary;
+}
+.navbar-light .navbar-nav .bg_style:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: red ;
+    font-size: 16px;
+    transition: 0.7s;
+}
+.navbar-light .bg_style:hover, .navbar-light .navbar-brand:focus {
+    color: $tertiary ;
+}
+
+
+body{
+        .img_bg_style_register{
+          
+            background-image: url("public/img/background_log_reg.jpg");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-color: #2e2d2d;
+            background-size: cover;
+        }
+    
+}
+
+
+@media only screen and (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
+    body {
+        .img_bg_style_register,.img_bg_style_login{
+            height: 100%; 
+        } 
+        .img_bg_style_home{
+            height: 100vh;
+           
+        }
+     
+    }
+}
+@media only screen and (max-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
+    body {
+        .img_bg_style_register,.img_bg_style_login{
+            height: 100%; 
+        } 
+        .img_bg_style_home{
+            height: 100vh;
+           
+        }
+     
+    }
+}
+@media only screen and (min-width:577px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    body {
+        .img_bg_style_register{
+            height: 100%;
+           
+        }
+        .img_bg_style_home{
+            height: 100vh;
+           
+        }
+    }
+}
+@media only screen and (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
+    
+}

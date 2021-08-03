@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register Your Restaurant' ) }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -91,25 +91,6 @@
                             @enderror
 
                         </div>
-
-                       
-
-                        <!-- Load FilePond library -->
-                        <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
-
-                        <!-- Turn all file input elements into ponds -->
-                        <script>
-                        FilePond.parse(document.body);
-                        </script>
-                        <div class="form-group row">
-
-                            <label for="cover_UR" class="col-md-4 col-form-label text-md-right">{{ __('Cover Risto') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="cover_UR" type="file"  name="cover_UR" >
-                            </div>
-                        </div>
-
 
                         {{--Tipologie di ristorante--}}
 
