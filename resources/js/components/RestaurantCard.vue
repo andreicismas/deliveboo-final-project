@@ -43,11 +43,9 @@ export default {
 
 
     getImgUrl(url){
-      
       const urlHttp =  this.img;
       if(url){
         return '/storage/covers/' + this.indice + '/' + url
-       
       }
       if (url) {
         
@@ -55,10 +53,9 @@ export default {
         // return  'https://www.linga.org/site/photos/Largnewsimages/image-not-found.png' 
       }
       else  {
-        
+     
       }
-
-      
+    
     }
   }
 };

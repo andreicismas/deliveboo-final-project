@@ -27,8 +27,8 @@
 
 </head>
 <body>
-    <div id="app" class="img_bg_style_register  img_bg_style_login">
-        <nav class="navbar navbar-expand-md navbar-light  shadow-sm">
+    <div id="app" class="img_bg_style_register  img_bg_style_login img_bg_style_home">
+        <nav class="fixed-top navbar navbar-expand-md navbar-light  shadow-sm">
             <div class="container">
                 <a class="navbar-brand bg_style" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}

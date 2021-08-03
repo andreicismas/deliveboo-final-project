@@ -15910,29 +15910,40 @@ nav {
 }
 
 body .img_bg_style_register {
-  height: 100vh;
   background-image: url(/images/background_log_reg.jpg?ad6f05945d0e32b530adbd0233b613a1);
   background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: #2e2d2d;
   background-size: cover;
 }
 
-@media (min-width: 320px) {
+@media only screen and (min-width: 320px) {
   /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+
+  body .img_bg_style_register,
+  body .img_bg_style_login {
+    height: 100%;
+  }
+
+  body .img_bg_style_home {
+    height: 100vh;
+  }
+}
+
+@media only screen and (min-width: 577px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
 
   body .img_bg_style_register {
     height: 100%;
   }
 
-  body .img_bg_style_login {
+  body .img_bg_style_home {
     height: 100vh;
   }
 }
 
-@media (min-width: 577px) {
-  /* tablet, landscape iPad, lo-res laptops ands desktops */
-
-  body .img_bg_style_register {
-    height: 100vh;
-  }
+@media only screen and (min-width: 320px) {
+  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 }
 
