@@ -152,24 +152,6 @@
             </footer> 
         </div>
     </div>
-    {{-- <nav></nav>
-
-        <div>
-        <img class="img-fluid" src="{{ asset('img/donut-burger.jpg') }}" alt="">
-            <h1>Scegli il tuo ristorante </h1>
-            <span class="badge badge-primary">Primary</span>
-<span class="badge badge-secondary">Secondary</span>
-<span class="badge badge-success">Success</span>
-<span class="badge badge-danger">Danger</span>
-<span class="badge badge-warning">Warning</span>
-<span class="badge badge-info">Info</span>
-<span class="badge badge-light">Light</span>
-<span class="badge badge-dark">Dark</span>
-
-        <restaurants-index></restaurants-index>
-        
-        </div>
-    </div> --}}
 </body>
 
 </html>
