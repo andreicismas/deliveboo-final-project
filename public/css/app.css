@@ -5176,6 +5176,109 @@ input[type=number] {
         to {width: 0%;}
     }*/
 
+.orders-part .my-container-flex {
+  display: flex;
+}
+
+.orders-part .my-container-flex.flex-between {
+  justify-content: space-between;
+}
+
+.orders-part .my-link-container {
+  padding-bottom: 1.5rem;
+}
+
+.orders-part .fas {
+  width: 5%;
+  height: 100%;
+  font-size: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.orders-part th {
+  color: #fe7101;
+}
+
+.orders-part h1 {
+  font-family: "Lilita One", cursive;
+  color: #323335;
+}
+
+.chart-container {
+  position: relative;
+  max-width: 992px;
+  margin: auto;
+}
+
+.center {
+  text-align: center;
+}
+
+#payment-form .form-group label {
+  color: #323335;
+  font-weight: bold;
+}
+
+#payment-form h4 {
+  color: #323335;
+}
+
+#payment-form th {
+  color: #fe7101;
+}
+
+#payment-form .fas {
+  width: 5%;
+  height: 100%;
+  font-size: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#payment-form .my-container-flex {
+  display: flex;
+}
+
+#payment-form .my-container-flex.flex-between {
+  justify-content: space-between;
+}
+
+#payment-form .my-container-flex.flex-between .my-submit-btn {
+  background-color: #feae01;
+  font-size: 20px;
+  color: #fffdfa;
+}
+
+#payment-form .my-link-container {
+  padding-bottom: 1.5rem;
+}
+
+.successful {
+  min-height: 100vh;
+  background-color: #e3342f;
+  display: flex;
+  flex-direction: column;
+}
+
+.successful .filler {
+  flex-grow: 1;
+}
+
+.successful > * {
+  margin: 20px auto;
+  font-family: "Lilita One", cursive;
+  color: #fffdfa;
+  text-align: center;
+}
+
+.successful a {
+  background-color: #fffdfa;
+  color: #323335;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

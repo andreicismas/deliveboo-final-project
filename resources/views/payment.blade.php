@@ -84,13 +84,7 @@
             </div>
         </nav>
     </div>
-    <main class="py-4">
-
-        @if (session('success_message'))
-            <div class="alert alert-success">
-                {{ session('success_message') }}
-            </div>
-        @endif
+    <main class="py-4 container-fluid">
         @if (count($errors) > 0)
             <div class="alert alert-danger">
                 <ul>
@@ -104,7 +98,7 @@
         <form method="post" action="{{ route('checkout') }}" class="container" id="payment-form">
             @csrf
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-sm-12">
                     <div class="form-group">
                         <label for="customer_mail">Email address</label>
                         <input type="email" class="form-control" name="customer_mail" id="customer_mail"
@@ -129,33 +123,35 @@
             </div>
 
             <div>
-                <h4>Resoconto Carrello</h4>
-                <table>
-                    <thead>
-                        <th>Piatto</th>
-                        <th>Prezzo</th>
-                        <th>Porzioni</th>
-                    </thead>
-                    <tbody>
-                        @foreach($allRestaurantDishes as $restaurantDish)    
-                            @foreach ($ordered_dishes as $ordered_dish => $quantity)
-                                @if ($quantity && $restaurantDish->id == $ordered_dish)
-                                    <tr>
-                                        <td>{{ $restaurantDish->name }}</td>
-                                        <td>{{ $restaurantDish->price }}</td>
-                                        <td>{{ $quantity }}</td>
-                                    </tr>
-                                    <input type="hidden" name="dishes[{{ $ordered_dish }}]" value="{{$quantity}}">
-                                @endif
+                <h4>Riepilogo Carrello</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <th>Piatto</th>
+                            <th>Prezzo</th>
+                            <th>Porzioni</th>
+                        </thead>
+                        <tbody>
+                            @foreach($allRestaurantDishes as $restaurantDish)    
+                                @foreach ($ordered_dishes as $ordered_dish => $quantity)
+                                    @if ($quantity && $restaurantDish->id == $ordered_dish)
+                                        <tr>
+                                            <td>{{ $restaurantDish->name }}</td>
+                                            <td>{{ $restaurantDish->price }}€</td>
+                                            <td>{{ $quantity }}</td>
+                                        </tr>
+                                        <input type="hidden" name="dishes[{{ $ordered_dish }}]" value="{{$quantity}}">
+                                    @endif
+                                @endforeach
                             @endforeach
-                        @endforeach
-                    </tbody>
-                    <tfoot>
-                        <th>Totale</th>
-                        <td>{{ $amount }}</td>
-                        <input type="hidden" name="amount" value="{{$amount}}">
-                    </tfoot>
-                </table>
+                        </tbody>
+                        <tfoot>
+                            <th>Totale</th>
+                            <td>{{ $amount }}€</td>
+                            <input type="hidden" name="amount" value="{{$amount}}">
+                        </tfoot>
+                    </table>
+                </div>
             </div>
 
             <div class="bt-drop-in-wrapper">
@@ -163,7 +159,10 @@
             </div>
 
             <input id="nonce" name="payment_method_nonce" type="hidden" />
-            <button class="button" type="submit"><span>Confirm</span></button>
+            <div class="my-container-flex flex-between">
+                <a href="{{ route('orders.create', ["slug" => $restaurantSlug]) }}"><i class="fas fa-backspace"></i></a>
+                <button class="my-submit-btn" type="submit"><span>Conferma</span></button>
+            </div>
         </form>
     </main>
 
