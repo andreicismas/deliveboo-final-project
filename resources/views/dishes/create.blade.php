@@ -8,10 +8,10 @@
     @endforeach
     @endif
 
-<a href="{{route("dishes.index")}}">Indietro</a>
 
-<form action ="{{route('dishes.store')}}" method="post"> 
+<form class="dishes create" action ="{{route('dishes.store')}}" method="post"> 
     @csrf 
+        <a href="{{route("dishes.index")}}">Indietro</a>
 
         <div>
          <textarea name="name" class="form-control" aria-label="With textarea" rows="1" style="resize: none" placeholder="Nome piatto"></textarea>
@@ -38,7 +38,7 @@
         </div>
 
     <div>
-      <input type="submit" value="carica">
+      <input type="submit" value="Carica" class="btn btn-primary">
     </div>
 </form>
 @endsection
