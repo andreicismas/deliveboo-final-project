@@ -4799,7 +4799,7 @@ h1 {
 }
 
 .back-bttn {
-  font-size: 30px;
+  font-size: 45px;
   padding: 0;
 }
 
@@ -4816,6 +4816,8 @@ h1 {
 
 .box-submit {
   width: 25%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .my-submit {

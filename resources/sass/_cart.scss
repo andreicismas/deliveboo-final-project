@@ -33,9 +33,9 @@ h1{font-family: 'Lilita One';}
     height: 100%;
 }
 
-//torna indietro, provvisorio
+//torna indietro
 .back-bttn {
-    font-size: 30px;
+    font-size: 45px;
     padding: 0;
 }
 
@@ -53,6 +53,9 @@ h1{font-family: 'Lilita One';}
 
 .box-submit{
     width: 25%;
+    display: flex;
+    justify-content: flex-end;
+
 }
 
 
