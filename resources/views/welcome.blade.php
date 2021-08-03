@@ -140,7 +140,7 @@
                             </div>          
                         </div>                          
                         <div class="text-center">
-                            <h6><span class="primary">© Copyright 2012 - 2020 | DeliveBoo Theme by</span><span class="white">
+                            <h6><span class="primary ">© Copyright 2012 - 2020 | DeliveBoo Theme by</span><span class="white">
                                     DeliveBoo Fusion
                                 </span><span class="primary">| All Rights Reserved | Powered By</span><span
                                     class="white"> Team Heroes</span></h6>
@@ -153,7 +153,6 @@
         </div>
     </div>
     {{-- <nav></nav>
-   
 
         <div>
         <img class="img-fluid" src="{{ asset('img/donut-burger.jpg') }}" alt="">
