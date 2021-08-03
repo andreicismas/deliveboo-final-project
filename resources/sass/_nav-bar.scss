@@ -48,7 +48,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid $secondary;
 }
 
 
@@ -76,6 +76,9 @@
     .my-brand {
         font-size: 33px;
         color: $falsewhite;
+        &:hover{
+            color: white;
+        }
     }
 
     .my-nav-link{
@@ -91,5 +94,7 @@
     #navbarDropdown.my-name {
       color: white;
     }
+
+ 
     
 }
