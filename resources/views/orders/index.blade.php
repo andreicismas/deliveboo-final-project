@@ -86,7 +86,8 @@
             <div class="container-fluid">
                 <div class="my-container-flex flex-between my-link-container">
                     <a href="{{ route('home') }}"><i class="fas fa-backspace"></i></a>
-                    <a href="#chartY"><i class="fas fa-chart-line" aria-hidden="true"></i></a>
+                    <h1>Riepilogo Ordini</h1>
+                    <a href="#chartSec"><i class="fas fa-chart-line" aria-hidden="true"></i></a>
                 </div>
 
                 @if (count($orders) == 0)
@@ -118,11 +119,11 @@
     </div>
 
     <div class="container-fluid">
-        <h3 class="center">Riepilogo Ordini</h3>
+        <h3 id="chartSec" class="center">Grafico Annuale</h3>
         <div class="chart-container">
             <canvas id="chartY"></canvas>
         </div>
-        <h3 class="center">Riepilogo dell'Ultimo Anno</h3>
+        <h3 class="center">Grafico dell'Ultimo Anno</h3>
         <div class="chart-container">
             <canvas id="chartM"></canvas>
         </div>

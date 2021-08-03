@@ -4,7 +4,7 @@
         <div class="my-link-container py-4">
             <a href="{{ route('orders.index') }}"><i class="fas fa-backspace"></i></a>
         </div>
-        <h1>Ordine Numero {{ $order->id }}</h1>
+        <h1>Ordine #{{ $order->id }}</h1>
         <div class="table-responsive">
             <table class="table table-striped table-bordered">
                 <thead>

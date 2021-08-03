@@ -4966,6 +4966,11 @@ input[type=number] {
   color: #fe7101;
 }
 
+.orders-part h1 {
+  font-family: "Lilita One", cursive;
+  color: #323335;
+}
+
 .chart-container {
   position: relative;
   max-width: 992px;
@@ -5028,6 +5033,7 @@ input[type=number] {
 
 .successful > * {
   margin: 20px auto;
+  font-family: "Lilita One", cursive;
   color: #fffdfa;
   text-align: center;
 }
