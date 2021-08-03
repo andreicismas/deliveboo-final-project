@@ -4684,8 +4684,8 @@ icona usata da me -> <i class="fas fa-backspace"> */
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.39);
 }
 
-.my-nav > * {
-  border: 1px solid black;
+.my-nav {
+  width: 100%;
 }
 
 .my-container {
