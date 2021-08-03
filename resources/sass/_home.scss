@@ -60,7 +60,7 @@
 
 .container {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
 }
 
 .email {
@@ -249,5 +249,13 @@ ul {
 .box-img {
     width: 100%;
     height: 100%;
+}
+
+@media (min-width: 577px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    .payoff {
+        .one, .two, .three {
+        font-size: 11px;
+        }
+    }
 }
 

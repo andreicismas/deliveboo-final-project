@@ -1,8 +1,10 @@
 <template>
   <div class="">
-    <div class="card d-flex " style="width: 18rem; margin: 5px">
+    <div class="card d-flex badge" style="width: 18rem; margin: 5px">
       <a :href="link">
-        <span v-for="type in types" :key="type.id">{{ type.name }}</span>
+        <div class="d-flex justify-content-center">
+          <span class="badge badge-primary ml-2" v-for="type in types" :key="type.id">{{ type.name }}</span>
+        </div>
         <div class="card-body">
           <img src="img/pancake-burger-200x150.jpg" alt="">
           <h5 class="card-title">{{ name }}</h5>

@@ -7,7 +7,7 @@
       ></type-filter-button>
     </div>
 
-    <div class="radius d-flex flex-wrap justify-content-between align-items-center">
+    <div class="d-flex flex-wrap justify-content-between align-items-center">
       <restaurant-card
         v-for="restaurant in restaurantsList"
         :key="restaurant.id" 

@@ -112,9 +112,9 @@
                 </div>
                 <div class="container">
                     <div class="m-top-20 flex row-between mb-5">
-                         <h1 class="$tertiary">Restaurant Types</h1>
+                         <h1 class="secondary">Restaurant Types</h1>
                     </div>
-                    <div >
+                    <div  >
                         <restaurants-index></restaurants-index>
                     </div>
                 </div>

@@ -1957,6 +1957,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCard",
   props: {
@@ -37838,39 +37840,41 @@ var render = function() {
     _c(
       "div",
       {
-        staticClass: "card d-flex ",
+        staticClass: "card d-flex badge",
         staticStyle: { width: "18rem", margin: "5px" }
       },
       [
-        _c(
-          "a",
-          { attrs: { href: _vm.link } },
-          [
+        _c("a", { attrs: { href: _vm.link } }, [
+          _c(
+            "div",
+            { staticClass: "d-flex justify-content-center" },
             _vm._l(_vm.types, function(type) {
-              return _c("span", { key: type.id }, [_vm._v(_vm._s(type.name))])
+              return _c(
+                "span",
+                { key: type.id, staticClass: "badge badge-primary ml-2" },
+                [_vm._v(_vm._s(type.name))]
+              )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c("img", {
+              attrs: { src: "img/pancake-burger-200x150.jpg", alt: "" }
             }),
             _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _c("img", {
-                attrs: { src: "img/pancake-burger-200x150.jpg", alt: "" }
-              }),
-              _vm._v(" "),
-              _c("h5", { staticClass: "card-title" }, [
-                _vm._v(_vm._s(_vm.name))
-              ]),
-              _vm._v(" "),
-              _c("em", { staticClass: "card-title" }, [
-                _vm._v(_vm._s(_vm.email))
-              ]),
-              _c("br"),
-              _vm._v(" "),
-              _c("em", { staticClass: "card-title" }, [
-                _vm._v(_vm._s(_vm.address))
-              ])
+            _c("h5", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.name))]),
+            _vm._v(" "),
+            _c("em", { staticClass: "card-title" }, [
+              _vm._v(_vm._s(_vm.email))
+            ]),
+            _c("br"),
+            _vm._v(" "),
+            _c("em", { staticClass: "card-title" }, [
+              _vm._v(_vm._s(_vm.address))
             ])
-          ],
-          2
-        )
+          ])
+        ])
       ]
     )
   ])
