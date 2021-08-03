@@ -15,7 +15,7 @@ class AddCoverUrlToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->text("cover_UR")->after("password");
+            $table->text("cover_UR")->after("password")->nullable();
             
         });
     }
