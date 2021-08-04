@@ -9,6 +9,8 @@
       v-for="restaurant in restaurantsList"
       :key="restaurant.id"
       :name="restaurant.name"
+      :indice="restaurant.id"
+      :img="restaurant.cover_UR"
       :email="restaurant.email"
       :address="restaurant.address"
       :link="restaurant.link"
