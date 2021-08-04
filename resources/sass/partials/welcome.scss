@@ -15,10 +15,10 @@
     }
 
     .hero{
-        height: 600px;
+        height: 400px;
         width: 100%;
         padding: 150px 40px 50px 40px;
-        background-color: yellowgreen;
+        background-color: rgb(168, 175, 153);
     }
 
     .filter-btn{
@@ -129,7 +129,7 @@
             padding: 10px 15px;
             background-color: $red;
             color: $falsewhite;
-            margin: 5px;
+            margin: 0px;
             border-radius: 5px;
         }
     }
