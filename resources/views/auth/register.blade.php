@@ -103,17 +103,16 @@
 
                             </div>
 
-                            {{-- input cover ristorante --}}
-
+                        
                             <div class="form-group row">
 
-                                <label for="cover_UR"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Cover Risto') }}</label>
+                                <label for="cover_UR" class="col-md-4 col-form-label text-md-right">{{ __('Cover Risto') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="cover_UR" type="file" name="cover_UR">
+                                    <input id="cover_UR" type="file"  name="cover_UR" >
                                 </div>
                             </div>
+                           
 
 
                             {{-- Tipologie di ristorante --}}
@@ -134,6 +133,7 @@
                                 @endforeach
 
                             </div>
+
 
 
                             {{--  --}}
