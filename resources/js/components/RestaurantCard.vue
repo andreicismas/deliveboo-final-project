@@ -22,20 +22,6 @@ export default {
     link: String,
     img: String,
     types: Array,
-  },
-  methods: {
-    // getImgUrl(url){
-    //   const urlHttp =  this.img;
-    //   if(url){
-    //     return '/storage/covers/' + this.indice + '/' + url
-    //   }
-    //   if (url) {
-    //     return  url
-    //     // return  'https://www.linga.org/site/photos/Largnewsimages/image-not-found.png'
-    //   }
-    //   else  {
-    //   }
-    // }
-  },
+  }
 };
 </script>

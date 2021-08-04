@@ -32,8 +32,10 @@
                 <a class="my-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Deliveboo') }}
                 </a>
-                <button class="my-toggler"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span ><i class="fas fa-bars"></i></span>
+                <button class="my-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="{{ __('Toggle navigation') }}">
+                    <span><i class="fas fa-bars"></i></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -55,8 +57,9 @@
                                 </li>
                             @endif
                         @else
-                            <li class=" nav-item dropdown"> {{--non aggiungere my--}}
-                                <a id="navbarDropdown" class="my-name dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <li class=" nav-item dropdown"> {{-- non aggiungere my --}}
+                                <a id="navbarDropdown" class="my-name dropdown-toggle" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -65,9 +68,8 @@
                                         Torna alla home
                                     </a>
 
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -130,7 +132,7 @@
                             <th>Porzioni</th>
                         </thead>
                         <tbody>
-                            @foreach($allRestaurantDishes as $restaurantDish)    
+                            @foreach ($allRestaurantDishes as $restaurantDish)
                                 @foreach ($ordered_dishes as $ordered_dish => $quantity)
                                     @if ($quantity && $restaurantDish->id == $ordered_dish)
                                         <tr>
@@ -138,7 +140,8 @@
                                             <td>{{ $restaurantDish->price }}€</td>
                                             <td>{{ $quantity }}</td>
                                         </tr>
-                                        <input type="hidden" name="dishes[{{ $ordered_dish }}]" value="{{$quantity}}">
+                                        <input type="hidden" name="dishes[{{ $ordered_dish }}]"
+                                            value="{{ $quantity }}">
                                     @endif
                                 @endforeach
                             @endforeach
@@ -146,7 +149,7 @@
                         <tfoot>
                             <th>Totale</th>
                             <td>{{ $amount }}€</td>
-                            <input type="hidden" name="amount" value="{{$amount}}">
+                            <input type="hidden" name="amount" value="{{ $amount }}">
                         </tfoot>
                     </table>
                 </div>
@@ -158,7 +161,8 @@
 
             <input id="nonce" name="payment_method_nonce" type="hidden" />
             <div class="my-container-flex flex-between">
-                <a href="{{ route('orders.create', ["slug" => $restaurantSlug]) }}"><i class="fas fa-backspace"></i></a>
+                <a href="{{ route('orders.create', ['slug' => $restaurantSlug]) }}"><i
+                        class="fas fa-backspace"></i></a>
                 <button class="my-submit-btn" type="submit"><span>Conferma</span></button>
             </div>
         </form>

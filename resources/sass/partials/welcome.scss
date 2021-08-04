@@ -87,6 +87,9 @@
                         margin: 5px 0;
                         a {
                             color: $falsewhite;
+                            &:hover {
+                                color: gray;
+                            }
                             img {
                                 width: 100px;
                                 border: 1px solid $falsewhite;
@@ -105,6 +108,9 @@
                         margin-right: 20px;
                         i {
                             font-size: 20px;
+                        }
+                        &:hover {
+                            color: gray;
                         }
                     }
                 }
