@@ -15,7 +15,10 @@ h1{font-family: 'Lilita One';}
     height: 100%;
     display: flex;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
     justify-content: space-between;
     background-color: $falsewhite;
 }
@@ -30,6 +33,13 @@ h1{font-family: 'Lilita One';}
     display: none;
 }
 
+//nome ristoratore
+.signboardMobile {
+height: 100px;
+width: 100%;
+padding-left: 10%;
+ }
+
 //div del pulsante 'indietro'
 .divBack{
     width: 15%;
@@ -42,18 +52,7 @@ h1{font-family: 'Lilita One';}
     padding: 0;
 }
 
-//nome ristoratore
-.signboard {
-   font-family: 'Lilita One', cursive;
-   color: $main-text;
-   width: 50%;
-   height: 100px;
-   display: flex;
-   align-items: center;
-   z-index: 3;
-   font-size: 30px;
-   display: none;
-}
+
 
 .box-submit{
     width: 25%;
@@ -350,7 +349,11 @@ flex-direction: column;
         z-index: 3;
         font-size: 30px;
         display: block;
-     }
+    }
+
+     .signboardMobile {
+        display: none;
+    }
 
 }
 

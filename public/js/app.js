@@ -38000,7 +38000,7 @@ var render = function() {
         "div",
         {
           key: type.id,
-          staticClass: "btn-group btn-group-toggle col-6-md p-2",
+          staticClass: "btn-group filters-marg btn-group-toggle col-6-md p-2",
           attrs: { "data-toggle": "buttons" }
         },
         [

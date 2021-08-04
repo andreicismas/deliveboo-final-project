@@ -76,6 +76,15 @@
     }       
 }
 
+.my-label{
+   background-color: $tertiary;
+   display: flex;
+   justify-content: flex-start;
+   flex-wrap: wrap;
+   padding: 5px 5px 5px 10px;
+   border-radius: 10px;
+}
+
 // @media screen and (max-width: 575px) {
 //     .register .types-label {
 //         margin:0 0 15px 0 ;

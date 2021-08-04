@@ -1,19 +1,24 @@
 @extends('layouts.app')
 @section('content')
-<div class="for-the-nav">
+<div class="for-the-nav container">
 
 
     @if(count($errors->all())>0) 
+    <div class="errorDiv">
+        <i class="fas fa-exclamation-triangle"></i>
 
-    @foreach($errors->all() as $error)
-        <h5>{{$error}}</h5>   
-    @endforeach
+        @foreach($errors->all() as $error)
+            <h5>{{$error}}</h5>   
+        @endforeach
+        
+    </div>
     @endif
 
+<a href="{{ url()->previous() }}" class="btn btn-default"><i class="fas fa-backspace back-bttn"></i></a>
 
 <form class="dishes create" action ="{{route('dishes.store')}}" method="post"> 
     @csrf 
-        <a href="{{ route('dishes.index') }}"><i class="fas fa-backspace back-bttn"></i></a>
+        
 
         <div>
          <textarea name="name" class="form-control" aria-label="With textarea" rows="1" style="resize: none" placeholder="Nome piatto"></textarea>

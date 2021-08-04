@@ -3,16 +3,22 @@
 <div class="for-the-nav">
 
     @if (count($errors->all()) > 0)
-    <div class="errorDiv">
-            @foreach ($errors->all() as $error)
-                <h5>{{ $error }}</h5>
-            @endforeach
-    </div>
+        <div class="errorDiv">
+                <i class="fas fa-exclamation-triangle"></i>
+                
+                @foreach ($errors->all() as $error)
+                    <h5>{{ $error }}</h5>
+                @endforeach
+        </div>
     @endif
 
 
     <form action="{{ route('payment') }}" method="post">
         @csrf
+
+        <div class="signboardMobile">
+            <h1>{{ $restaurant }}</h1>
+        </div>
 
         <div class="cart-head">
 
@@ -24,7 +30,7 @@
                 <h1>{{ $restaurant }}</h1>
             </div>
 
-            @if (count($dishes) > 0)
+    @if (count($dishes) > 0)
             <div class="box-submit">
                 <button class="my-submit my-bttns" type="submit" value="ordina" value="#ff00ff">
                     <span class="hiddenText"> Ordina adesso!</span>
@@ -79,8 +85,11 @@
         <input type="hidden" name="restaurant_id" value="{{ $dishes[0]->user_id }}">
     @else
         </div>
-        <h1>Oops! Sembra che non ci siano piatti da poter ordinare in questo ristorante!</h1>
-        @endif
+        <div class="errorDiv">
+            <i class="fas fa-exclamation-triangle"></i>
+           <h3>Oops! Sembra che non ci siano piatti da poter ordinare in questo ristorante!</h3>
+        </div>
+    @endif
     </form>
     </div>
 

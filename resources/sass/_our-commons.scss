@@ -5,19 +5,30 @@
 .for-the-nav{
     margin:0;
     padding:0;
-    padding-top: 100px
+    padding-top: 130px
 }
+   @media (min-width: 200px) and (max-width: 992px) {
+    .for-the-nav{
+        padding-top: 150px;
+    }
+
+   }
 
 .errorDiv{
     margin-top: 70px;
     margin-bottom: 50px;
     margin-left: 30%;
     margin-right: 30%;
-    padding: 20px 0 20px 0;
+    padding: 30px 0 30px 0;
     border: 2px solid $secondary;
     background-color: white;
     color: $secondary;
     text-align: center;
+    border-radius: 5px;
+    & .fas{
+        margin-bottom: 10px;
+        font-size: 25px;
+    }
 
 }
 
@@ -53,14 +64,14 @@ icona usata da me -> <i class="fas fa-backspace"> */
     justify-content: center;
     align-items: center;
 
-    text-transform: uppercase;
     font-size: 15px;
     font-weight: bolder;
 
-    border-radius: 30px;
-    margin: 30px;
+    border-radius: 5px;
+    margin: 5px;
     border:0;
-
+    padding-right: 10px;
+    padding-left: 10px;
     color: $falsewhite;
     background-color: $secondary;
     z-index: 3;
@@ -71,7 +82,20 @@ icona usata da me -> <i class="fas fa-backspace"> */
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.39);
 }
 
+.row{
+    display: flex;
+}
 
+.card-body{
+    form{
+        .my-bttns{
+            &:hover{
+                color:white;
+                background-color: $secondary;
+            }
+        }
+    }
+}
 
 
 

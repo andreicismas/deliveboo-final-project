@@ -33,6 +33,12 @@
         padding-bottom: 1.5rem;
     }
 }
+
+.class-thumb-up{
+    font-size: 300px;
+    color: white;
+}
+
 .successful {
     min-height: 100vh;
     background-color: $red;
@@ -43,14 +49,21 @@
     }
     & > * {
         margin: 20px auto;
-        font-family: 'Lilita One', cursive;
-        color: $falsewhite;
-        text-align: center;
     }
     a {
         background-color: $falsewhite;
-        color: $main-text;
+        color: red;
+        font-weight: 600;
         padding: 10px;
         border-radius: 10px;
     }
+    & h3{
+        color:white;
+        font-family: 'Poppins', sans-serif;
+    }
+    & h1{
+        font-family: 'Lilita One', cursive;
+        color: $falsewhite;
+    }
+
 }

@@ -6,7 +6,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard di ') }} {{ Auth::user()->name }}</div>
+                <div class="card-header d-flex justify-content-between mytext bg-primary">
+                    <span class="card-span">Area personale</span>
+                    <span class="card-span">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,58 +20,45 @@
                         </div>
                     @endif
 
-                    <div class="mt-2 mb-2">
-                        {{ __('Ciao') }} <em>{{ Auth::user()->name }}</em>
-                    </div>
                     <div class="card" >
                         <img class="img-thumbnail" src="{{ asset('storage/covers/'.auth()->user()->id .'/'.auth()->user()->cover_UR)}}">
 
-                        <h3 class="ml-4 mt-3">Dati Ristorante <span><em>{{ Auth::user()->name }}</em></span></h3>
+                        <h3>Dati ristorante <span><strong>{{ Auth::user()->name }}</strong></span></h3>
  
-                        <div class="table-responsive-md table-responsive-sm card-body">
-                            <table class="table table-sm">
-                                <thead>
-                                    <tr>
-                                        
-                                        <th scope="col">Nome Ristorante</th>
-                                        <th scope="col">Email Ristorante</th>
-                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        
-                                        <td><em class="badge badge-secondary">{{ Auth::user()->name }}</em></td>
-                                        <td><em class="badge badge-secondary">{{ Auth::user()->email }}</em></td>
-                                        
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table class="table table-sm">
-                                <thead>
-                                    <tr>
-                                        
-                                        
-                                        <th scope="col">indirizzo Ristorante</th>
-                                        <th scope="col">P.IVA</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        
-                                       
-                                        <td><em class="badge badge-secondary">{{ Auth::user()->address }}</em></td>
-                                        <td><em class="badge badge-secondary">{{ Auth::user()->VAT }}</em></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div>
+                             <h6> <strong> mail: </strong></h6> 
+                             <h5 class="block-user">{{ Auth::user()->email }}</h5>
+
+                             <h6> <strong> indirizzo: </strong></h6> 
+                             <h5 class="block-user">{{ Auth::user()->address }}</h5>
+
+                             <h6> <strong> p.IVA </strong></h6> 
+                             <h5 class="block-user">{{ Auth::user()->VAT }}</h5>
+
                         </div>
+                  
 
-                        <div class="d-flex justify-content-around">
+                        <div class="link-container">
 
-                            <a  class="btn btn-primary" href="{{ route('dishes.index') }}">Vedi menù</a>
-                            <a  class="btn btn-primary" href="{{ route('dishes.create') }}">Carica nuovi piatti</a>
-                            <a  class="btn btn-primary" href="{{ route('orders.index') }}">Storico Ordini</a>
+                            <a  class="btn btn-secondary" href="{{ route('dishes.index') }}"> 
+                                <span class="card-span-2">
+                                    <i class="fas fa-clipboard-list"></i>
+                                    Vedi menù
+                                </span>
+                            </a>
+                               
+                            <a  class="btn btn-secondary" href="{{ route('dishes.create') }}">
+                                <span class="card-span-2">
+                                    <i class="fas fa-hamburger"></i>
+                                    Carica nuovi piatti
+                                </span>
+                            </a>
+                            <a  class="btn btn-secondary" href="{{ route('orders.index') }}">
+                                <span class="card-span-2">
+                                    <i class="fas fa-hourglass-end"></i>
+                                    Storico Ordini
+                                </span>
+                            </a>
                         </div>
 
                     

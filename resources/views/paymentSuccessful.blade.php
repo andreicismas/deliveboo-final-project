@@ -25,10 +25,13 @@
 <body>
     <div id="app" class="successful my-container-flex">
         <div class="filler"></div>
+        <div class="class-thumb-up">
+            <i class="far fa-thumbs-up"></i>
+        </div>
         <h1>ORDINE EFFETTUATO CON SUCCESSO!</h1>
-        <p>Ordine #{{ $order->id }}</p>
-        <p>Indirizzo: {{ $order->delivery_address }}</p>
-        <p>Tempo stimato di arrivo: 10 minuti</p>
+        <h3>Ordine #{{ $order->id }}</h3>
+        <h3>Indirizzo: {{ $order->delivery_address }}</h3>
+        <h3>Tempo stimato di arrivo: 10 minuti</h3>
         <div>
             <a href="{{ route('welcome') }}">Ritorna alla pagina iniziale</a>
         </div>

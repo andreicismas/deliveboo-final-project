@@ -4618,7 +4618,13 @@ readers do not read off random characters that represent icons */
 .for-the-nav {
   margin: 0;
   padding: 0;
-  padding-top: 100px;
+  padding-top: 130px;
+}
+
+@media (min-width: 200px) and (max-width: 992px) {
+  .for-the-nav {
+    padding-top: 150px;
+  }
 }
 
 .errorDiv {
@@ -4626,11 +4632,17 @@ readers do not read off random characters that represent icons */
   margin-bottom: 50px;
   margin-left: 30%;
   margin-right: 30%;
-  padding: 20px 0 20px 0;
+  padding: 30px 0 30px 0;
   border: 2px solid #fe7101;
   background-color: white;
   color: #fe7101;
   text-align: center;
+  border-radius: 5px;
+}
+
+.errorDiv .fas {
+  margin-bottom: 10px;
+  font-size: 25px;
 }
 
 a:hover {
@@ -4674,12 +4686,13 @@ icona usata da me -> <i class="fas fa-backspace"> */
   display: flex;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
   font-size: 15px;
   font-weight: bolder;
-  border-radius: 30px;
-  margin: 30px;
+  border-radius: 5px;
+  margin: 5px;
   border: 0;
+  padding-right: 10px;
+  padding-left: 10px;
   color: #fffdfa;
   background-color: #fe7101;
   z-index: 3;
@@ -4689,6 +4702,15 @@ icona usata da me -> <i class="fas fa-backspace"> */
 
 .my-bttns {
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.39);
+}
+
+.row {
+  display: flex;
+}
+
+.card-body form .my-bttns:hover {
+  color: white;
+  background-color: #fe7101;
 }
 
 .my-nav {
@@ -4818,7 +4840,10 @@ h1 {
   height: 100%;
   display: flex;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 5%;
+  padding-right: 5%;
   justify-content: space-between;
   background-color: #fffdfa;
 }
@@ -4832,6 +4857,12 @@ h1 {
   display: none;
 }
 
+.signboardMobile {
+  height: 100px;
+  width: 100%;
+  padding-left: 10%;
+}
+
 .divBack {
   width: 15%;
   height: 100%;
@@ -4840,18 +4871,6 @@ h1 {
 .back-bttn {
   font-size: 45px;
   padding: 0;
-}
-
-.signboard {
-  font-family: "Lilita One", cursive;
-  color: #323335;
-  width: 50%;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  z-index: 3;
-  font-size: 30px;
-  display: none;
 }
 
 .box-submit {
@@ -5153,6 +5172,10 @@ h1 {
     font-size: 30px;
     display: block;
   }
+
+  .signboardMobile {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1396px) {
@@ -5229,6 +5252,39 @@ input[type=number] {
 
 @media only screen and (min-width: 320px) {
   /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+}
+
+.block-user {
+  margin-bottom: 5px;
+  text-align: left;
+  padding: 5px 20px 5px 10px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.39);
+  margin-bottom: 15px;
+}
+
+.block-user * {
+  text-transform: uppercase;
+}
+
+.card-span {
+  font-weight: bolder;
+  font-size: larger;
+  text-transform: uppercase;
+  color: white;
+}
+
+.card-span-2 {
+  font-weight: bold;
+  font-size: large;
+  color: white;
+}
+
+.card-span-2 .fas {
+  margin-right: 10px;
+}
+
+.link-container {
+  margin-top: 20px;
 }
 
 .orders-part .my-container-flex {
@@ -5309,6 +5365,11 @@ input[type=number] {
   padding-bottom: 1.5rem;
 }
 
+.class-thumb-up {
+  font-size: 300px;
+  color: white;
+}
+
 .successful {
   min-height: 100vh;
   background-color: #e3342f;
@@ -5322,16 +5383,24 @@ input[type=number] {
 
 .successful > * {
   margin: 20px auto;
-  font-family: "Lilita One", cursive;
-  color: #fffdfa;
-  text-align: center;
 }
 
 .successful a {
   background-color: #fffdfa;
-  color: #323335;
+  color: red;
+  font-weight: 600;
   padding: 10px;
   border-radius: 10px;
+}
+
+.successful h3 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.successful h1 {
+  font-family: "Lilita One", cursive;
+  color: #fffdfa;
 }
 
 .welcome {
@@ -5348,10 +5417,15 @@ input[type=number] {
   margin: 0 10px;
 }
 
+.welcome .filters-marg {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
 .welcome .hero {
-  height: 400px;
+  height: 600px;
   width: 100%;
-  padding-top: 100px;
+  padding: 150px 40px 50px 40px;
   background-color: yellowgreen;
 }
 
@@ -5384,10 +5458,12 @@ input[type=number] {
 
 .welcome .restaurant-container .restaurant-card {
   display: flex;
+  height: 324px;
+  width: 505px;
+  min-width: 200px;
   flex-direction: column;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.39);
   border-radius: 10px;
-  min-width: 250px;
   margin: 10px;
   padding: 10px;
 }
@@ -5411,7 +5487,7 @@ input[type=number] {
   display: flex;
   align-items: center;
   padding: 0 5px;
-  font-size: small;
+  font-size: large;
   font-weight: bold;
   color: #fe7101;
 }
@@ -5426,15 +5502,18 @@ input[type=number] {
 }
 
 .welcome .restaurant-container .restaurant-card .img-container {
-  width: 80%;
-  height: 100%;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   align-self: center;
   flex-grow: 1;
 }
 
 .welcome .restaurant-container .restaurant-card .img-container img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .welcome .restaurant-container .restaurant-card .name-container {
@@ -5615,7 +5694,6 @@ h5 {
 .dishes.index > .dish-card {
   display: flex;
   flex-direction: column;
-  border: 1px solid #feae01;
   padding: 15px;
   border-radius: 4px;
   width: 30%;
@@ -5810,6 +5888,15 @@ h5 {
     content: ";";
     color: #323335;
   }
+}
+
+.my-label {
+  background-color: #ff8b6c;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 5px 5px 5px 10px;
+  border-radius: 10px;
 }
 
 /*!

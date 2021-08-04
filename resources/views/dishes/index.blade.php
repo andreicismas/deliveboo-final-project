@@ -6,14 +6,16 @@
     <a href="{{ route('home') }}"><i class="fas fa-backspace back-bttn"></i></a> 
         @if(count($dishes) == 0)
 
+                <div>
                     <h3>Non ci sono piatti da mostrare,
                         <a href="{{route('dishes.create')}}">aggiungi un piatto</a>
                     </h3>
+                </div>
                 </div>  
             </div>   
         @else
             @foreach($dishes as $dish)
-                <div class="dish-card">
+                <div class="dish-card my-bttns">
                     <h2>{{$dish->name}} </h2>
                     <h5><span>Ingredienti:</span> {{$dish->ingredients}} </h5>
 

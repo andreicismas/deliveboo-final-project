@@ -3,17 +3,19 @@
 <div class="for-the-nav">
 
       @if(count($errors->all())>0) 
-
-        @foreach($errors->all() as $error)
-            <h5>{{$error}}</h5>   
-        @endforeach
+            <div class="errorDiv">
+                <i class="fas fa-exclamation-triangle"></i>
+                @foreach($errors->all() as $error)
+                    <h5>{{$error}}</h5>   
+                @endforeach
+            </div>
         @endif
 
     <div class="container img_bg_style_register  img_bg_style_login img_bg_style_home">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Register Your Restaurant') }}</div>
+                    <div class="card-header d-flex justify-content-between mytext bg-primary"><span class="card-span-2">{{ __('Register Your Restaurant') }}</span></div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
@@ -120,8 +122,8 @@
                                 </label>
 
                                 <div class="col-md-6">
-                                    <label class="btn btn-primary">
-                                        Scegli immagine
+                                    <label class="my-label">
+                                        Scegli una immagine
                                         <input id="cover_UR" type="file" name="cover_UR">
                                     </label>
                                 </div>
@@ -130,7 +132,7 @@
 
                             {{-- Tipologie di ristorante --}}
 
-                            <label class="types-label">Tipologie di ristorante</label>
+                            <label class="types-label"><strong>Tipologie di ristorante</strong></label>
                             <div class="form-group row types">
                                 @foreach ($types as $type)
 
@@ -152,8 +154,8 @@
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Register') }}
+                                    <button type="submit" class="my-button">
+                                        {{ __('Registrati') }}
                                     </button>
                                 </div>
                             </div>
