@@ -13,7 +13,7 @@
     @csrf 
     @method('PATCH')
 
-        <a href="{{route("dishes.index")}}">Indietro</a>
+        <a href="{{ route('dishes.index') }}"><i class="fas fa-backspace back-bttn"></i></a>
 
         <div>
          <textarea name="name" class="form-control" aria-label="With textarea" rows="1" style="resize: none" placeholder="nome">{{$dish->name}}</textarea>
