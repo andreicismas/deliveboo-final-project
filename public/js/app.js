@@ -1957,6 +1957,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCard",
   props: {
@@ -2094,6 +2101,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -37847,27 +37855,43 @@ var render = function() {
   return _c("div", [
     _c("a", { attrs: { href: _vm.link } }, [
       _c("div", { staticClass: "restaurant-card" }, [
-        _c(
-          "div",
-          { staticClass: "type-container" },
-          _vm._l(_vm.types, function(type) {
-            return _c("span", { key: type.id, staticClass: "type-item" }, [
-              _vm._v(_vm._s(type.name))
-            ])
-          }),
-          0
-        ),
+        _c("div", { staticClass: "type-container" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "mini-types" },
+            _vm._l(_vm.types, function(type) {
+              return _c("span", { key: type.id, staticClass: "type-item" }, [
+                _c("i", { staticClass: "fas fa-circle" }),
+                _vm._v(" " + _vm._s(type.name))
+              ])
+            }),
+            0
+          )
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "img-container" }, [
           _c("img", { attrs: { src: _vm.img, alt: "" } })
         ]),
         _vm._v(" "),
-        _c("h5", [_vm._v(_vm._s(_vm.name))])
+        _c("div", { staticClass: "name-container" }, [
+          _c("h5", [_vm._v(_vm._s(_vm.name))])
+        ])
       ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "my-icon" }, [
+      _c("i", { staticClass: "fas fa-utensils" })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -37929,7 +37953,6 @@ var render = function() {
                 "button",
                 {
                   key: i,
-                  staticClass: "my-bttns",
                   attrs: { value: i },
                   on: {
                     click: function($event) {
@@ -37981,14 +38004,21 @@ var render = function() {
           attrs: { "data-toggle": "buttons" }
         },
         [
-          _c("label", { staticClass: "btn btn-secondary button_style" }, [
-            _vm._v(_vm._s(type.name) + "\n          "),
-            _c("input", {
-              attrs: { type: "checkbox", autocomplete: "off" },
-              domProps: { value: type.id },
-              on: { change: _vm.onChange }
-            })
-          ])
+          _c(
+            "label",
+            {
+              staticClass:
+                "btn btn filter-btn my-bttns my-btn-secondary button_style"
+            },
+            [
+              _vm._v(_vm._s(type.name) + "\n          "),
+              _c("input", {
+                attrs: { type: "checkbox", autocomplete: "off" },
+                domProps: { value: type.id },
+                on: { change: _vm.onChange }
+              })
+            ]
+          )
         ]
       )
     }),
@@ -50669,8 +50699,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\boolean\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolean\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\felic\Desktop\boolean\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\felic\Desktop\boolean\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

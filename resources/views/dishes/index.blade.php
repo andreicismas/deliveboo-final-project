@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+<div class="for-the-nav">
+
     <div class="container dishes index">
     <a href="{{ route('home') }}"><i class="fas fa-backspace back-bttn"></i></a> 
         @if(count($dishes) == 0)
@@ -40,4 +42,5 @@
             @endforeach
         @endif
     </div>
+</div>
 @endsection

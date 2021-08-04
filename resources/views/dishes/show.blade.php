@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+<div class="for-the-nav">
+
     <div class="container dishes show">
             <a href="{{ route('dishes.index') }}"><i class="fas fa-backspace back-bttn"></i></a>
        
@@ -20,4 +22,5 @@
 
 
     </div>
+</div>
 @endsection

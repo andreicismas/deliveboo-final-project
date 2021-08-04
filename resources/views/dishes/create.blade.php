@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
+<div class="for-the-nav">
 
-    @if(count($errors->all())>0) {{--messaggi errore, flex a dx del form--}}
+
+    @if(count($errors->all())>0) 
 
     @foreach($errors->all() as $error)
         <h5>{{$error}}</h5>   
@@ -41,4 +43,5 @@
       <input type="submit" value="Carica" class="btn btn-primary">
     </div>
 </form>
+</div>
 @endsection

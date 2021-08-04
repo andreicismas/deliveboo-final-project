@@ -1,7 +1,15 @@
 @extends('layouts.app')
-
 @section('content')
-    <div class="container register img_bg_style_register  img_bg_style_login img_bg_style_home">
+<div class="for-the-nav">
+
+      @if(count($errors->all())>0) 
+
+        @foreach($errors->all() as $error)
+            <h5>{{$error}}</h5>   
+        @endforeach
+        @endif
+
+    <div class="container img_bg_style_register  img_bg_style_login img_bg_style_home">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -154,5 +162,6 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 @endsection
