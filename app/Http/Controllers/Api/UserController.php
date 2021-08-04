@@ -14,7 +14,7 @@ class UserController extends Controller
 
         foreach ($users as $user) {
             $user->link = route("orders.create", ["slug" => $user->slug]);
-            // $user->cover_url = $user->cover_url ? asset('storage/' . $user->cover_url) : 'https://www.linga.org/site/photos/Largnewsimages/image-not-found.png';
+            $user->cover_UR = $user->cover_UR ? asset('storage/covers/' . $user->id . '/'. $user->cover_UR) : 'https://www.linga.org/site/photos/Largnewsimages/image-not-found.png';
         }
 
         return response()->json([
