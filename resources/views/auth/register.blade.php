@@ -116,22 +116,26 @@
                             <div class="form-group row">
 
                                 <label for="cover_UR"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Cover Risto') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Cover Image') }}
+                                </label>
 
                                 <div class="col-md-6">
-                                    <input id="cover_UR" type="file" name="cover_UR">
+                                    <label class="btn btn-primary">
+                                        Scegli immagine
+                                        <input id="cover_UR" type="file" name="cover_UR">
+                                    </label>
                                 </div>
                             </div>
 
 
                             {{-- Tipologie di ristorante --}}
 
-                            <div class="form-group row ">
-                                <label>Tipologie di ristorante</label>
+                            <label class="types-label">Tipologie di ristorante</label>
+                            <div class="form-group row types">
                                 @foreach ($types as $type)
 
-                                    <div class="form-check form-check-inline">
-                                        <label class="form-check-label">
+                                    <div class="form-check form-check-inline col-xl-3 col-lg-4 col-md-5">
+                                        <label class="form-check-label type">
                                             <input name="types[]" class="form-check-input" type="checkbox"
                                                 value="{{ $type->id }}">
 

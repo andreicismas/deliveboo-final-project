@@ -3,6 +3,7 @@
 <div class="for-the-nav">
 
     <div class="container dishes show">
+            <a href="{{ route('dishes.index') }}"><i class="fas fa-backspace back-bttn"></i></a>
        
             <h2>{{$dish->name}} </h2>
             <h5><span>Ingredienti:</span> {{$dish->ingredients}} </h5>
@@ -16,10 +17,10 @@
                 @endif
 
             
-            <a href="{{ route('dishes.edit', ['dish' => $dish->id]) }}" class="btn btn-primary myBtn"> Modifica </a> 
+            <a href="{{ route('dishes.edit', ['dish' => $dish->id]) }}" class="btn btn-primary myBtn edit"> Modifica </a> 
             @include('layouts.deleteBtn', [ "id" => $dish->id, "resource" => "dishes" ])
 
-            <a href="{{route("dishes.index")}}">Indietro</a>
+
     </div>
 </div>
 @endsection

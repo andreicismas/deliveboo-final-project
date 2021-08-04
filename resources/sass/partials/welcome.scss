@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    h1 {
+        font-size: 3.5rem;
+    }
     .filter-button-container {
         margin: 0 10px;
     }
@@ -174,6 +177,21 @@
                 }
                 span {
                     color: $falsewhite;
+                }
+            }
+            @media screen and (max-width: 767px) {
+                .section-container {
+                    flex-direction: column;
+                    justify-content: center;
+                    .section {
+                        width: 100%;
+                        margin-right: 0;
+                        margin-bottom: 20px;
+                        text-align: center;
+                        ul {
+                            padding-left: 0;
+                        }
+                    }
                 }
             }
         }

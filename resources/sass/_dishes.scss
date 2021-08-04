@@ -3,7 +3,8 @@
 .container.dishes {
     margin-top: 30px;
     h2,span {
-       color: $primary;
+       //color: $primary;
+       font-weight: bold ;
        display: block;
     }
 
@@ -20,6 +21,7 @@
 .container.dishes h2,h5 {
     line-height: 1.6rem;
     margin-bottom: 1rem;
+    
 }  
 
 .container.dishes h2 {
@@ -33,7 +35,7 @@
 .dishes .visibility {
     text-decoration: underline;
     color: $secondary;
-    margin-bottom: 30px;
+    margin: 30px 0;
 }
 
 //classe Bootstrap modificata
@@ -52,7 +54,9 @@
 }
 
 .dishes.index > .dish-card {
-    border: 3px solid $primary;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $primary;
     padding: 15px;
     border-radius: 4px;
     width: 30%;
@@ -62,7 +66,33 @@
         display: inline-block;
         margin: 5px 0;
     }
+    &>h2 {
+        font-family: 'Lilita One', cursive;
+    }
+    .filler {
+        display: flex;
+        flex-grow: 1;
+    }
+    .btn.edit {
+        display: inline-block;
+        margin-top: unset;
+    }
 }
+
+//DISHES.SHOW
+.dishes.show {
+    i {
+        margin-bottom: 30px;
+    }
+    h2 {
+        font-family: 'Lilita One', cursive; 
+    }
+    .btn.edit {
+        display: inline-block;
+        margin-top: unset;
+    }
+}
+
 
 //DISHES.CREATE
 
@@ -75,12 +105,12 @@
         textarea {
             margin: 10px 0;
             border-color: $primary;
-            &::placeholder {
-                color: $primary
-            }
+            // &::placeholder {
+            //     color: $primary
+            // }
         }
         label {
-            color: $primary;
+            //color: $primary;
             &:first-of-type {
                 font-weight:bold;
                 color: $tertiary;
@@ -117,22 +147,36 @@
     .dishes.create,
     .dishes.edit {
         &>div {
-            max-width: 75%;
+            max-width: 75%;     
         }
     }        
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
     .dishes.index > .dish-card {
-         &>a, &>form {
-            display: block;
-            margin:5px auto
-        }
-        &>form {
+        //  &>a, &>form {
+        //     margin:5px auto
+        // }
+        // &>form {
+        //     display: flex;
+        //     input {
+        //         width: 100%;
+        //     }
+        // }
+        .buttons {
             display: flex;
-            input {
-                width: 100%;
+            flex-direction: column;
+            &>a,form {
+                margin-top:5px;
+
             }
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+            .btn.edit {
+                margin-top: 5px;
+    }
         }
     }
 }

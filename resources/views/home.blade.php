@@ -19,7 +19,7 @@
                         {{ __('Ciao') }} <em>{{ Auth::user()->name }}</em>
                     </div>
                     <div class="card" >
-                        <img class="img-thumbnail" src={{ asset('storage/covers/'.auth()->user()->id .'/'.auth()->user()->cover_UR)}}>
+                        <img class="img-thumbnail" src="{{ asset('storage/covers/'.auth()->user()->id .'/'.auth()->user()->cover_UR)}}">
 
                         <h3 class="ml-4 mt-3">Dati Ristorante <span><em>{{ Auth::user()->name }}</em></span></h3>
  
