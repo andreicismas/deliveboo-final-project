@@ -9,7 +9,7 @@
 
     <footer>
         <div class="container">
-            <div class="my-container-flex">
+            <div class="my-container-flex section-container">
                 <div class="section">
                     <h5>Scopri Deliveboo</h5>
                     <ul>

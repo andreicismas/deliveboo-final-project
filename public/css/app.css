@@ -5341,6 +5341,10 @@ body main .img_bg_style_register.container {
   align-items: center;
 }
 
+.welcome h1 {
+  font-size: 3.5rem;
+}
+
 .welcome .filter-button-container {
   margin: 0 10px;
 }
@@ -5481,6 +5485,24 @@ body main .img_bg_style_register.container {
 
 .welcome footer .container .bottom-banner span {
   color: #fffdfa;
+}
+
+@media screen and (max-width: 767px) {
+  .welcome footer .container .section-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .welcome footer .container .section-container .section {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .welcome footer .container .section-container .section ul {
+    padding-left: 0;
+  }
 }
 
 .container.dishes {
