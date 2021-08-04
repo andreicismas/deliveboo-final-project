@@ -5180,16 +5180,6 @@ input[type=number] {
         to {width: 0%;}
     }*/
 
-body main .img_bg_style_register.container {
-  width: 100%;
-  background-image: url(/images/background_log_reg.jpg?ad6f05945d0e32b530adbd0233b613a1);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-color: #2e2d2d;
-  background-size: cover;
-}
-
 @media only screen and (min-width: 320px) {
   /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 
@@ -5511,7 +5501,7 @@ body main .img_bg_style_register.container {
 
 .container.dishes h2,
 .container.dishes span {
-  color: #feae01;
+  font-weight: bold;
   display: block;
 }
 
@@ -5541,7 +5531,7 @@ h5 {
 .dishes .visibility {
   text-decoration: underline;
   color: #fe7101;
-  margin-bottom: 30px;
+  margin: 30px 0;
 }
 
 .dishes .btn {
@@ -5558,7 +5548,9 @@ h5 {
 }
 
 .dishes.index > .dish-card {
-  border: 3px solid #feae01;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #feae01;
   padding: 15px;
   border-radius: 4px;
   width: 30%;
@@ -5569,6 +5561,33 @@ h5 {
 .dishes.index > .dish-card > a {
   display: inline-block;
   margin: 5px 0;
+}
+
+.dishes.index > .dish-card > h2 {
+  font-family: "Lilita One", cursive;
+}
+
+.dishes.index > .dish-card .filler {
+  display: flex;
+  flex-grow: 1;
+}
+
+.dishes.index > .dish-card .btn.edit {
+  display: inline-block;
+  margin-top: unset;
+}
+
+.dishes.show i {
+  margin-bottom: 30px;
+}
+
+.dishes.show h2 {
+  font-family: "Lilita One", cursive;
+}
+
+.dishes.show .btn.edit {
+  display: inline-block;
+  margin-top: unset;
 }
 
 .dishes.create,
@@ -5590,28 +5609,6 @@ h5 {
 .dishes.edit > a textarea {
   margin: 10px 0;
   border-color: #feae01;
-}
-
-.dishes.create > div textarea::-moz-placeholder, .dishes.create > a textarea::-moz-placeholder, .dishes.edit > div textarea::-moz-placeholder, .dishes.edit > a textarea::-moz-placeholder {
-  color: #feae01;
-}
-
-.dishes.create > div textarea:-ms-input-placeholder, .dishes.create > a textarea:-ms-input-placeholder, .dishes.edit > div textarea:-ms-input-placeholder, .dishes.edit > a textarea:-ms-input-placeholder {
-  color: #feae01;
-}
-
-.dishes.create > div textarea::placeholder,
-.dishes.create > a textarea::placeholder,
-.dishes.edit > div textarea::placeholder,
-.dishes.edit > a textarea::placeholder {
-  color: #feae01;
-}
-
-.dishes.create > div label,
-.dishes.create > a label,
-.dishes.edit > div label,
-.dishes.edit > a label {
-  color: #feae01;
 }
 
 .dishes.create > div label:first-of-type,
@@ -5652,18 +5649,101 @@ h5 {
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .dishes.index > .dish-card > a,
-  .dishes.index > .dish-card > form {
-    display: block;
-    margin: 5px auto;
-  }
-
-  .dishes.index > .dish-card > form {
+  .dishes.index > .dish-card .buttons {
     display: flex;
+    flex-direction: column;
   }
 
-  .dishes.index > .dish-card > form input {
-    width: 100%;
+  .dishes.index > .dish-card .buttons > a,
+  .dishes.index > .dish-card .buttons form {
+    margin-top: 5px;
+  }
+
+  .dishes.index > .dish-card .buttons form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dishes.index > .dish-card .buttons .btn.edit {
+    margin-top: 5px;
+  }
+}
+
+.register,
+.login {
+  margin-top: 30px;
+}
+
+.register .btn,
+.login .btn {
+  font-weight: bold;
+}
+
+.register input[type=file],
+.login input[type=file] {
+  display: none;
+}
+
+.register .types-label,
+.login .types-label {
+  margin: 0 0 15px 60px;
+}
+
+.register .card-header,
+.login .card-header {
+  background-color: #feae01;
+  font-weight: bold;
+}
+
+.register .card-body label:not([for=remember]),
+.login .card-body label:not([for=remember]) {
+  font-weight: bold;
+}
+
+.types {
+  padding-left: 75px;
+  margin: auto;
+}
+
+.types .type {
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .register .types-label {
+    margin: 0 0 15px 20px;
+  }
+
+  .types {
+    padding-left: 35px;
+  }
+
+  .type {
+    margin-bottom: 10px;
+  }
+
+  .type::after {
+    content: ";";
+    color: #323335;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .register .types-label {
+    margin: 0 0 15px 0;
+  }
+
+  .types {
+    padding-left: 15px;
+  }
+
+  .type {
+    margin-bottom: 10px;
+  }
+
+  .type::after {
+    content: ";";
+    color: #323335;
   }
 }
 
