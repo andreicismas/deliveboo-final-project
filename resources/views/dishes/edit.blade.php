@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+<div class="for-the-nav">
+
 
     @if(count($errors->all())>0) {{--messaggi errore, flex a dx del form--}}
 
@@ -45,4 +47,5 @@
   
          
 </form>
+</div>
 @endsection

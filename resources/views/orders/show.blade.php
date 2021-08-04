@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+<div class="for-the-nav">
+
     <div class="container-fluid orders-part">
         <div class="my-link-container py-4">
             <a href="{{ route('orders.index') }}"><i class="fas fa-backspace"></i></a>
@@ -49,4 +51,5 @@
             </table>
         </div>
     </div>
+</div>
 @endsection

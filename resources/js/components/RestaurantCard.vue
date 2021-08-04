@@ -3,12 +3,19 @@
     <a :href="link">
       <div class="restaurant-card">
         <div class="type-container">
-          <span class="type-item" v-for="type in types" :key="type.id">{{ type.name }}</span>
+          <div class="my-icon"><i class="fas fa-utensils"></i></div>
+
+            <div class="mini-types">
+              <span class="type-item" v-for="type in types" :key="type.id"><i class="fas fa-circle"></i> {{ type.name }}</span>
+            </div>
+
         </div>
         <div class="img-container">
           <img :src="img" alt="">
         </div>
-        <h5>{{ name }}</h5>
+        <div class="name-container">
+          <h5>{{ name }}</h5>
+        </div>
       </div>
     </a>
   </div>
