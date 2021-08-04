@@ -60,8 +60,8 @@ Route::post("/payment", function (Request $request) {
     $allRestaurantDishes = Dish::where("user_id", $restaurant_id)->get();
 
     // validazione quantità
-     $request->validate([
-    'dishes.*' => 'digits_between:1,99',
+    $request->validate([
+        'dishes.*' => 'digits_between:1,99',
     ]);
 
     // calcolo totale
@@ -100,6 +100,13 @@ Route::post('/checkout', function (Request $request) {
         'publicKey' => config('services.braintree.publicKey'),
         'privateKey' => config('services.braintree.privateKey')
     ]);
+
+    // $request->validate([
+    //     'customer_name' => 'required|max:255',
+    //     'customer_mail' => 'required|email:rfc,dns',
+    //     'customer_phone_number' => 'required|numeric|max:15',
+    //     'delivery_address' => 'required|max:255',
+    // ]);
 
     $amount = $request->amount;
     $nonce = $request->payment_method_nonce;
