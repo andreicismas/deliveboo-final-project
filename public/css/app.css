@@ -4615,6 +4615,12 @@ readers do not read off random characters that represent icons */
   color: #fe7101;
 }
 
+.for-the-nav {
+  margin: 0;
+  padding: 0;
+  padding-top: 100px;
+}
+
 .errorDiv {
   margin-top: 70px;
   margin-bottom: 50px;
@@ -4659,6 +4665,7 @@ icona usata da me -> <i class="fas fa-backspace"> */
   font-size: 40px;
   padding-left: 10px;
   padding-right: 10px;
+  border-color: none;
 }
 
 /*bottone base*/
@@ -4686,6 +4693,8 @@ icona usata da me -> <i class="fas fa-backspace"> */
 
 .my-nav {
   width: 100%;
+  z-index: 3;
+  background-color: #fffdfa;
 }
 
 .my-nav a:not(a.my-brand) {
@@ -5345,49 +5354,105 @@ body main .img_bg_style_register.container {
   margin: 0 10px;
 }
 
+.welcome .hero {
+  height: 400px;
+  width: 100%;
+  padding-top: 100px;
+  background-color: yellowgreen;
+}
+
+.welcome .filter-btn {
+  color: white;
+  font-weight: 600;
+  padding: 10px 15px;
+}
+
+.welcome .my-btn-secondary {
+  color: #fff;
+  background-color: #feae01;
+}
+
+.welcome .my-btn-secondary:not(:disabled):not(.disabled):active,
+.welcome .my-btn-secondary:not(:disabled):not(.disabled).active,
+.welcome .show > .my-btn-secondary.dropdown-toggle {
+  color: #fff;
+  background-color: #fe7101;
+}
+
 .welcome .restaurant-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 1280px;
   margin: auto;
+  min-height: calc(100vh - 400px);
 }
 
 .welcome .restaurant-container .restaurant-card {
   display: flex;
   flex-direction: column;
-  border: 1px solid #fe7101;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.39);
   border-radius: 10px;
-  min-width: 300px;
-  height: 200px;
+  min-width: 250px;
   margin: 10px;
+  padding: 10px;
+}
+
+.welcome .restaurant-container .restaurant-card .my-icon {
+  width: 36px;
+  text-align: center;
+  font-size: 25px;
 }
 
 .welcome .restaurant-container .restaurant-card .type-container {
+  width: 100%;
+  height: 20%;
+  min-height: 37px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .welcome .restaurant-container .restaurant-card .type-container .type-item {
-  padding: 3px;
-  margin: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
   font-size: small;
-  color: #fffdfa;
-  background-color: #feae01;
-  border-radius: 5px;
+  font-weight: bold;
+  color: #fe7101;
+}
+
+.welcome .restaurant-container .restaurant-card .type-container .type-item .fa-circle {
+  font-size: 7px;
+  margin-right: 5px;
+}
+
+.welcome .restaurant-container .restaurant-card .type-container .mini-types {
+  display: flex;
 }
 
 .welcome .restaurant-container .restaurant-card .img-container {
+  width: 80%;
+  height: 100%;
   align-self: center;
   flex-grow: 1;
 }
 
 .welcome .restaurant-container .restaurant-card .img-container img {
-  height: 130px;
+  width: 100%;
+  height: 100%;
 }
 
-.welcome .restaurant-container .restaurant-card h5 {
-  align-self: center;
+.welcome .restaurant-container .restaurant-card .name-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+}
+
+.welcome .restaurant-container .restaurant-card .name-container h5 {
+  margin-top: 10px;
   color: #323335;
   font-family: "Lilita One", cursive;
 }

@@ -5,43 +5,101 @@
     .filter-button-container {
         margin: 0 10px;
     }
+
+    .hero{
+        height: 400px;
+        width: 100%;
+        padding-top: 100px;
+        background-color: yellowgreen;
+    }
+
+    .filter-btn{
+        color: white;
+        font-weight: 600;
+        padding: 10px 15px;
+    }
+
+    .my-btn-secondary {
+        color: #fff;
+        background-color: $primary;
+    }
+
+    .my-btn-secondary:not(:disabled):not(.disabled):active, .my-btn-secondary:not(:disabled):not(.disabled).active, .show > .my-btn-secondary.dropdown-toggle {
+        color: #fff;
+        background-color: $secondary;
+    }
+
+
     .restaurant-container {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         max-width: 1280px;
         margin: auto;
+        min-height: calc(100vh - 400px); //mantiene il footer giù
+
         .restaurant-card {
             display: flex;
             flex-direction: column;
-            border: 1px solid $secondary;
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.39);
             border-radius: 10px;
-            min-width: 300px;
-            height: 200px;
+            min-width: 250px;
+          
             margin: 10px;
+            padding: 10px;
+
+            .my-icon{
+                width: 36px;
+                text-align: center;
+                font-size: 25px;
+            }
+
             .type-container {
+                width: 100%;
+                height: 20%;
+                min-height: 37px;
                 display: flex;
                 flex-wrap: wrap;
+                justify-content: space-between;
+
                 .type-item {
-                    padding: 3px;
-                    margin: 5px;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 5px;
                     font-size: small;
-                    color: $falsewhite;
-                    background-color: $primary;
-                    border-radius: 5px;
+                    font-weight: bold;
+                    color: $secondary;
+                      & .fa-circle{
+                          font-size: 7px;
+                          margin-right: 5px;
+                      }
+                }
+                .mini-types{
+                    display: flex;
                 }
             }
             .img-container {
+                width: 80%;
+                height: 100%;
                 align-self: center;
                 flex-grow: 1;
                 img {
-                    height: 130px;
+                    width: 100%;
+                    height: 100%;
                 }
             }
-            h5 {
-                align-self: center;
-                color: $main-text;
-                font-family: "Lilita One", cursive;
+            .name-container {
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+                height: 20%;
+
+                & h5 {
+                    margin-top: 10px;
+                    color: $main-text;
+                    font-family: "Lilita One", cursive;
+                }
             }
         }
     }
@@ -121,3 +179,4 @@
         }
     }
 }
+

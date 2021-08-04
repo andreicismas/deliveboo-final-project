@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+<div class="for-the-nav">
+
     <div class="container dishes show">
        
             <h2>{{$dish->name}} </h2>
@@ -19,4 +21,5 @@
 
             <a href="{{route("dishes.index")}}">Indietro</a>
     </div>
+</div>
 @endsection

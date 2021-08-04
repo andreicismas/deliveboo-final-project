@@ -17,7 +17,7 @@
     </div>
 
     <div class="pb-container" v-if="totalPages > 1">
-      <button class="my-bttns" v-for="i in totalPages" :key="i" :value="i" v-on:click="changePage(i)">{{ i }}</button>
+      <button v-for="i in totalPages" :key="i" :value="i" v-on:click="changePage(i)">{{ i }}</button>
     </div>
   </div>
 </template>

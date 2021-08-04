@@ -1,5 +1,7 @@
 .my-nav {
     width: 100%;
+    z-index: 3;
+    background-color: $falsewhite;
     & a:not(a.my-brand){
         color: $secondary;
         font-weight: 600;

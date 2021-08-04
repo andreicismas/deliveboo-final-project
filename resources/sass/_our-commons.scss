@@ -2,6 +2,11 @@
 
 .enlight{color: $secondary}
 
+.for-the-nav{
+    margin:0;
+    padding:0;
+    padding-top: 100px
+}
 
 .errorDiv{
     margin-top: 70px;
@@ -39,6 +44,7 @@ icona usata da me -> <i class="fas fa-backspace"> */
     font-size: 40px;
     padding-left: 10px;
     padding-right: 10px;
+    border-color: none ;
 }
 
 /*bottone base*/

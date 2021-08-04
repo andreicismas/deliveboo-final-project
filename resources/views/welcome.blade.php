@@ -1,10 +1,10 @@
 @extends('layouts.app')
-
 @section('content')
 
 <div class="welcome">
-    <h1>Scegli il tuo ristorante</h1>
-
+    <div class="hero">
+      <h1>Scegli il tuo ristorante</h1>
+    </div>
     <restaurants-index></restaurants-index>
 
     <footer>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
+<div class="for-the-nav">
 
     @if (count($errors->all()) > 0)
     <div class="errorDiv">
@@ -82,5 +82,6 @@
         <h1>Oops! Sembra che non ci siano piatti da poter ordinare in questo ristorante!</h1>
         @endif
     </form>
+    </div>
 
 @endsection
