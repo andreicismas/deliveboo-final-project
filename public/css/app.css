@@ -5423,10 +5423,10 @@ input[type=number] {
 }
 
 .welcome .hero {
-  height: 600px;
+  height: 400px;
   width: 100%;
   padding: 150px 40px 50px 40px;
-  background-color: yellowgreen;
+  background-color: #a8af99;
 }
 
 .welcome .filter-btn {
@@ -5541,7 +5541,7 @@ input[type=number] {
   padding: 10px 15px;
   background-color: #e3342f;
   color: #fffdfa;
-  margin: 5px;
+  margin: 0px;
   border-radius: 5px;
 }
 
