@@ -5180,8 +5180,12 @@ input[type=number] {
         to {width: 0%;}
     }*/
 
-body main .img_bg_style_register.container {
-  width: 100%;
+body #app main {
+  height: 100vh;
+}
+
+body #app main .img_bg_style_register {
+  height: 100%;
   background-image: url(/images/background_log_reg.jpg?ad6f05945d0e32b530adbd0233b613a1);
   background-repeat: no-repeat;
   background-position: center center;
@@ -5190,46 +5194,10 @@ body main .img_bg_style_register.container {
   background-size: cover;
 }
 
-@media only screen and (min-width: 320px) {
-  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
-
-  body main .container.img_bg_style_register,
-  body main .img_bg_style_login {
+@media screen and (max-width: 575px) and (min-width: 320px), (min-width: 100%) {
+  body #app main {
     height: 100%;
   }
-
-  body main .img_bg_style_home {
-    height: 100vh;
-  }
-}
-
-@media only screen and (max-width: 320px) {
-  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
-
-  body main .container.img_bg_style_register,
-  body main .img_bg_style_login {
-    height: 100%;
-  }
-
-  body main .img_bg_style_home {
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width: 577px) {
-  /* tablet, landscape iPad, lo-res laptops ands desktops */
-
-  body main .container.img_bg_style_register {
-    height: 100%;
-  }
-
-  body main .img_bg_style_home {
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width: 320px) {
-  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 }
 
 .orders-part .my-container-flex {

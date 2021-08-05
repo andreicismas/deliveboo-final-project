@@ -1,69 +1,37 @@
 // appena funziona creo is scss folder
 
-
-
 body{
-
-    main{
-        .img_bg_style_register.container{
-            width: 100%;
-            background-image: url("public/img/background_log_reg.jpg");
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-attachment: fixed;
-            background-color: #2e2d2d;
-            background-size: cover;
-        }
-    }
-    
-}
-
-
-@media only screen and (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
-    body{
-
-        main {
-            .container.img_bg_style_register,.img_bg_style_login{
-                height: 100%; 
-            } 
-            .img_bg_style_home{
-                height: 100vh;
-                
-            }
-            
-        }
-    }
-}
-@media only screen and (max-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
-    body{
-
-        main {
-            .container.img_bg_style_register,.img_bg_style_login{
-                height: 100%; 
-            } 
-            .img_bg_style_home{
-                height: 100vh;
-                
-            }
-            
-        }
-    }
-}
-@media only screen and (min-width:577px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
-    body{
-
-        main {
-            .container.img_bg_style_register{
+    #app{
+        
+        main{
+            height: 100vh;
+            .img_bg_style_register{
                 height: 100%;
-                
+                background-image: url("public/img/background_log_reg.jpg");
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-attachment: fixed;
+                background-color: #2e2d2d;
+                background-size: cover;
             }
-            .img_bg_style_home{
-                height: 100vh;
-                
-            }
+
         }
     }
+
 }
-@media only screen and (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
-    
-}
+
+
+       
+
+ @media screen and ( max-width:575px) and (min-width:320px), (min-width: 100%) {
+    body{
+        #app{
+            main{
+                
+            height: 100%;
+            }
+        }
+ 
+     }
+  }
+ 

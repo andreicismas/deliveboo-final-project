@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container img_bg_style_register  img_bg_style_login img_bg_style_home">
+<div class="img_bg_style_register  img_bg_style_login img_bg_style_home">
+    <div class="container pt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -117,15 +118,13 @@
 
                             {{-- Tipologie di ristorante --}}
 
-                            <div class="form-group row ">
-                                <label>Tipologie di ristorante</label>
+                            <label>Tipologie di ristorante</label>
+                            <div class="row justify-content-center ">
                                 @foreach ($types as $type)
 
-                                    <div class="form-check form-check-inline">
-                                        <label class="form-check-label">
-                                            <input name="types[]" class="form-check-input" type="checkbox"
-                                                value="{{ $type->id }}">
-
+                                    <div class='form-check form-check-inline m-1'>
+                                        <label class='tag form-check-label text-capitalize badge badge-secondary'>
+                                            <input name="types[]" class='form-check-input' type="checkbox"value="{{ $type->id }}">
                                             {{ $type->name }}
                                         </label>
                                     </div>
@@ -138,7 +137,7 @@
 
                             {{--  --}}
 
-                            <div class="form-group row mb-0">
+                            <div class="row justify-content-center pt-3">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Register') }}
@@ -151,4 +150,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
