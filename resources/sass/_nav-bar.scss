@@ -2,10 +2,10 @@
     width: 100%;
     z-index: 3;
     background-color: $falsewhite;
-    & a:not(a.my-brand){
-        color: $secondary;
-        font-weight: 600;
-        }
+    // & a:not(a.my-brand){
+    //     color: $secondary;
+    //     font-weight: 600;
+    //     }
 }
 
 .my-brand {
@@ -69,17 +69,17 @@
         background-color: $secondary;
         height: 100px;
         border-bottom-right-radius: 150px 150px;
-            & a:not(a.my-brand){
-                color: $secondary;
-                font-weight: bold;
-            }
+            // & a:not(a.my-brand){
+            //     color: $secondary;
+            //     font-weight: bold;
+            // }
     }
 
     .my-brand {
         font-size: 33px;
         color: $falsewhite;
         &:hover{
-            color: white;
+            color: $primary;
         }
     }
 
@@ -87,10 +87,18 @@
         margin: 20px 20px 20px 5px;
         padding: 10px 15px 10px 15px;
         background-color: $falsewhite;
+        color: $secondary;
+        font-weight: bold;
+        &:hover {
+            color: white;
+        }
     }
   
     .my-nav-item {
         border-bottom: 0px;
+        a:hover {
+            background-color: $primary;
+        }
     }
    
     #navbarDropdown.my-name {

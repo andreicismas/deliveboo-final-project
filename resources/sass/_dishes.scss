@@ -38,9 +38,23 @@
     margin: 30px 0;
 }
 
+.dishes i {
+    &:hover {
+        color: $primary;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+}
+
 //classe Bootstrap modificata
 .dishes .btn {
     font-weight: bold;
+    background-color: $secondary;
+    color: $falsewhite;
+    &:hover {
+        background-color: #d86001;
+        color: $falsewhite;
+    }
 }
 
 //DISHES.INDEX

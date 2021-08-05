@@ -1,29 +1,20 @@
-// appena funziona creo is scss folder
+.home .link-container {
+    display: flex;
+    justify-content: center;
+    a {
+        margin: 0 5px;
+    }
+}
 
-//  body {
-//      background-image: url("public/img/background_log_reg.jpg");
-//      background-repeat: no-repeat;
-//      background-position: center;
-//      background-attachment: fixed;
-//      background-size: cover;
-//  }
-
-// body{
-
-//     main{
-//         .img_bg_style_register.container.home{
-//             width: 100%;
-//             background-image: url("public/img/background_log_reg.jpg");
-//             background-repeat: no-repeat;
-//             background-position: center;
-//             background-attachment: fixed;
-//             background-color: #2e2d2d;
-//             background-size: cover;
-//         }
-//     }
-    
-// }
-
+.home .card.data{
+    padding: 10px;
+    .img-thumbnail {
+        margin: -10px;
+    }
+    h3:first-of-type {
+        margin-top: 30px;
+    }
+}
 
 @media only screen and (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
     body{

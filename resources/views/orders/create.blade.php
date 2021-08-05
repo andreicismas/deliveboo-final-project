@@ -13,7 +13,7 @@
     @endif
 
 
-    <form action="{{ route('payment') }}" method="post">
+    <form action="{{ route('payment') }}" method="post" class="oreders create">
         @csrf
 
         <div class="signboardMobile">

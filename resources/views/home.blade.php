@@ -2,7 +2,7 @@
 @section('content')
 <div class="for-the-nav">
 
-<div class="container">
+<div class="container home">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -20,7 +20,7 @@
                         </div>
                     @endif
 
-                    <div class="card" >
+                    <div class="card data" >
                         <img class="img-thumbnail" src="{{ asset('storage/covers/'.auth()->user()->id .'/'.auth()->user()->cover_UR)}}">
 
                         <h3>Dati ristorante <span><strong>{{ Auth::user()->name }}</strong></span></h3>

@@ -163,7 +163,7 @@
             <div class="my-container-flex flex-between">
                 <a href="{{ route('orders.create', ['slug' => $restaurantSlug]) }}"><i
                         class="fas fa-backspace"></i></a>
-                <button class="my-submit-btn" type="submit"><span>Conferma</span></button>
+                <button class="my-submit-btn btn btn-primary" type="submit"><span>Conferma</span></button>
             </div>
         </form>
     </main>
