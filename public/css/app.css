@@ -4719,11 +4719,6 @@ icona usata da me -> <i class="fas fa-backspace"> */
   background-color: #fffdfa;
 }
 
-.my-nav a:not(a.my-brand) {
-  color: #fe7101;
-  font-weight: 600;
-}
-
 .my-brand {
   font-family: "Righteous", cursive;
   font-size: 30px;
@@ -4785,28 +4780,33 @@ icona usata da me -> <i class="fas fa-backspace"> */
     border-bottom-right-radius: 150px 150px;
   }
 
-  .my-nav a:not(a.my-brand) {
-    color: #fe7101;
-    font-weight: bold;
-  }
-
   .my-brand {
     font-size: 33px;
     color: #fffdfa;
   }
 
   .my-brand:hover {
-    color: white;
+    color: #feae01;
   }
 
   .my-nav-link {
     margin: 20px 20px 20px 5px;
     padding: 10px 15px 10px 15px;
     background-color: #fffdfa;
+    color: #fe7101;
+    font-weight: bold;
+  }
+
+  .my-nav-link:hover {
+    color: white;
   }
 
   .my-nav-item {
     border-bottom: 0px;
+  }
+
+  .my-nav-item a:hover {
+    background-color: #feae01;
   }
 
   #navbarDropdown.my-name {
@@ -5212,6 +5212,27 @@ input[type=number] {
         to {width: 0%;}
     }*/
 
+.home .link-container {
+  display: flex;
+  justify-content: center;
+}
+
+.home .link-container a {
+  margin: 0 5px;
+}
+
+.home .card.data {
+  padding: 10px;
+}
+
+.home .card.data .img-thumbnail {
+  margin: -10px;
+}
+
+.home .card.data h3:first-of-type {
+  margin-top: 30px;
+}
+
 @media only screen and (min-width: 320px) {
   /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 
@@ -5305,6 +5326,13 @@ input[type=number] {
   font-size: 40px;
   padding-left: 10px;
   padding-right: 10px;
+  color: #fe7101;
+}
+
+.orders-part .fas:hover {
+  color: #feae01;
+  text-decoration: none;
+  transition: 0.2s;
 }
 
 .orders-part th {
@@ -5320,10 +5348,21 @@ input[type=number] {
   position: relative;
   max-width: 992px;
   margin: auto;
+  padding-bottom: 30px;
 }
 
 .center {
   text-align: center;
+}
+
+.orders.create .box-submit button:hover {
+  background-color: #feae01;
+  transition: 0.2s;
+}
+
+.my-overlay:hover {
+  background-color: #ec812a;
+  transition: 0.5s;
 }
 
 #payment-form .form-group label {
@@ -5340,11 +5379,18 @@ input[type=number] {
 }
 
 #payment-form .fas {
+  color: #fe7101;
   width: 5%;
   height: 100%;
   font-size: 40px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+#payment-form .fas:hover {
+  color: #feae01;
+  text-decoration: none;
+  transition: 0.2s;
 }
 
 #payment-form .my-container-flex {
@@ -5356,13 +5402,29 @@ input[type=number] {
 }
 
 #payment-form .my-container-flex.flex-between .my-submit-btn {
-  background-color: #feae01;
-  font-size: 20px;
+  font-weight: bold;
+  background-color: #fe7101;
+  color: #fffdfa;
+}
+
+#payment-form .my-container-flex.flex-between .my-submit-btn:hover {
+  background-color: #d86001;
   color: #fffdfa;
 }
 
 #payment-form .my-link-container {
   padding-bottom: 1.5rem;
+}
+
+.btn.my-submit-button {
+  font-weight: bold;
+  background-color: #fe7101;
+  color: #fffdfa;
+}
+
+.btn.my-submit-button:hover {
+  background-color: #d86001;
+  color: #fffdfa;
 }
 
 .class-thumb-up {
@@ -5423,7 +5485,7 @@ input[type=number] {
 }
 
 .welcome .hero {
-  height: 400px;
+  height: 300px;
   width: 100%;
   padding: 150px 40px 50px 40px;
   background-color: #a8af99;
@@ -5433,6 +5495,12 @@ input[type=number] {
   color: white;
   font-weight: 600;
   padding: 10px 15px;
+}
+
+.welcome .filter-btn:hover {
+  transform: scale(1.2);
+  transition: 0.3s;
+  color: white;
 }
 
 .welcome .my-btn-secondary {
@@ -5466,6 +5534,11 @@ input[type=number] {
   border-radius: 10px;
   margin: 10px;
   padding: 10px;
+}
+
+.welcome .restaurant-container .restaurant-card:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
 }
 
 .welcome .restaurant-container .restaurant-card .my-icon {
@@ -5537,12 +5610,19 @@ input[type=number] {
 }
 
 .welcome .pb-container button {
-  text-align: center;
-  padding: 10px 15px;
-  background-color: #e3342f;
-  color: #fffdfa;
-  margin: 0px;
+  border: none;
   border-radius: 5px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-weight: bold;
+  background-color: #fe7101;
+  color: #fffdfa;
+}
+
+.welcome .pb-container button:hover {
+  background-color: #d86001;
+  color: #fffdfa;
+  transition: 0.3s;
 }
 
 .welcome footer {
@@ -5678,8 +5758,21 @@ h5 {
   margin: 30px 0;
 }
 
+.dishes i:hover {
+  color: #feae01;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
 .dishes .btn {
   font-weight: bold;
+  background-color: #fe7101;
+  color: #fffdfa;
+}
+
+.dishes .btn:hover {
+  background-color: #d86001;
+  color: #fffdfa;
 }
 
 .container.dishes.index {
@@ -5832,10 +5925,32 @@ h5 {
   margin: 0 0 15px 60px;
 }
 
+.register .btn,
+.login .btn {
+  background-color: #fe7101;
+  color: #fffdfa;
+}
+
+.register .btn:hover,
+.login .btn:hover {
+  background-color: #d86001;
+  color: #fffdfa;
+}
+
+.login .btn {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.btn.btn-link.forget:hover {
+  text-decoration: none;
+}
+
 .register .card-header,
 .login .card-header {
   background-color: #feae01;
   font-weight: bold;
+  color: white;
 }
 
 .register .card-body label:not([for=remember]),
@@ -5850,6 +5965,10 @@ h5 {
 
 .types .type {
   margin-bottom: 10px;
+}
+
+.types .type:hover {
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -5888,15 +6007,6 @@ h5 {
     content: ";";
     color: #323335;
   }
-}
-
-.my-label {
-  background-color: #ff8b6c;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  padding: 5px 5px 5px 10px;
-  border-radius: 10px;
 }
 
 /*!
@@ -16849,5 +16959,6 @@ Extra-bold 800*/
 a:hover {
   color: #feae01;
   text-decoration: none;
+  transition: 0.2s;
 }
 
